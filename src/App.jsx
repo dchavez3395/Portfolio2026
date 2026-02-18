@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import telusImage from "./assets/telus.webp";
 import iympImage from "./assets/iymp.png";
@@ -19,7 +19,7 @@ const translations = {
         { label: "work", href: "#portfolio" },
         { label: "skills", href: "#skills" },
         { label: "accessibility", href: "/accessibility" },
-        { label: "contact", href: "/contact" },
+        { label: "contact", href: "#contact" },
       ],
       primaryLabel: "Primary navigation",
       toggleLabel: "Toggle menu",
@@ -28,9 +28,9 @@ const translations = {
     },
     hero: {
       greeting: "Hello, I'm Daniel",
-      title: "I architect accessible, business-grade web platforms",
+      title: "I deliver accessible, business-grade web platforms",
       description:
-        "Full-stack developer with three years of production delivery and prior dealership business development leadership. I translate executive priorities into reliable, scalable solutions across React, WordPress, PHP, Blade, DNS, and modern tooling.",
+        "I'm a full-stack developer with over three years of experience delivering production work using PHP, React, Node, and modern tooling. I can contribute alongside designers, PMs, and QA or manage entire projects independently, always keeping web accessibility, performance, and transparent communication at the center of every delivery.",
       portfolioCta: "View selected work",
       accessibilityCta: "Accessibility",
       resumeCta: "Resume",
@@ -38,11 +38,12 @@ const translations = {
     },
     about: {
       title: "About",
-      lead:
-        "Strategic full-stack developer focused on outcomes, clarity, and dependable execution.",
-      body: "Over the past three years I have delivered production websites and applications from discovery through launch and support. My earlier role as a dealership business development manager sharpened my approach to stakeholder alignment, pipeline strategy, and operational discipline. I prioritize WCAG compliance, performance, and maintainable architecture, with deep experience in WordPress, PHP, Blade, DNS, hosting, and modern front-end stacks.",
+      lead: "Professional summary",
+      body:
+        "I deploy production websites and web applications with a focus on responsive, accessible experiences. My toolkit spans PHP, WordPress (custom themes), Node.js, React, Blade, SCSS, Tailwind CSS, DNS, hosting, and modern deployment platforms. I pair Deque University accessibility training with a background in agency delivery and dealership leadership to keep performance, security, and business priorities aligned with engineering execution.",
       highlightsTitle: "Experience highlights",
       highlights: [
+        "Deque University Web Accessibility Training",
         "End-to-end delivery from discovery through launch and support",
         "Stakeholder alignment, executive reporting, and roadmap clarity",
         "Accessibility-first delivery aligned with WCAG guidance",
@@ -54,6 +55,7 @@ const translations = {
       visit: "Visit site",
       ctaTitle: "Seeking a developer who aligns technology with business outcomes?",
       ctaButton: "Schedule a conversation",
+      note: "Projects delivered while collaborating with Vincent Design, my current team.",
     },
     homeAccessibility: {
       title: "Why accessibility matters",
@@ -82,49 +84,47 @@ const translations = {
         ctaSecondary: "Contact",
       },
       why: {
-        title: "Why it matters",
-        intro:
-          "Accessibility is part of a reliable product experience and a responsible brand.",
-        points: [
-          "Removes barriers for people with disabilities and expands your audience.",
-          "Improves usability for all users, including mobile and low bandwidth.",
-          "Strengthens brand trust and reduces legal exposure.",
-          "Supports SEO, performance, and content clarity.",
+        title: "Why accessibility still matters",
+        paragraphs: [
+          "Accessibility is part of a reliable product experience and a responsible brand, not a checkbox at the end of development. Framing web access as a risk management practice keeps launches calm and lets teams protect customers who rely on screen readers, keyboard navigation, and adaptive hardware.",
+          "When accessibility is prioritized, the product becomes easier to understand on any device, performs better in low-bandwidth scenarios, and reaches the business and public sector buyers who expect inclusive delivery.",
         ],
       },
-      legal: {
-        title: "Canadian legal landscape",
+      principles: {
+        title: "Guiding principles for inclusive delivery",
         intro:
-          "Obligations vary by sector and province, but many organizations must meet accessibility standards.",
-        points: [
-          "Accessible Canada Act (ACA) applies to federally regulated organizations.",
-          "Accessibility for Manitobans Act (AMA) establishes standards in Manitoba.",
-          "Accessibility for Ontarians with Disabilities Act (AODA) applies in Ontario.",
-          "Human rights codes across Canada require reasonable accommodation.",
-          "Most organizations align to WCAG 2.1 AA as a practical benchmark.",
+          "Accessibility is built into design, content, and engineering workstreams. The goal is measurable improvements, not a surprise sprint at launch.",
+        items: [
+          {
+            title: "Structure for people",
+            body: "Semantic HTML, consistent landmarks, and visible focus ensure everyone can navigate with a keyboard or assistive device.",
+          },
+          {
+            title: "Readable content",
+            body: "Contrast, typography, clear error handling, and straightforward language make content legible under different conditions.",
+          },
+          {
+            title: "Media ownership",
+            body: "Alt text, captions, transcripts, and descriptive controls keep images, video, and interactive components meaningful.",
+          },
+          {
+            title: "Process & partnership",
+            body: "Reviews at design and build, WCAG-aligned checklists, and documentation keep teams accountable without slowing delivery.",
+          },
         ],
+        closing:
+          "These principles guide assessment, remediation, and knowledge-sharing so accessibility grows with the product.",
       },
-      compliance: {
-        title: "What compliance looks like",
+      context: {
+        title: "Legal and compliance context",
         intro:
-          "Accessibility is built into design, content, and engineering, not added at the end.",
+          "Obligations vary by sector and province, yet many organizations must meet accessibility standards. Understanding the landscape makes planning easier.",
         points: [
-          "Semantic structure, keyboard navigation, and visible focus.",
-          "Color contrast, readable typography, and clear error states.",
-          "Alt text, captions, and accessible media.",
-          "Consistent headings, navigation, and content hierarchy.",
-          "Automated checks plus manual testing.",
-        ],
-      },
-      approach: {
-        title: "How I support accessibility",
-        intro:
-          "I integrate accessibility early to reduce rework, improve quality, and limit risk.",
-        points: [
-          "Accessibility reviews at design and build stages.",
-          "WCAG-aligned checklists and QA.",
-          "Remediation plans with prioritized fixes.",
-          "Documentation for teams and stakeholders.",
+          "Accessible Canada Act (ACA) applies to federally regulated organizations and Crown corporations.",
+          "Accessibility for Manitobans Act (AMA) sets procurement and design obligations across Manitoba.",
+          "Accessibility for Ontarians with Disabilities Act (AODA) governs public and private sector organizations in Ontario.",
+          "Human rights codes in every province require reasonable accommodation for people with disabilities.",
+          "Most organizations adopt WCAG 2.1 AA as a practical benchmark for both design reviews and procurement.",
         ],
       },
       details: {
@@ -149,103 +149,54 @@ const translations = {
       note: "This page provides general information and is not legal advice.",
     },
     skills: {
-      title: "Core Capabilities",
+      title: "Technical expertise",
       groups: [
         {
-          title: "Product engineering",
-          items: [
-            "React",
-            "TypeScript",
-            "Next.js",
-            "Design systems",
-            "Responsive UI",
-            "Tailwind CSS",
-          ],
-        },
-        {
-          title: "Backend and data",
+          title: "Languages & frameworks",
           items: [
             "PHP",
-            "Laravel and Blade",
+            "JavaScript (ES6+)",
+            "React.js",
             "Node.js",
+            "Express.js",
+            "HTML5",
+            "SCSS/SASS",
+            "Tailwind CSS",
+            "EJS",
+          ],
+        },
+        {
+          title: "CMS & platforms",
+          items: [
+            "WordPress (custom themes)",
+            "Laravel / Blade templating",
+            "Flywheel",
+            "WP Engine",
+            "Vercel",
+            "DNS & hosting",
+          ],
+        },
+        {
+          title: "Tools & workflow",
+          items: [
+            "Git & GitHub",
             "REST APIs",
-            "MySQL",
-            "PostgreSQL",
-          ],
-        },
-        {
-          title: "Platforms and operations",
-          items: [
-            "WordPress",
-            "CMS migrations",
-            "DNS and hosting",
+            "Figma",
+            "Responsive web design",
+            "Cross-browser compatibility",
             "CI/CD pipelines",
-            "Git and GitHub",
-            "Cloud deployments",
           ],
         },
         {
-          title: "Quality and leadership",
+          title: "Performance & optimization",
           items: [
-            "WCAG compliance",
-            "Accessibility audits",
-            "SEO and metadata",
-            "Performance optimization",
-            "Analytics and reporting",
-            "Stakeholder alignment",
+            "SEO best practices",
+            "Accessibility standards",
+            "Site performance optimization",
+            "Analytics & reporting",
           ],
         },
       ],
-    },
-    contact: {
-      title: "Contact",
-      breadcrumb: {
-        label: "Breadcrumb",
-        home: "Home",
-        current: "Contact",
-      },
-      pageIntro:
-        "Book a consultation to review goals, timelines, and constraints. I will confirm availability and next steps by email.",
-      intro: "If you are evaluating candidates or partners, email me",
-      emailLinkLabel: "here",
-      scheduler: {
-        title: "Schedule an appointment",
-        intro:
-          "Select a date and time for a 30-minute call. Times display in your local time zone.",
-        dateLabel: "Select a date",
-        timeLabel: "Choose a time",
-        timeEmpty: "Select a date to see available times.",
-        timeZoneLabel: "Time zone",
-        selectedLabel: "Selected",
-        button: "Request appointment",
-        duration: "30-minute call",
-        prevMonthLabel: "Previous month",
-        nextMonthLabel: "Next month",
-      },
-      modal: {
-        title: "Confirm your request",
-        intro: "Add your details so I can confirm the appointment.",
-        summaryLabel: "Requested time",
-        submit: "Send request",
-        cancel: "Cancel",
-        sending: "Sending...",
-        success: "Request sent. I will confirm by email shortly.",
-        error: "Something went wrong. Please try again.",
-        devError: "API unavailable. Run vercel dev to test locally.",
-        errors: {
-          required: "This field is required.",
-          email: "Enter a valid email address.",
-        },
-      },
-      nameLabel: "Full name",
-      namePlaceholder: "Full name",
-      phoneLabel: "Phone number",
-      phonePlaceholder: "Phone number",
-      emailLabel: "Work email",
-      emailPlaceholder: "Work email",
-      messageLabel: "Message",
-      messagePlaceholder: "Describe the role or project",
-      button: "Send inquiry",
     },
     social: {
       linkedin: "LinkedIn",
@@ -262,7 +213,7 @@ const translations = {
       links: [
         { label: "Work", href: "#portfolio" },
         { label: "Skills", href: "#skills" },
-        { label: "Contact", href: "/contact" },
+        { label: "Contact", href: "#contact" },
       ],
       rights: "All rights reserved.",
     },
@@ -275,7 +226,7 @@ const translations = {
         { label: "trabajo", href: "#portfolio" },
         { label: "habilidades", href: "#skills" },
         { label: "accesibilidad", href: "/accessibility" },
-        { label: "contacto", href: "/contact" },
+        { label: "contacto", href: "#contact" },
       ],
       primaryLabel: "Navegacion principal",
       toggleLabel: "Alternar menu",
@@ -310,6 +261,7 @@ const translations = {
       visit: "Ver sitio",
       ctaTitle: "Busca un desarrollador que alinee tecnologia con resultados de negocio?",
       ctaButton: "Agendar conversacion",
+      note: "Proyectos entregados mientras colaboro con Vincent Design, mi equipo actual.",
     },
     homeAccessibility: {
       title: "Por que importa la accesibilidad",
@@ -338,71 +290,69 @@ const translations = {
         ctaSecondary: "Contacto",
       },
       why: {
-        title: "Por que importa",
-        intro:
-          "La accesibilidad es parte de una experiencia confiable y una marca responsable.",
-        points: [
-          "Elimina barreras para personas con discapacidades y amplia la audiencia.",
-          "Mejora la usabilidad para todos, incluyendo movil y baja conectividad.",
-          "Refuerza la confianza de marca y reduce riesgo legal.",
-          "Apoya SEO, rendimiento y claridad de contenido.",
+        title: "Por que sigue importando la accesibilidad",
+        paragraphs: [
+          "La accesibilidad es parte de una experiencia confiable y una marca responsable, no un requisito que se valida al final. Considerarla reduce la presion de los lanzamientos y protege a personas que dependen de lectores de pantalla, navegacion por teclado y hardware adaptado.",
+          "Cuando la accesibilidad es prioridad, el producto funciona mejor en cualquier dispositivo, rinde en conexiones lentas y mejora la percepcion ante clientes corporativos y del sector publico que exigen experiencias inclusivas.",
         ],
       },
-      legal: {
-        title: "Panorama legal en Canada",
+      principles: {
+        title: "Principios orientadores para entregas inclusivas",
         intro:
-          "Las obligaciones varian por sector y provincia; muchas organizaciones deben cumplir.",
-        points: [
-          "La Accessible Canada Act (ACA) aplica a organizaciones reguladas federalmente.",
-          "La Accessibility for Manitobans Act (AMA) define estandares en Manitoba.",
-          "La Accessibility for Ontarians with Disabilities Act (AODA) aplica en Ontario.",
-          "Los codigos de derechos humanos exigen ajustes razonables.",
-          "La mayoria alinea sus sitios a WCAG 2.1 AA como referencia practica.",
+          "La accesibilidad se incorpora a los flujos de diseño, contenido e ingeniería. Buscamos mejoras medibles sin sorpresas en la producción.",
+        items: [
+          {
+            title: "Estructura centrada en personas",
+            body: "HTML semántico, puntos de referencia consistentes y foco visible permiten navegar con teclado o dispositivos de asistencia.",
+          },
+          {
+            title: "Contenido legible",
+            body: "Contraste, tipografía, mensajes de error claros y lenguaje directo facilitan la comprensión en distintas condiciones.",
+          },
+          {
+            title: "Medios con propósito",
+            body: "Texto alternativo, subtítulos, transcripciones y controles descriptivos hacen que imágenes, videos e interacciones tengan sentido.",
+          },
+          {
+            title: "Proceso y colaboración",
+            body: "Revisiones en diseño y construcción, listas de verificación alineadas a WCAG y documentación mantienen a los equipos responsables sin retrasar entregas.",
+          },
         ],
+        closing:
+          "Estos principios guían la evaluación, remediación y transferencia de conocimiento para que la accesibilidad crezca con el producto.",
       },
-      compliance: {
-        title: "Como se ve el cumplimiento",
+      context: {
+        title: "Contexto legal y de cumplimiento",
         intro:
-          "La accesibilidad se integra en diseno, contenido y desarrollo, no al final.",
+          "Las obligaciones varían por sector y provincia, pero muchas organizaciones deben ajustarse a normas de accesibilidad. Entenderlas facilita la planificación.",
         points: [
-          "Estructura semantica, navegacion por teclado y foco visible.",
-          "Contraste de color, tipografia legible y errores claros.",
-          "Texto alternativo, subtitulos y medios accesibles.",
-          "Navegacion consistente, encabezados y jerarquia clara.",
-          "Pruebas automaticas y revision manual.",
-        ],
-      },
-      approach: {
-        title: "Como apoyo la accesibilidad",
-        intro:
-          "Integro accesibilidad desde el inicio para reducir retrabajo y riesgo.",
-        points: [
-          "Revisiones de accesibilidad en diseno y desarrollo.",
-          "Listas de verificacion alineadas a WCAG y QA.",
-          "Planes de remediacion con prioridades claras.",
-          "Documentacion para equipos y stakeholders.",
+          "La Accessible Canada Act (ACA) aplica a organizaciones reguladas federalmente y corporaciones de la Corona.",
+          "La Accessibility for Manitobans Act (AMA) establece obligaciones de adquisiciones y diseño en Manitoba.",
+          "La Accessibility for Ontarians with Disabilities Act (AODA) regula a los sectores público y privado en Ontario.",
+          "Los códigos de derechos humanos provinciales exigen ajustes razonables para personas con discapacidades.",
+          "La mayoría adopta WCAG 2.1 AA como estándar práctico para revisiones de diseño y adquisiciones.",
         ],
       },
       details: {
         title: "Soporte profesional de accesibilidad",
         intro:
-          "Los programas de accesibilidad funcionan mejor cuando estrategia, diseno, contenido y desarrollo avanzan juntos. Ayudo a equipos a convertir requisitos en mejoras medibles sin frenar entregas.",
+          "Los programas de accesibilidad funcionan mejor cuando estrategia, diseño, contenido y desarrollo avanzan juntos. Ayudo a equipos a convertir requisitos en mejoras medibles sin frenar entregas.",
         paragraphs: [
-          "Un proyecto tipico empieza con una revision de plantillas, componentes y flujos clave. Combino pruebas automaticas y manuales con teclado y lector de pantalla para confirmar problemas reales.",
-          "Luego entrego un plan de remediacion priorizado que mapea cada ajuste a WCAG 2.1 AA, esfuerzo y riesgo. Esto alinea a los equipos y facilita planificar por sprints.",
-          "Tambien apoyo estandares de contenido, redaccion accesible y cambios en el sistema de diseno para que las mejoras se mantengan.",
+          "Un proyecto típico empieza con una revisión de plantillas, componentes y flujos clave. Combino pruebas automáticas y manuales con teclado y lector de pantalla para confirmar problemas reales.",
+          "Luego entrego un plan de remediación priorizado que mapea cada ajuste a WCAG 2.1 AA, esfuerzo y riesgo. Esto alinea a los equipos y facilita planificar por sprints.",
+          "También apoyo estándares de contenido, redacción accesible y cambios en el sistema de diseño para que las mejoras se mantengan.",
         ],
         listTitle: "Lo que recibes",
         listItems: [
-          "Hallazgos claros con capturas y guia tecnica",
-          "Ruta de trabajo priorizada y plan de validacion",
+          "Hallazgos claros con capturas y guía técnica",
+          "Ruta de trabajo priorizada y plan de validación",
           "Recomendaciones para componentes y contenido",
-          "Colaboracion con diseno, desarrollo y liderazgo",
+          "Colaboración con diseño, desarrollo y liderazgo",
         ],
         closing:
-          "Si necesitas capacitacion, gobierno o QA continuo, puedo definir un proceso simple que tu equipo mantenga.",
+          "Si necesitas capacitación, gobierno o QA continuo, puedo definir un proceso simple que tu equipo mantenga.",
       },
-      note: "Esta pagina ofrece informacion general y no es asesoramiento legal.",
+      note: "Esta página ofrece información general y no es asesoramiento legal.",
     },
     skills: {
       title: "Capacidades clave",
@@ -453,56 +403,6 @@ const translations = {
         },
       ],
     },
-    contact: {
-      title: "Contacto",
-      breadcrumb: {
-        label: "Ruta de navegacion",
-        home: "Inicio",
-        current: "Contacto",
-      },
-      pageIntro:
-        "Agenda una consulta para revisar objetivos, tiempos y restricciones. Confirmare disponibilidad y siguientes pasos por correo.",
-      intro: "Si evalua candidatos o socios, escribame",
-      emailLinkLabel: "aqui",
-      scheduler: {
-        title: "Agendar una cita",
-        intro:
-          "Elige fecha y hora para una llamada de 30 minutos. Los horarios se muestran en tu zona local.",
-        dateLabel: "Selecciona una fecha",
-        timeLabel: "Elige una hora",
-        timeEmpty: "Selecciona una fecha para ver horarios.",
-        timeZoneLabel: "Zona horaria",
-        selectedLabel: "Seleccionado",
-        button: "Solicitar cita",
-        duration: "Llamada de 30 minutos",
-        prevMonthLabel: "Mes anterior",
-        nextMonthLabel: "Mes siguiente",
-      },
-      modal: {
-        title: "Confirmar solicitud",
-        intro: "Agrega tus datos para confirmar la cita.",
-        summaryLabel: "Horario solicitado",
-        submit: "Enviar solicitud",
-        cancel: "Cancelar",
-        sending: "Enviando...",
-        success: "Solicitud enviada. Confirmare por correo pronto.",
-        error: "Algo salio mal. Intenta de nuevo.",
-        devError: "API no disponible. Ejecuta vercel dev para probar localmente.",
-        errors: {
-          required: "Este campo es obligatorio.",
-          email: "Ingresa un correo valido.",
-        },
-      },
-      nameLabel: "Nombre completo",
-      namePlaceholder: "Nombre completo",
-      phoneLabel: "Telefono",
-      phonePlaceholder: "Telefono",
-      emailLabel: "Correo de trabajo",
-      emailPlaceholder: "Email de trabajo",
-      messageLabel: "Mensaje",
-      messagePlaceholder: "Describa el rol o proyecto",
-      button: "Enviar consulta",
-    },
     social: {
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -519,7 +419,7 @@ const translations = {
       links: [
         { label: "Trabajo", href: "#portfolio" },
         { label: "Habilidades", href: "#skills" },
-        { label: "Contacto", href: "/contact" },
+        { label: "Contacto", href: "#contact" },
       ],
       rights: "Todos los derechos reservados.",
     },
@@ -732,107 +632,82 @@ const AccessibilityPage = ({ t, sectionLink }) => (
       </div>
     </header>
 
-    <section className="w-full py-16">
+    <section className="w-full py-16 bg-surface/70">
       <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
-        <div className="max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-ink">
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">
+            {t.accessibility.hero.label}
+          </p>
+          <h2 className="mt-2 text-2xl md:text-3xl font-display font-semibold text-ink">
             {t.accessibility.hero.title}
           </h2>
           <p className="mt-3 text-sm md:text-base text-muted">
             {t.accessibility.hero.subtitle}
           </p>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-6 md:p-8 shadow-lg shadow-black/40">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-accent">
-              {t.accessibility.why.title}
-            </h3>
-            <p className="mt-4 text-sm text-muted">
-              {t.accessibility.why.intro}
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted">
-              {t.accessibility.why.points.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 rounded-full bg-accent/80"
-                  ></span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-6 md:p-8 shadow-lg shadow-black/40">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-accent">
-              {t.accessibility.legal.title}
-            </h3>
-            <p className="mt-4 text-sm text-muted">
-              {t.accessibility.legal.intro}
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted">
-              {t.accessibility.legal.points.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 rounded-full bg-accent/80"
-                  ></span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-12 max-w-3xl">
+          <h3 className="text-xl font-display font-semibold text-ink">
+            {t.accessibility.why.title}
+          </h3>
+          <div className="mt-6 space-y-6 text-sm md:text-base text-muted">
+            {t.accessibility.why.paragraphs.map((paragraph, index) => (
+              <p key={`why-${index}`}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <section className="w-full py-16 bg-gradient-to-b from-surface to-surface-muted">
+    <section className="w-full py-16 bg-surface/70">
       <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-6 md:p-8 shadow-lg shadow-black/40">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-accent">
-              {t.accessibility.compliance.title}
-            </h3>
-            <p className="mt-4 text-sm text-muted">
-              {t.accessibility.compliance.intro}
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted">
-              {t.accessibility.compliance.points.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 rounded-full bg-accent/80"
-                  ></span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-6 md:p-8 shadow-lg shadow-black/40">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-accent">
-              {t.accessibility.approach.title}
-            </h3>
-            <p className="mt-4 text-sm text-muted">
-              {t.accessibility.approach.intro}
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted">
-              {t.accessibility.approach.points.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 rounded-full bg-accent/80"
-                  ></span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">
+            {t.accessibility.principles.title}
+          </p>
+          <p className="mt-4 text-sm text-muted">{t.accessibility.principles.intro}</p>
+        </div>
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {t.accessibility.principles.items.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl border border-border/60 bg-surface/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:bg-surface/95"
+            >
+              <p className="text-lg font-semibold text-ink">{item.title}</p>
+              <p className="mt-2 text-sm text-muted">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-10 text-sm text-muted">
+          {t.accessibility.principles.closing}
+        </p>
+      </div>
+    </section>
+
+    <section className="w-full py-16">
+      <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">
+            {t.accessibility.context.title}
+          </p>
+          <p className="mt-4 text-sm text-muted">{t.accessibility.context.intro}</p>
+        </div>
+        <div className="mt-10 grid gap-6 text-sm text-muted">
+          {t.accessibility.context.points.map((point) => (
+            <div key={point} className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 rounded-full bg-accent/80"
+              ></span>
+              <p className="m-0">{point}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
     <section className="w-full py-16">
       <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
-        <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40">
+        <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:bg-surface/95">
           <h2 className="text-2xl md:text-3xl font-display font-semibold text-ink">
             {t.accessibility.details.title}
           </h2>
@@ -871,791 +746,6 @@ const AccessibilityPage = ({ t, sectionLink }) => (
     </section>
   </>
 );
-
-const ContactPage = ({ t, sectionLink, language }) => {
-  const locale = language === "es" ? "es-ES" : "en-US";
-  const baseTimeZone = "America/Winnipeg";
-  const resolvedLocalTimeZone =
-    typeof Intl !== "undefined"
-      ? Intl.DateTimeFormat().resolvedOptions().timeZone
-      : "";
-  const localTimeZone = resolvedLocalTimeZone || "Local time";
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [appointmentDetails, setAppointmentDetails] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [formErrors, setFormErrors] = useState({});
-  const [requestStatus, setRequestStatus] = useState("idle");
-  const [requestError, setRequestError] = useState("");
-  const modalRef = useRef(null);
-  const modalFirstFieldRef = useRef(null);
-  const previousFocusRef = useRef(null);
-  const [currentMonth, setCurrentMonth] = useState(() => new Date());
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState("");
-  const today = new Date();
-  const normalizedToday = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate()
-  );
-  const monthStart = new Date(
-    currentMonth.getFullYear(),
-    currentMonth.getMonth(),
-    1
-  );
-  const monthEnd = new Date(
-    currentMonth.getFullYear(),
-    currentMonth.getMonth() + 1,
-    0
-  );
-  const startDayIndex = (monthStart.getDay() + 6) % 7;
-  const totalDays = monthEnd.getDate();
-  const monthLabel = new Intl.DateTimeFormat(locale, {
-    month: "long",
-    year: "numeric",
-  }).format(monthStart);
-  const weekdayLabels = Array.from({ length: 7 }, (_, index) => {
-    const referenceDate = new Date(2021, 7, 2 + index);
-    return new Intl.DateTimeFormat(locale, { weekday: "short" }).format(
-      referenceDate
-    );
-  });
-  const dayCells = [
-    ...Array.from({ length: startDayIndex }, () => null),
-    ...Array.from({ length: totalDays }, (_, index) => index + 1),
-  ];
-  while (dayCells.length % 7 !== 0) {
-    dayCells.push(null);
-  }
-  const timeSlots = ["09:00", "10:30", "13:00", "15:30", "17:00"];
-  const formatDate = (date) =>
-    new Intl.DateTimeFormat(locale, {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    }).format(date);
-  const getTimeZoneOffset = (date, timeZone) => {
-    const dtf = new Intl.DateTimeFormat("en-US", {
-      timeZone,
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
-    const parts = dtf.formatToParts(date);
-    const values = parts.reduce((acc, part) => {
-      acc[part.type] = part.value;
-      return acc;
-    }, {});
-    const asUtc = Date.UTC(
-      Number(values.year),
-      Number(values.month) - 1,
-      Number(values.day),
-      Number(values.hour),
-      Number(values.minute),
-      Number(values.second)
-    );
-    return asUtc - date.getTime();
-  };
-  const makeDateInTimeZone = (dateRef, timeValue, timeZone) => {
-    const [hours, minutes] = timeValue.split(":").map(Number);
-    const utcDate = new Date(
-      Date.UTC(
-        dateRef.getFullYear(),
-        dateRef.getMonth(),
-        dateRef.getDate(),
-        hours,
-        minutes
-      )
-    );
-    const offset = getTimeZoneOffset(utcDate, timeZone);
-    return new Date(utcDate.getTime() - offset);
-  };
-  const formatZonedDate = (date, timeZone) =>
-    new Intl.DateTimeFormat(locale, {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      timeZone,
-    }).format(date);
-  const formatZonedTime = (date, timeZone) =>
-    new Intl.DateTimeFormat(locale, {
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone,
-    }).format(date);
-  const formatTimeValue = (timeValue, dateRef, timeZone) => {
-    const baseDate = dateRef || normalizedToday;
-    const zonedDate = makeDateInTimeZone(baseDate, timeValue, timeZone);
-    return formatZonedTime(zonedDate, timeZone);
-  };
-  const isSameDay = (left, right) =>
-    left &&
-    right &&
-    left.getFullYear() === right.getFullYear() &&
-    left.getMonth() === right.getMonth() &&
-    left.getDate() === right.getDate();
-  const selectedZonedDate =
-    selectedDate && selectedTime
-      ? makeDateInTimeZone(selectedDate, selectedTime, baseTimeZone)
-      : null;
-  const selectedBaseDateLabel = selectedZonedDate
-    ? formatZonedDate(selectedZonedDate, baseTimeZone)
-    : "";
-  const selectedBaseTimeLabel = selectedZonedDate
-    ? formatZonedTime(selectedZonedDate, baseTimeZone)
-    : "";
-  const selectedLocalTimeLabel =
-    selectedZonedDate && resolvedLocalTimeZone
-      ? formatZonedTime(selectedZonedDate, resolvedLocalTimeZone)
-      : "";
-  const showLocalTime =
-    !!selectedZonedDate && resolvedLocalTimeZone !== "" && resolvedLocalTimeZone !== baseTimeZone;
-  const isPrevDisabled =
-    monthStart.getFullYear() === normalizedToday.getFullYear() &&
-    monthStart.getMonth() === normalizedToday.getMonth();
-  const handlePrevMonth = () => {
-    if (isPrevDisabled) return;
-    setCurrentMonth(
-      (prev) => new Date(prev.getFullYear(), prev.getMonth() - 1, 1)
-    );
-  };
-  const handleNextMonth = () => {
-    setCurrentMonth(
-      (prev) => new Date(prev.getFullYear(), prev.getMonth() + 1, 1)
-    );
-  };
-  const handleDaySelect = (day) => {
-    const nextDate = new Date(
-      currentMonth.getFullYear(),
-      currentMonth.getMonth(),
-      day
-    );
-    setSelectedDate(nextDate);
-    setSelectedTime("");
-  };
-  const encodeMailtoValue = (value) =>
-    encodeURIComponent(value).replace(/%0A/g, "%0D%0A");
-  const openMailClient = (subject, body) => {
-    if (typeof window === "undefined") return;
-    const params = [];
-    if (subject) {
-      params.push(`subject=${encodeMailtoValue(subject)}`);
-    }
-    if (body) {
-      params.push(`body=${encodeMailtoValue(body)}`);
-    }
-    const mailtoUrl = params.length
-      ? `${CONTACT_EMAIL_MAILTO}?${params.join("&")}`
-      : CONTACT_EMAIL_MAILTO;
-    const popup = window.open(mailtoUrl, "_blank", "noopener,noreferrer");
-    if (!popup) {
-      window.location.href = mailtoUrl;
-    }
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setFormErrors({});
-    setRequestStatus("idle");
-    setRequestError("");
-  };
-  const validateForm = () => {
-    const nextErrors = {};
-    if (!appointmentDetails.name.trim()) {
-      nextErrors.name = t.contact.modal.errors.required;
-    }
-    if (!appointmentDetails.email.trim()) {
-      nextErrors.email = t.contact.modal.errors.required;
-    } else if (!/^\S+@\S+\.\S+$/.test(appointmentDetails.email.trim())) {
-      nextErrors.email = t.contact.modal.errors.email;
-    }
-    if (!appointmentDetails.phone.trim()) {
-      nextErrors.phone = t.contact.modal.errors.required;
-    }
-    if (!appointmentDetails.message.trim()) {
-      nextErrors.message = t.contact.modal.errors.required;
-    }
-    setFormErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
-  };
-  const handleModalSubmit = async (event) => {
-    event.preventDefault();
-    if (!validateForm()) return;
-    if (!selectedBaseDateLabel || !selectedBaseTimeLabel) {
-      setRequestStatus("error");
-      setRequestError(t.contact.modal.error);
-      return;
-    }
-    setRequestStatus("submitting");
-    setRequestError("");
-    try {
-      const response = await fetch("/api/appointments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: appointmentDetails.name.trim(),
-          email: appointmentDetails.email.trim(),
-          phone: appointmentDetails.phone.trim(),
-          message: appointmentDetails.message.trim(),
-          requestedDate: selectedBaseDateLabel,
-          requestedTime: selectedBaseTimeLabel,
-          baseTimeZone,
-          localTimeZone: showLocalTime ? localTimeZone : "",
-          localTime: showLocalTime ? selectedLocalTimeLabel : "",
-          language,
-        }),
-      });
-      if (!response.ok) {
-        const errorPayload = await response.json().catch(() => ({}));
-        const message =
-          response.status === 404
-            ? t.contact.modal.devError
-            : errorPayload.error || t.contact.modal.error;
-        throw new Error(message);
-      }
-      setRequestStatus("success");
-      setAppointmentDetails({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-      setFormErrors({});
-    } catch (error) {
-      setRequestStatus("error");
-      setRequestError(
-        error instanceof Error && error.message
-          ? error.message
-          : t.contact.modal.error
-      );
-    }
-  };
-  const handleFieldChange = (field) => (event) => {
-    const value = event.target.value;
-    setAppointmentDetails((prev) => ({ ...prev, [field]: value }));
-    setFormErrors((prev) => ({ ...prev, [field]: "" }));
-  };
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-    setFormErrors({});
-    setRequestStatus("idle");
-    setRequestError("");
-  };
-  const isSubmitting = requestStatus === "submitting";
-  const isSuccess = requestStatus === "success";
-  const isError = requestStatus === "error";
-  useEffect(() => {
-    if (!isModalOpen) return;
-    previousFocusRef.current = document.activeElement;
-    if (modalFirstFieldRef.current) {
-      modalFirstFieldRef.current.focus();
-    }
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        closeModal();
-        return;
-      }
-      if (event.key !== "Tab") return;
-      const modalElement = modalRef.current;
-      if (!modalElement) return;
-      const focusableElements = modalElement.querySelectorAll(
-        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
-      );
-      if (focusableElements.length === 0) return;
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-      if (event.shiftKey && document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      } else if (!event.shiftKey && document.activeElement === lastElement) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    };
-    const modalElement = modalRef.current;
-    if (modalElement) {
-      modalElement.addEventListener("keydown", handleKeyDown);
-    }
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      if (modalElement) {
-        modalElement.removeEventListener("keydown", handleKeyDown);
-      }
-      if (previousFocusRef.current && previousFocusRef.current.focus) {
-        previousFocusRef.current.focus();
-      }
-    };
-  }, [isModalOpen, showLocalTime, selectedLocalTimeLabel, localTimeZone]);
-
-  return (
-    <>
-      <header className="relative w-full bg-gradient-to-b from-surface-muted via-surface to-surface-muted overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-16 left-8 h-48 w-48 rounded-full bg-accent/20 blur-3xl"
-        ></div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-10 h-48 w-48 rounded-full bg-rose-400/10 blur-3xl"
-        ></div>
-        <div className="relative z-10 max-w-screen-xl mx-auto w-full px-4 lg:pl-24 lg:pr-8 pt-44 xl:pt-48 pb-10">
-          <nav aria-label={t.contact.breadcrumb.label}>
-            <ol className="flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-muted">
-              <li>
-                <Link
-                  to={sectionLink("#home")}
-                  className="transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm"
-                >
-                  {t.contact.breadcrumb.home}
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li aria-current="page" className="text-ink">
-                {t.contact.breadcrumb.current}
-              </li>
-            </ol>
-          </nav>
-          <h1 className="mt-4 text-3xl md:text-5xl font-display font-semibold text-ink leading-tight">
-            {t.contact.title}
-          </h1>
-        </div>
-      </header>
-
-      <section className="w-full py-16">
-        <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr,1.4fr]">
-            <div>
-              <p id="contact-page-intro" className="text-base md:text-lg text-muted">
-                {t.contact.pageIntro}
-              </p>
-              <p id="contact-page-email" className="mt-6 text-sm text-muted">
-                {t.contact.intro}{" "}
-                <span className="text-accent font-semibold cursor-pointer">
-                  <a
-                    href={CONTACT_EMAIL_MAILTO}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      openMailClient();
-                    }}
-                    className="text-link rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-                  >
-                    {t.contact.emailLinkLabel}
-                  </a>
-                </span>
-                .
-              </p>
-            </div>
-            <div
-              aria-describedby="contact-page-intro contact-page-email"
-              className="rounded-3xl border border-border/60 bg-surface/90 p-6 md:p-8 shadow-lg shadow-black/40"
-            >
-              <div className="border-b border-border/60 pb-6">
-                <h2 className="text-2xl md:text-3xl font-display font-semibold text-ink">
-                  {t.contact.scheduler.title}
-                </h2>
-                <p className="mt-3 text-sm text-muted">
-                  {t.contact.scheduler.intro}
-                </p>
-              </div>
-
-              <div className="mt-6 flex items-center justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-accent">
-                    {t.contact.scheduler.dateLabel}
-                  </p>
-                  <p className="mt-2 text-lg font-semibold text-ink capitalize">
-                    {monthLabel}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={handlePrevMonth}
-                    disabled={isPrevDisabled}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
-                      isPrevDisabled
-                        ? "border-border/40 text-muted/40 cursor-not-allowed"
-                        : "border-border/60 text-ink hover:border-accent/50"
-                    }`}
-                    aria-label={t.contact.scheduler.prevMonthLabel}
-                  >
-                    <span aria-hidden="true">{"<"}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNextMonth}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border/60 text-sm text-ink transition hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-                    aria-label={t.contact.scheduler.nextMonthLabel}
-                  >
-                    <span aria-hidden="true">{">"}</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-6 grid grid-cols-7 gap-2 text-[11px] uppercase tracking-[0.28em] text-muted">
-                {weekdayLabels.map((label) => (
-                  <span key={label} className="text-center">
-                    {label}
-                  </span>
-                ))}
-              </div>
-              <div
-                className="mt-3 grid grid-cols-7 gap-2"
-                role="grid"
-                aria-label={t.contact.scheduler.dateLabel}
-              >
-                {dayCells.map((day, index) => {
-                  if (!day) {
-                    return <span key={`empty-${index}`} />;
-                  }
-                  const dayDate = new Date(
-                    currentMonth.getFullYear(),
-                    currentMonth.getMonth(),
-                    day
-                  );
-                  const isPast = dayDate < normalizedToday;
-                  const isToday = isSameDay(dayDate, normalizedToday);
-                  const isSelected = isSameDay(dayDate, selectedDate);
-                  return (
-                    <button
-                      key={day}
-                      type="button"
-                      onClick={() => handleDaySelect(day)}
-                      disabled={isPast}
-                      aria-pressed={isSelected}
-                      aria-current={isToday ? "date" : undefined}
-                      aria-label={formatDate(dayDate)}
-                      className={`h-10 w-10 rounded-full text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
-                        isPast
-                          ? "text-muted/40 cursor-not-allowed"
-                          : isSelected
-                          ? "bg-accent text-surface shadow-md shadow-black/30"
-                          : "text-ink hover:bg-surface-muted/70"
-                      }`}
-                    >
-                      {day}
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 border-t border-border/60 pt-6">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-xs uppercase tracking-[0.3em] text-accent">
-                    {t.contact.scheduler.timeLabel}
-                  </p>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-muted">
-                    {t.contact.scheduler.duration}
-                  </p>
-                </div>
-                {selectedDate ? (
-                  <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {timeSlots.map((time) => (
-                      <button
-                        key={time}
-                        type="button"
-                        onClick={() => setSelectedTime(time)}
-                        aria-pressed={selectedTime === time}
-                        className={`rounded-full border px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
-                          selectedTime === time
-                            ? "border-accent bg-accent text-surface"
-                            : "border-border/60 text-ink hover:border-accent/40"
-                        }`}
-                      >
-                        {formatTimeValue(time, selectedDate || monthStart, baseTimeZone)}
-                      </button>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="mt-4 text-sm text-muted">
-                    {t.contact.scheduler.timeEmpty}
-                  </p>
-                )}
-              </div>
-
-              <div className="mt-6 rounded-2xl border border-border/60 bg-surface/80 p-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-accent">
-                  {t.contact.scheduler.selectedLabel}
-                </p>
-                <p className="mt-2 text-sm text-ink" aria-live="polite">
-                  {selectedDate && selectedTime
-                    ? `${selectedBaseDateLabel} - ${selectedBaseTimeLabel}`
-                    : "--"}
-                </p>
-                <p className="mt-2 text-xs text-muted">
-                  {t.contact.scheduler.timeZoneLabel}: {baseTimeZone}
-                  {showLocalTime
-                    ? ` (${localTimeZone}: ${selectedLocalTimeLabel})`
-                    : ""}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={handleOpenModal}
-                disabled={!selectedDate || !selectedTime}
-                className={`mt-6 w-full rounded-full px-6 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
-                  selectedDate && selectedTime
-                    ? "bg-accent text-surface shadow-lg shadow-black/30 hover:bg-white"
-                    : "cursor-not-allowed bg-surface-muted text-muted"
-                }`}
-              >
-                {t.contact.scheduler.button}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      {isModalOpen ? (
-        <div
-          className="fixed inset-0 z-[10050] flex items-center justify-center bg-surface/80 px-4 py-6 backdrop-blur"
-          role="presentation"
-          onClick={closeModal}
-        >
-          <div
-            ref={modalRef}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="appointment-modal-title"
-            aria-describedby="appointment-modal-intro appointment-modal-summary"
-            className="w-full max-w-xl rounded-3xl border border-border/60 bg-surface/95 p-6 shadow-2xl shadow-black/60"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
-              <div>
-                <h2
-                  id="appointment-modal-title"
-                  className="text-2xl font-display font-semibold text-ink"
-                >
-                  {t.contact.modal.title}
-                </h2>
-                <p
-                  id="appointment-modal-intro"
-                  className="mt-2 text-sm text-muted"
-                >
-                  {t.contact.modal.intro}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={closeModal}
-                className="rounded-full border border-border/60 px-3 py-1 text-xs uppercase tracking-[0.3em] text-muted transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-              >
-                {t.contact.modal.cancel}
-              </button>
-            </div>
-
-            <div
-              id="appointment-modal-summary"
-              className="mt-4 rounded-2xl border border-border/60 bg-surface/80 p-4"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-accent">
-                {t.contact.modal.summaryLabel}
-              </p>
-              <p className="mt-2 text-sm text-ink">
-                {selectedBaseDateLabel && selectedBaseTimeLabel
-                  ? `${selectedBaseDateLabel} - ${selectedBaseTimeLabel} (${baseTimeZone})`
-                  : "--"}
-                {showLocalTime
-                  ? ` | ${localTimeZone}: ${selectedLocalTimeLabel}`
-                  : ""}
-              </p>
-            </div>
-
-            {isSuccess ? (
-              <p
-                className="mt-4 rounded-2xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-100"
-                role="status"
-              >
-                {t.contact.modal.success}
-              </p>
-            ) : null}
-            {isError ? (
-              <p
-                className="mt-4 rounded-2xl border border-rose-400/40 bg-rose-400/10 px-4 py-3 text-sm text-rose-100"
-                role="alert"
-              >
-                {requestError || t.contact.modal.error}
-              </p>
-            ) : null}
-
-            <form
-              className="mt-6 space-y-4"
-              onSubmit={handleModalSubmit}
-              noValidate
-            >
-              <div>
-                <label
-                  htmlFor="appointment-name"
-                  className="text-xs uppercase tracking-[0.3em] text-muted"
-                >
-                  {t.contact.nameLabel}
-                </label>
-                <input
-                  ref={modalFirstFieldRef}
-                  id="appointment-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  value={appointmentDetails.name}
-                  onChange={handleFieldChange("name")}
-                  aria-invalid={!!formErrors.name}
-                  aria-describedby={
-                    formErrors.name ? "appointment-name-error" : undefined
-                  }
-                  placeholder={t.contact.namePlaceholder}
-                  disabled={isSubmitting || isSuccess}
-                  className="mt-2 w-full rounded-xl border border-border/60 bg-surface px-3 py-2 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent-strong/80"
-                />
-                {formErrors.name ? (
-                  <p
-                    id="appointment-name-error"
-                    className="mt-1 text-xs text-rose-200"
-                    role="alert"
-                  >
-                    {formErrors.name}
-                  </p>
-                ) : null}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="appointment-email"
-                  className="text-xs uppercase tracking-[0.3em] text-muted"
-                >
-                  {t.contact.emailLabel}
-                </label>
-                <input
-                  id="appointment-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={appointmentDetails.email}
-                  onChange={handleFieldChange("email")}
-                  aria-invalid={!!formErrors.email}
-                  aria-describedby={
-                    formErrors.email ? "appointment-email-error" : undefined
-                  }
-                  placeholder={t.contact.emailPlaceholder}
-                  disabled={isSubmitting || isSuccess}
-                  className="mt-2 w-full rounded-xl border border-border/60 bg-surface px-3 py-2 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent-strong/80"
-                />
-                {formErrors.email ? (
-                  <p
-                    id="appointment-email-error"
-                    className="mt-1 text-xs text-rose-200"
-                    role="alert"
-                  >
-                    {formErrors.email}
-                  </p>
-                ) : null}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="appointment-phone"
-                  className="text-xs uppercase tracking-[0.3em] text-muted"
-                >
-                  {t.contact.phoneLabel}
-                </label>
-                <input
-                  id="appointment-phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  required
-                  value={appointmentDetails.phone}
-                  onChange={handleFieldChange("phone")}
-                  aria-invalid={!!formErrors.phone}
-                  aria-describedby={
-                    formErrors.phone ? "appointment-phone-error" : undefined
-                  }
-                  placeholder={t.contact.phonePlaceholder}
-                  disabled={isSubmitting || isSuccess}
-                  className="mt-2 w-full rounded-xl border border-border/60 bg-surface px-3 py-2 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent-strong/80"
-                />
-                {formErrors.phone ? (
-                  <p
-                    id="appointment-phone-error"
-                    className="mt-1 text-xs text-rose-200"
-                    role="alert"
-                  >
-                    {formErrors.phone}
-                  </p>
-                ) : null}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="appointment-message"
-                  className="text-xs uppercase tracking-[0.3em] text-muted"
-                >
-                  {t.contact.messageLabel}
-                </label>
-                <textarea
-                  id="appointment-message"
-                  name="message"
-                  rows="4"
-                  required
-                  value={appointmentDetails.message}
-                  onChange={handleFieldChange("message")}
-                  aria-invalid={!!formErrors.message}
-                  aria-describedby={
-                    formErrors.message ? "appointment-message-error" : undefined
-                  }
-                  placeholder={t.contact.messagePlaceholder}
-                  disabled={isSubmitting || isSuccess}
-                  className="mt-2 w-full rounded-xl border border-border/60 bg-surface px-3 py-2 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent-strong/80"
-                ></textarea>
-                {formErrors.message ? (
-                  <p
-                    id="appointment-message-error"
-                    className="mt-1 text-xs text-rose-200"
-                    role="alert"
-                  >
-                    {formErrors.message}
-                  </p>
-                ) : null}
-              </div>
-
-              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="rounded-full border border-border/60 px-5 py-2 text-sm text-muted transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-                >
-                  {t.contact.modal.cancel}
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSubmitting || isSuccess}
-                  className={`rounded-full px-5 py-2 text-sm font-semibold text-surface shadow-lg shadow-black/30 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
-                    isSubmitting || isSuccess
-                      ? "cursor-not-allowed bg-surface-muted text-muted"
-                      : "bg-accent hover:bg-white"
-                  }`}
-                >
-                  {isSubmitting ? t.contact.modal.sending : t.contact.modal.submit}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      ) : null}
-    </>
-  );
-};
 
 const SiteFooter = ({ t, socialLinks, currentYear, sectionLink }) => (
   <footer className="border-t border-border/60 bg-surface/80">
@@ -1726,7 +816,6 @@ function App() {
   const [language, setLanguage] = useState("en");
   const location = useLocation();
   const isAccessibilityPage = location.pathname === "/accessibility";
-  const isContactPage = location.pathname === "/contact";
   const t = translations[language];
   const navItems = t.nav.items;
   const currentYear = new Date().getFullYear();
@@ -1752,7 +841,7 @@ function App() {
     },
     {
       label: t.social.resume,
-      href: "https://dchavez3395.github.io/My-Portfolio/resume.PDF",
+      href: "https://drive.google.com/file/d/14YB6WlofnTUA1mYMaB8LVPW8YuWfgOo7/view?usp=sharing",
       external: true,
       download: true,
       icon: ResumeIcon,
@@ -1787,6 +876,11 @@ function App() {
   const handleLanguageChange = (nextLanguage) => {
     setLanguage(nextLanguage);
     setNavOpen(false);
+  };
+
+  const handleMailClick = () => {
+    if (typeof window === "undefined") return;
+    window.location.href = CONTACT_EMAIL_MAILTO;
   };
 
   return (
@@ -1922,8 +1016,6 @@ function App() {
       <main id="main-content" tabIndex="-1" className="w-full scroll-mt-32">
         {isAccessibilityPage ? (
           <AccessibilityPage t={t} sectionLink={sectionLink} />
-        ) : isContactPage ? (
-          <ContactPage t={t} sectionLink={sectionLink} language={language} />
         ) : (
           <>
         <section
@@ -1980,7 +1072,7 @@ function App() {
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
-                  href="https://dchavez3395.github.io/My-Portfolio/resume.PDF"
+                  href="https://drive.google.com/file/d/14YB6WlofnTUA1mYMaB8LVPW8YuWfgOo7/view?usp=sharing"
                   className="group lg:hidden text-accent w-fit px-6 py-3 my-2 flex items-center rounded-full border border-accent bg-transparent shadow-sm shadow-black/30 transition hover:text-white hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                 >
                   {t.hero.resumeCta}
@@ -1999,7 +1091,7 @@ function App() {
         className="w-full py-24 scroll-mt-32"
       >
         <div className="max-w-screen-xl mx-auto w-full px-4 lg:pl-24 lg:pr-8">
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40">
+          <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:bg-surface/95">
             <div className="pb-6">
               <h2 className="text-3xl md:text-4xl font-display font-semibold inline border-b-2 border-accent">
                 {t.about.title} <span className="text-accent">.</span>
@@ -2039,7 +1131,7 @@ function App() {
 
       <section className="w-full py-20 bg-gradient-to-b from-surface to-surface-muted">
         <div className="max-w-screen-xl mx-auto w-full px-4 lg:pl-24 lg:pr-8">
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40">
+          <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-12 shadow-lg shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:bg-surface/95">
             <div className="grid gap-8 lg:grid-cols-[1.4fr,auto] lg:items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-display font-semibold text-ink">
@@ -2068,10 +1160,11 @@ function App() {
         className="w-full py-24 bg-gradient-to-b from-surface-muted via-surface to-surface-muted scroll-mt-32"
       >
         <div className="max-w-screen-xl px-4 lg:pl-24 lg:pr-8 mx-auto flex flex-col justify-center w-full">
-          <div className="pb-8">
+          <div className="pb-8 space-y-3">
             <h2 className="text-3xl md:text-4xl font-display font-semibold inline border-b-2 border-accent">
               {t.portfolio.title} <span className="text-accent">.</span>
             </h2>
+            <p className="!mt-6 max-w-3xl text-sm text-muted">{t.portfolio.note}</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 lg:px-0 gap-6">
@@ -2111,15 +1204,16 @@ function App() {
 
           <div className="m-auto pt-12 text-center flex flex-col items-center gap-4">
             <h3 className="text-lg md:text-xl text-muted">{t.portfolio.ctaTitle}</h3>
-            <Link
-              to="/contact"
+            <button
+              type="button"
+              onClick={handleMailClick}
               className="group text-surface w-fit px-6 py-3 my-3 flex items-center rounded-full bg-accent shadow-lg shadow-black/30 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
             >
               {t.portfolio.ctaButton}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowIcon className="ml-1" />
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -2138,7 +1232,7 @@ function App() {
             {t.skills.groups.map((group) => (
               <div
                 key={group.title}
-                className="rounded-2xl border border-border/60 bg-surface/80 p-5 shadow-sm shadow-black/40"
+                className="rounded-2xl border border-border/60 bg-surface/80 p-5 shadow-sm shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:bg-surface/90"
               >
                 <h3 className="text-[11px] uppercase tracking-[0.3em] text-accent">
                   {group.title}
@@ -2160,9 +1254,12 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full py-20 bg-gradient-to-b from-surface-muted via-surface to-surface-muted">
+      <section
+        id="contact"
+        className="w-full py-20 bg-gradient-to-b from-surface-muted via-surface to-surface-muted scroll-mt-32"
+      >
         <div className="max-w-screen-xl mx-auto px-4 lg:pl-24 lg:pr-8">
-          <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-10 shadow-lg shadow-black/40 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="rounded-3xl border border-border/60 bg-surface/90 p-8 md:p-10 shadow-lg shadow-black/40 flex flex-col gap-6 md:flex-row md:items-center md:justify-between transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:bg-surface/95">
             <div className="max-w-2xl">
               <h2 className="text-2xl md:text-3xl font-display font-semibold text-ink">
                 {t.homeContact.title}
@@ -2171,15 +1268,16 @@ function App() {
                 {t.homeContact.body}
               </p>
             </div>
-            <Link
-              to="/contact"
+            <button
+              type="button"
+              onClick={handleMailClick}
               className="group text-surface w-fit px-6 py-3 flex items-center rounded-full bg-accent shadow-lg shadow-black/30 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
             >
               {t.homeContact.button}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowIcon className="ml-1" />
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </section>

@@ -7,11 +7,11 @@
 @layer base {
   :root {
     --color-ink: 242 238 232;
-    --color-muted: 170 163 175;
+    --color-muted: 222 220 226;
     --color-accent: 250 204 21;
     --color-accent-strong: 202 138 4;
-    --color-surface: 20 17 27;
-    --color-surface-muted: 9 9 14;
+    --color-surface: 0 0 0;
+    --color-surface-muted: 0 0 0;
     --color-border: 47 40 60;
   }
 
@@ -30,7 +30,7 @@
     @apply font-sans antialiased;
     overflow-x: hidden;
     color: rgb(var(--color-ink));
-    background-color: rgb(var(--color-surface-muted));
+    background-color: #000;
     background-image: radial-gradient(
         circle at 12% 18%,
         rgb(var(--color-accent) / 0.16),
@@ -46,11 +46,7 @@
         rgb(34 197 94 / 0.1),
         transparent 46%
       ),
-      linear-gradient(
-        180deg,
-        rgb(var(--color-surface-muted)) 0%,
-        rgb(12 10 18) 100%
-      );
+      linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 100%);
   }
 }
 
