@@ -4,18 +4,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        logo: ['"Fraunces"', "serif"],
-        display: ['"Fraunces"', "serif"],
-        sans: ['"Space Grotesk"', "sans-serif"],
+        display: ['"Space Grotesk"', "sans-serif"],
+        sans: ['"Manrope"', "sans-serif"],
       },
       colors: {
         ink: "rgb(var(--color-ink) / <alpha-value>)",
         muted: "rgb(var(--color-muted) / <alpha-value>)",
-        accent: "rgb(var(--color-accent) / <alpha-value>)",
-        "accent-strong": "rgb(var(--color-accent-strong) / <alpha-value>)",
+        canvas: "rgb(var(--color-canvas) / <alpha-value>)",
         surface: "rgb(var(--color-surface) / <alpha-value>)",
-        "surface-muted": "rgb(var(--color-surface-muted) / <alpha-value>)",
         border: "rgb(var(--color-border) / <alpha-value>)",
+        berry: "rgb(var(--color-berry) / <alpha-value>)",
+        clay: "rgb(var(--color-clay) / <alpha-value>)",
+        gold: "rgb(var(--color-gold) / <alpha-value>)",
+        teal: "rgb(var(--color-teal) / <alpha-value>)",
+        jade: "rgb(var(--color-jade) / <alpha-value>)",
+        night: "rgb(var(--color-night) / <alpha-value>)",
       },
     },
   },

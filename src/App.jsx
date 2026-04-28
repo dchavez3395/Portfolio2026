@@ -5,7 +5,7 @@ import iympImage from "./assets/iymp.png";
 import mbTradesImage from "./assets/mbt.png";
 import manitobaAdvocateImage from "./assets/macy.png";
 import cedawpgImage from "./assets/ceda.webp";
-import empowerMenImage from "./assets/EmpowerMen.png";
+import fpegfImage from "./assets/FPEGF.png";
 import ravenSpaceImage from "./assets/ravenspace.png";
 import naotParamedicsImage from "./assets/ems.png";
 import yangManGif from "./assets/Yang man.gif";
@@ -54,7 +54,7 @@ const translations = {
       title: "Work Highlights",
       visit: "Visit site",
       ctaTitle: "Seeking a developer who aligns technology with business outcomes?",
-      ctaButton: "Schedule a conversation",
+      ctaButton: "Start a conversation",
       note: "Projects delivered while collaborating with Vincent Design, my current team.",
     },
     homeAccessibility: {
@@ -260,7 +260,7 @@ const translations = {
       title: "Trabajo destacado",
       visit: "Ver sitio",
       ctaTitle: "Busca un desarrollador que alinee tecnologia con resultados de negocio?",
-      ctaButton: "Agendar conversacion",
+      ctaButton: "Iniciar conversacion",
       note: "Proyectos entregados mientras colaboro con Vincent Design, mi equipo actual.",
     },
     homeAccessibility: {
@@ -463,10 +463,10 @@ const projects = [
     demo: "https://cedawpg.org/",
   },
   {
-    title: "Empower Men",
-    domain: "empowermen.ca",
-    image: empowerMenImage,
-    demo: "https://empowermen.ca/",
+    title: "First People's Economic Growth Fund",
+    domain: "firstpeoplesfund.ca",
+    image: fpegfImage,
+    demo: "https://firstpeoplesfund.ca/",
   },
   {
     title: "Raven Space: Cherokee Natural World",
@@ -1177,12 +1177,12 @@ function App() {
                 aria-label={`${t.portfolio.visit}: ${project.title}`}
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-surface/80 shadow-sm shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
               >
-                <div className="relative h-36 md:h-40 w-full overflow-hidden bg-gradient-to-br from-slate-50/90 to-slate-200/70">
+                <div className="flex h-36 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50/90 to-slate-200/70 p-5 md:h-40 md:p-6">
                   <img
                     src={project.image}
                     alt={`Screenshot of ${project.title}`}
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </div>
                 <div className="flex items-center justify-between gap-4 px-4 py-3">

@@ -1,16 +1,48 @@
-# React + Vite
+# Portfolio2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite portfolio site.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- Tailwind CSS
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js
+- npm
 
-## Expanding the ESLint configuration
+`composer` is not used in this project. If PowerShell says `npm` is not recognized, Node.js is not installed or your terminal needs to be reopened after installation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Setup
+
+1. Install Node.js on Windows. This also installs `npm`.
+2. Close and reopen PowerShell.
+3. Verify the install:
+
+```powershell
+node -v
+npm -v
+```
+
+4. Install dependencies:
+
+```powershell
+npm install
+```
+
+5. Start the dev server:
+
+```powershell
+npm run dev
+```
+
+The contact buttons use a simple `mailto:` link, so no API or environment variables are required for local development.
+
+## Scripts
+
+- `npm run dev` starts the Vite dev server
+- `npm run build` creates a production build
+- `npm run preview` previews the production build locally
+- `npm run lint` runs ESLint
