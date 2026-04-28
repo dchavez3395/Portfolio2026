@@ -5,7 +5,7 @@ import manitobaAdvocateImage from "./assets/macy.png";
 import cedawpgImage from "./assets/ceda.webp";
 import fpegfImage from "./assets/FPEGF.png";
 import ravenSpaceImage from "./assets/ravenspace.png";
-import naotParamedicsImage from "./assets/ems.png";
+import perimeterImage from "./assets/Perimeter.png";
 
 export const CONTACT_EMAIL = "dchavez3395@gmail.com";
 export const CONTACT_EMAIL_MAILTO = `mailto:${CONTACT_EMAIL}`;
@@ -131,19 +131,19 @@ export const projects = [
     },
   },
   {
-    title: "NAOT Paramedics",
-    domain: "naotparamedics.ca",
-    image: naotParamedicsImage,
-    demo: "https://naotparamedics.ca/",
+    title: "Perimeter Aviation",
+    domain: "perimeter.ca",
+    image: perimeterImage,
+    demo: "https://perimeter.ca/",
     accent: "from-clay via-gold to-teal",
     preview: "from-clay/15 via-gold/10 to-canvas",
     category: {
-      en: "Public service site",
-      es: "Sitio de servicio público",
+      en: "Aviation and cargo",
+      es: "Aviación y carga",
     },
     summary: {
-      en: "Proudly serving the Anishinaabe People of Treaty 3 territory alongside other community partners.",
-      es: "Nos enorgullece servir al pueblo Anishinaabe del territorio del Tratado 3 junto con otros socios comunitarios.",
+      en: "Perimeter Aviation and Bearskin Airlines connect communities across Manitoba and Ontario through passenger travel, cargo, and charter services.",
+      es: "Perimeter Aviation y Bearskin Airlines conectan comunidades de Manitoba y Ontario mediante viajes de pasajeros, carga y servicios charter.",
     },
   },
 ];

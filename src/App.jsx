@@ -7,7 +7,7 @@ import manitobaAdvocateImage from "./assets/macy.png";
 import cedawpgImage from "./assets/ceda.webp";
 import fpegfImage from "./assets/FPEGF.png";
 import ravenSpaceImage from "./assets/ravenspace.png";
-import naotParamedicsImage from "./assets/ems.png";
+import perimeterImage from "./assets/Perimeter.png";
 import yangManGif from "./assets/Yang man.gif";
 
 const translations = {
@@ -475,10 +475,10 @@ const projects = [
     demo: "https://developmentserver.ravenspacepublishing.org/the-cherokee-natural-world/index",
   },
   {
-    title: "NAOT Paramedics",
-    domain: "naotparamedics.ca",
-    image: naotParamedicsImage,
-    demo: "https://naotparamedics.ca/",
+    title: "Perimeter Aviation",
+    domain: "perimeter.ca",
+    image: perimeterImage,
+    demo: "https://perimeter.ca/",
   },
 ];
 
