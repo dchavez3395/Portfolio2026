@@ -314,6 +314,7 @@ const skillAccentClasses = {
   contrast: "border-[#f97316]/30 bg-[#f97316]/10 text-[#f97316]",
   css: "border-[#2965f1]/30 bg-[#2965f1]/10 text-[#2965f1]",
   deployment: "border-[#14b8a6]/30 bg-[#14b8a6]/10 text-[#14b8a6]",
+  express: "border-border/60 bg-ink/10 text-ink",
   figma: "border-[#a259ff]/30 bg-[#a259ff]/10 text-[#a259ff]",
   git: "border-[#f05033]/30 bg-[#f05033]/10 text-[#f05033]",
   github: "border-border/60 bg-ink/10 text-ink",
@@ -324,10 +325,13 @@ const skillAccentClasses = {
   next: "border-border/60 bg-ink/10 text-ink",
   node: "border-[#68a063]/30 bg-[#68a063]/10 text-[#68a063]",
   php: "border-[#777bb4]/30 bg-[#777bb4]/10 text-[#777bb4]",
+  postgres: "border-[#336791]/30 bg-[#336791]/10 text-[#60a5fa]",
   react: "border-[#61dafb]/30 bg-[#61dafb]/10 text-[#61dafb]",
   responsive: "border-[#06b6d4]/30 bg-[#06b6d4]/10 text-[#06b6d4]",
+  scalar: "border-[#a855f7]/30 bg-[#a855f7]/10 text-[#c084fc]",
   semantic: "border-[#f59e0b]/30 bg-[#f59e0b]/10 text-[#f59e0b]",
   tailwind: "border-[#38bdf8]/30 bg-[#38bdf8]/10 text-[#38bdf8]",
+  vercel: "border-border/60 bg-ink/10 text-ink",
   vite: "border-[#bd34fe]/30 bg-[#bd34fe]/10 text-[#bd34fe]",
   vue: "border-[#42b883]/30 bg-[#42b883]/10 text-[#42b883]",
   wordpress: "border-[#21759b]/30 bg-[#21759b]/10 text-[#21759b]",
@@ -381,6 +385,14 @@ function SkillIcon({ icon, className = "" }) {
           <rect x="4" y="5" width="16" height="10" rx="2" />
           <path d="M8 9h.01" />
           <path d="M11 9h5" />
+        </svg>
+      );
+    case "express":
+      return (
+        <svg {...iconProps}>
+          <path d="M4 12h16" />
+          <path d="M6 8c2.3 2.7 3.6 4 6 4s3.7-1.3 6-4" />
+          <path d="M6 16c2.3-2.7 3.6-4 6-4s3.7 1.3 6 4" />
         </svg>
       );
     case "figma":
@@ -475,6 +487,14 @@ function SkillIcon({ icon, className = "" }) {
           </text>
         </svg>
       );
+    case "postgres":
+      return (
+        <svg {...iconProps}>
+          <ellipse cx="12" cy="6" rx="7" ry="3" />
+          <path d="M5 6v8c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+          <path d="M5 10c0 1.7 3.1 3 7 3s7-1.3 7-3" />
+        </svg>
+      );
     case "react":
       return (
         <svg {...iconProps}>
@@ -491,6 +511,15 @@ function SkillIcon({ icon, className = "" }) {
           <rect x="17" y="9" width="4" height="8" rx="1" />
           <path d="M8 19h5" />
           <path d="M10.5 15v4" />
+        </svg>
+      );
+    case "scalar":
+      return (
+        <svg {...iconProps}>
+          <path d="M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+          <path d="M8 9h8" />
+          <path d="M8 13h5" />
+          <path d="m14 16 2 2 3-4" />
         </svg>
       );
     case "semantic":
@@ -515,6 +544,12 @@ function SkillIcon({ icon, className = "" }) {
         <svg {...iconProps}>
           <path d="m5 4 14 2-7 15Z" />
           <path d="m13 7-4 6h4l-2 5 5-8h-4Z" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "vercel":
+      return (
+        <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false">
+          <path d="M12 5 21 19H3Z" fill="currentColor" />
         </svg>
       );
     case "vue":
@@ -777,7 +812,7 @@ function HomePageEnd({ t, socialLinks }) {
             description={t.skills.intro}
           />
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {t.skills.groups.map((group) => (
               <article
                 key={group.title}
@@ -1384,5 +1419,3 @@ function SiteApp() {
 }
 
 export default SiteApp;
-
-
