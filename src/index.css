@@ -57,6 +57,10 @@
       linear-gradient(180deg, rgb(8 12 20) 0%, rgb(11 17 28) 44%, rgb(7 10 17) 100%);
   }
 
+  section[id] {
+    scroll-margin-top: 6.5rem;
+  }
+
   :root[data-theme="light"] body {
     background-image:
       radial-gradient(circle at 10% 8%, rgb(var(--color-gold) / 0.22), transparent 24rem),
@@ -204,7 +208,6 @@
       radial-gradient(circle at 50% -8%, rgb(255 255 255 / 0.55), transparent 28rem);
   }
 
-  .site-shell > header,
   .site-shell > main,
   .site-shell > footer {
     position: relative;

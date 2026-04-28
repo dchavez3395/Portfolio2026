@@ -173,6 +173,7 @@ export const translations = {
         dark: "Switch to dark mode",
       },
       skipLink: "Skip to main content",
+      backToTop: "Back to top",
     },
     hero: {
       eyebrow: "Full-stack web developer",
@@ -443,6 +444,7 @@ export const translations = {
         dark: "Cambiar a modo oscuro",
       },
       skipLink: "Saltar al contenido principal",
+      backToTop: "Volver arriba",
     },
     hero: {
       eyebrow: "Desarrollador web full-stack",

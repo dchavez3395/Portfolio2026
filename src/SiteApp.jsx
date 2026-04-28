@@ -1134,6 +1134,8 @@ function SiteFooter({ t, socialLinks, currentYear, sectionLink }) {
 function SiteApp() {
   const [theme, setTheme] = useState(getInitialTheme);
   const [navOpen, setNavOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const [language, setLanguage] = useState("en");
   const location = useLocation();
   const isAccessibilityPage = location.pathname === "/accessibility";
@@ -1152,6 +1154,18 @@ function SiteApp() {
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       writeStoredTheme(newTheme);
       return newTheme;
+    });
+  };
+  const handleBackToTop = () => {
+    closeNav();
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
   const socialLinks = [
@@ -1248,6 +1262,31 @@ function SiteApp() {
     AOS.refreshHard();
   }, [language, isAccessibilityPage]);
 
+  useEffect(() => {
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const scrollY = window.scrollY;
+      setHasScrolled(scrollY > 12);
+      setShowBackToTop(scrollY > 520);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    updateScrollState();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="site-shell min-h-screen text-ink">
       <a
@@ -1257,9 +1296,19 @@ function SiteApp() {
         {t.nav.skipLink}
       </a>
 
-      <header className="sticky top-0 z-50">
-        <div className="textile-band" />
-        <div className="border-b border-border/50 bg-canvas backdrop-blur-xl">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-shadow duration-300 ${
+          hasScrolled ? "shadow-[0_18px_55px_rgba(0,0,0,0.28)]" : ""
+        }`}
+      >
+        <div className={`textile-band transition-opacity duration-300 ${hasScrolled ? "opacity-80" : "opacity-100"}`} />
+        <div
+          className={`border-b backdrop-blur-xl transition-colors duration-300 ${
+            hasScrolled
+              ? "border-border/70 bg-canvas/95"
+              : "border-border/50 bg-canvas/90"
+          }`}
+        >
           <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
             <Link
               to={sectionLink("#home")}
@@ -1321,36 +1370,7 @@ function SiteApp() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 lg:hidden">
-              <div
-                aria-label={t.nav.languageLabel}
-                className="flex items-center gap-1 rounded-full border border-border/50 bg-surface p-1"
-              >
-                {languageOptions.map((option) => (
-                  <button
-                    key={option.id}
-                    type="button"
-                    aria-pressed={language === option.id}
-                    onClick={() => handleLanguageChange(option.id)}
-                    className={`rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] transition ${
-                      language === option.id
-                        ? "bg-gold text-canvas"
-                        : "text-muted hover:text-gold"
-                    } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-
-              <div aria-label={t.nav.themeLabel}>
-                <ThemeToggleButton
-                  theme={theme}
-                  label={themeToggleLabel}
-                  onToggle={handleThemeToggle}
-                />
-              </div>
-
+            <div className="flex items-center lg:hidden">
               <button
                 type="button"
                 aria-expanded={navOpen}
@@ -1388,9 +1408,44 @@ function SiteApp() {
                 ))}
               </ul>
             </nav>
+
+            <div className="border-t border-border/50 px-4 py-4 sm:px-6">
+              <div className="flex items-center justify-between gap-4">
+                <div
+                  aria-label={t.nav.languageLabel}
+                  className="flex items-center gap-1 rounded-full border border-border/50 bg-surface p-1"
+                >
+                  {languageOptions.map((option) => (
+                    <button
+                      key={option.id}
+                      type="button"
+                      aria-pressed={language === option.id}
+                      onClick={() => handleLanguageChange(option.id)}
+                      className={`rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] transition ${
+                        language === option.id
+                          ? "bg-gold text-canvas"
+                          : "text-muted hover:text-gold"
+                      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div aria-label={t.nav.themeLabel}>
+                  <ThemeToggleButton
+                    theme={theme}
+                    label={themeToggleLabel}
+                    onToggle={handleThemeToggle}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
+
+      <div aria-hidden="true" className="h-[5.75rem]" />
 
       <main id="main-content" tabIndex="-1" className="outline-none">
         {isAccessibilityPage ? (
@@ -1414,6 +1469,22 @@ function SiteApp() {
         currentYear={currentYear}
         sectionLink={sectionLink}
       />
+
+      <button
+        type="button"
+        aria-label={t.nav.backToTop}
+        aria-hidden={!showBackToTop}
+        title={t.nav.backToTop}
+        tabIndex={showBackToTop ? 0 : -1}
+        onClick={handleBackToTop}
+        className={`fixed bottom-5 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold text-canvas shadow-[0_18px_45px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas sm:bottom-6 sm:right-6 ${
+          showBackToTop
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-4 opacity-0"
+        }`}
+      >
+        <ArrowIcon className="h-5 w-5 -rotate-90" />
+      </button>
     </div>
   );
 }
