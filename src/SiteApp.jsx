@@ -980,7 +980,12 @@ function AccessibilityPage({ t, sectionLink }) {
         </section>
       </div>
 
-      <TextileBand muted />
+      <div
+        className="mx-auto mt-10 max-w-screen-xl overflow-hidden rounded-full sm:mt-12"
+        aria-hidden="true"
+      >
+        <TextileBand muted />
+      </div>
 
       <section className="mx-auto mt-16 max-w-screen-xl">
         <SectionHeading
