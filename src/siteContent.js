@@ -151,8 +151,8 @@ export const projects = [
 export const translations = {
   en: {
     meta: {
-      homeTitle: "Daniel Chavez | Full-stack web developer",
-      accessibilityTitle: "Daniel Chavez | Accessibility and web quality",
+      homeTitle: "Daniel Chavez | Full-Stack Web Developer",
+      accessibilityTitle: "Daniel Chavez | Accessibility and Web Quality",
     },
     nav: {
       items: [
@@ -176,27 +176,27 @@ export const translations = {
       backToTop: "Back to top",
     },
     hero: {
-      eyebrow: "Full-stack web developer",
+      eyebrow: "Full-Stack Web Developer",
       title: "I build accessible websites that are easy to maintain.",
       description:
-        "I am a Manitoba-based developer with production experience across React, WordPress, PHP, Node, Tailwind, hosting, and CMS support. I am looking for a full-time role where I can contribute to real builds, improve existing sites, and help teams ship cleaner work.",
-      primaryCta: "View work",
+        "I’m a Manitoba-based full-stack developer who builds accessible, maintainable websites and supports production CMS platforms. I’m looking for a full-time role where I can contribute to thoughtful builds, improve existing systems, and help teams ship reliable web work.",
+      primaryCta: "View Work",
       secondaryCta: "Accessibility",
-      tertiaryCta: "Email Daniel",
+      tertiaryCta: "Email Me",
       badges: [
         "React, WordPress, PHP, Node",
-        "Accessible front-end work",
-        "CMS builds and support",
+        "Accessible Front-End Work",
+        "CMS Builds and Support",
       ],
       visualEyebrow: "What I bring",
       visualTitle: "Useful across the build.",
       visualBody:
         "I can work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
       stats: [
-        { value: "3+ years", label: "production web development" },
+        { value: "3+ years", label: "Production Web Development" },
         { value: "CMS + front end", label: "WordPress, PHP, React, Tailwind" },
-        { value: "Accessibility", label: "semantic HTML, keyboard flow, contrast" },
-        { value: "Team-ready", label: "clear handoffs, QA, launch support" },
+        { value: "Accessibility", label: "Semantic HTML, Keyboard Flow, Contrast" },
+        { value: "Team-ready", label: "Clear Handoffs, QA, Launch Support" },
       ],
       socialLabel: "Social and resume links",
     },
@@ -210,15 +210,15 @@ export const translations = {
       quote: "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program. — Linus Torvalds",
       cards: [
         {
-          title: "Production mindset",
+          title: "Production Mindset",
           body: "I think beyond the first build: content editing, component reuse, QA, deployment, and what the next person will need to understand.",
         },
         {
-          title: "Accessible habits",
+          title: "Accessible Habits",
           body: "I use semantic markup, visible focus states, readable contrast, and predictable interaction patterns as part of normal front-end work.",
         },
         {
-          title: "Calm communication",
+          title: "Calm Communication",
           body: "I keep status, blockers, and tradeoffs visible so designers, PMs, QA, and stakeholders know what is happening.",
         },
       ],
@@ -228,7 +228,7 @@ export const translations = {
       title: "Production sites I have helped ship and support.",
       intro:
         "These are some of the projects I have worked on with Vincent Design and partner teams.",
-      visit: "Visit site",
+      visit: "Visit Site",
     },
     practice: {
       eyebrow: "Team contribution",
@@ -238,17 +238,17 @@ export const translations = {
       steps: [
         {
           number: "01",
-          title: "Build from the details",
+          title: "Build From the Details",
           body: "I translate layouts into responsive components, watch spacing and interaction states, and keep the implementation close to the design intent.",
         },
         {
           number: "02",
-          title: "Keep content manageable",
+          title: "Keep Content Manageable",
           body: "I care about CMS structure, reusable patterns, and editor-friendly decisions so a site is not painful to update after launch.",
         },
         {
           number: "03",
-          title: "Support the release",
+          title: "Support the Release",
           body: "I help with QA, accessibility checks, deployment details, bug fixes, and the follow-through work that keeps launches calm.",
         },
       ],
@@ -260,7 +260,7 @@ export const translations = {
         "Core tools from my resume, shown at a glance instead of another wall of text.",
       groups: [
         {
-          title: "Front end",
+          title: "Front End",
           items: [
             { label: "JavaScript", icon: "javascript" },
             { label: "React", icon: "react" },
@@ -273,7 +273,7 @@ export const translations = {
           ],
         },
         {
-          title: "CMS and back end",
+          title: "CMS and Back End",
           items: [
             { label: "WordPress", icon: "wordpress" },
             { label: "PHP", icon: "php" },
@@ -304,8 +304,8 @@ export const translations = {
       eyebrow: "Accessibility",
       title: "Accessibility is part of how I build.",
       body: "I focus on the practical pieces teams can maintain: semantic structure, keyboard access, focus states, contrast, alt text, and clear content patterns.",
-      primaryCta: "Accessibility notes",
-      secondaryCta: "Email Daniel",
+      primaryCta: "Accessibility Notes",
+      secondaryCta: "Email Me",
       points: [
         "Semantic HTML before custom behavior",
         "Keyboard and focus checks during build",
@@ -316,8 +316,8 @@ export const translations = {
       eyebrow: "Next role",
       title: "I am open to full-time web developer roles.",
       body: "I am looking for a team where I can contribute to production websites, CMS work, front-end systems, accessibility QA, and ongoing improvement.",
-      primaryCta: "Email Daniel",
-      secondaryCta: "View resume",
+      primaryCta: "Email Me",
+      secondaryCta: "View Resume",
       availability:
         "Based in Manitoba. Open to remote-friendly teams and roles where front-end quality, CMS work, and accessibility matter.",
     },
@@ -328,16 +328,16 @@ export const translations = {
         current: "Accessibility",
       },
       hero: {
-        eyebrow: "Accessibility and web quality",
+        eyebrow: "Accessibility and Web Quality",
         title: "Accessible front-end work, handled practically.",
         subtitle:
           "I focus on the parts that make a website easier to use and easier to maintain: semantic HTML, keyboard paths, focus states, readable contrast, and clear content structure.",
-        primaryCta: "Back to home",
-        secondaryCta: "Email Daniel",
+        primaryCta: "Back to Home",
+        secondaryCta: "Email Me",
         highlights: [
-          "Semantic HTML and page landmarks",
-          "Keyboard paths and visible focus states",
-          "Contrast, labels, alt text, and content clarity",
+          "Semantic HTML and Page Landmarks",
+          "Keyboard Paths and Visible Focus States",
+          "Contrast, Labels, Alt Text, and Content Clarity",
         ],
       },
       principles: {
@@ -347,25 +347,25 @@ export const translations = {
           "I look for issues during design handoff, component build, content entry, and QA instead of treating accessibility as a final checklist.",
         items: [
           {
-            title: "Structure first",
+            title: "Structure First",
             body: "Use the right HTML, headings, landmarks, lists, and labels before reaching for custom behavior.",
           },
           {
-            title: "Keyboard access",
+            title: "Keyboard Access",
             body: "Check that menus, links, forms, and interactive elements can be reached and understood without a mouse.",
           },
           {
-            title: "Readable interfaces",
+            title: "Readable Interfaces",
             body: "Keep contrast, type size, spacing, form messages, and content hierarchy clear across devices.",
           },
           {
-            title: "Sustainable fixes",
+            title: "Sustainable Fixes",
             body: "Document patterns and component decisions so accessibility improvements survive future edits.",
           },
         ],
       },
       context: {
-        title: "Standards and risk",
+        title: "Standards and Risk",
         intro:
           "I am not a lawyer, but I understand why teams use WCAG as a practical benchmark for product quality, procurement, and risk reduction.",
         points: [
@@ -377,7 +377,7 @@ export const translations = {
         ],
       },
       engagement: {
-        title: "How I can help a team",
+        title: "How I Can Help a Team",
         intro:
           "I can support accessibility as part of normal development work or during a focused review.",
         phases: [
@@ -398,8 +398,8 @@ export const translations = {
       cta: {
         title: "Need someone who can build and check the details?",
         body: "I can help teams turn accessibility requirements into practical front-end and CMS work.",
-        primaryCta: "Email Daniel",
-        secondaryCta: "Return home",
+        primaryCta: "Email Me",
+        secondaryCta: "Return Home",
       },
       note: "This page provides general information and is not legal advice.",
     },
@@ -411,7 +411,7 @@ export const translations = {
     },
     footer: {
       name: "Daniel Chavez",
-      tagline: "Full-stack web developer.",
+      tagline: "Full-Stack Web Developer.",
       links: [
         { label: "About", href: "#about" },
         { label: "Work", href: "#portfolio" },
@@ -450,10 +450,10 @@ export const translations = {
       eyebrow: "Desarrollador web full-stack",
       title: "Construyo sitios accesibles y fáciles de mantener.",
       description:
-        "Soy un desarrollador en Manitoba, Canada con experiencia en producción con React, WordPress, PHP, Node, hosting y soporte de CMS. Busco un rol de tiempo completo donde pueda contribuir a proyectos reales, mejorar sitios existentes y ayudar a los equipos a entregar trabajo más claro.",
+        "Soy un desarrollador full-stack con base en Manitoba que construye sitios accesibles y fáciles de mantener, y apoyo plataformas CMS en producción. Busco un rol de tiempo completo donde pueda contribuir a proyectos bien pensados, mejorar sistemas existentes y ayudar a los equipos a entregar trabajo web confiable.",
       primaryCta: "Ver trabajo",
       secondaryCta: "Accesibilidad",
-      tertiaryCta: "Escribir a Daniel",
+      tertiaryCta: "Escríbeme",
       badges: [
         "React, WordPress, PHP, Node",
         "Front-end accesible",
@@ -577,7 +577,7 @@ export const translations = {
       title: "La accesibilidad es parte de cómo construyo.",
       body: "Me enfoco en piezas que los equipos pueden mantener: estructura semántica, acceso por teclado, estados de foco, contraste, texto alternativo y patrones claros de contenido.",
       primaryCta: "Notas de accesibilidad",
-      secondaryCta: "Escribir a Daniel",
+      secondaryCta: "Escríbeme",
       points: [
         "HTML semántico antes que comportamiento personalizado",
         "Revisiones de teclado y foco durante el build",
@@ -588,7 +588,7 @@ export const translations = {
       eyebrow: "Próximo rol",
       title: "Estoy abierto a roles de desarrollador web de tiempo completo.",
       body: "Busco un equipo donde pueda contribuir a sitios en producción, trabajo de CMS, sistemas front-end, QA de accesibilidad y mejora continua.",
-      primaryCta: "Escribir a Daniel",
+      primaryCta: "Escríbeme",
       secondaryCta: "Ver CV",
       availability:
         "Con base en Manitoba. Abierto a equipos remotos y roles donde importen la calidad front-end, el trabajo de CMS y la accesibilidad.",
@@ -605,7 +605,7 @@ export const translations = {
         subtitle:
           "Me enfoco en las partes que hacen un sitio más fácil de usar y mantener: HTML semántico, rutas de teclado, estados de foco, contraste legible y estructura clara de contenido.",
         primaryCta: "Volver al inicio",
-        secondaryCta: "Escribir a Daniel",
+        secondaryCta: "Escríbeme",
         highlights: [
           "HTML semántico y landmarks de página",
           "Rutas de teclado y estados de foco visibles",
@@ -670,7 +670,7 @@ export const translations = {
       cta: {
         title: "¿Necesitas a alguien que construya y revise los detalles?",
         body: "Puedo ayudar a convertir requisitos de accesibilidad en trabajo práctico de front end y CMS.",
-        primaryCta: "Escribir a Daniel",
+        primaryCta: "Escríbeme",
         secondaryCta: "Volver al inicio",
       },
       note: "Esta página ofrece información general y no constituye asesoría legal.",
