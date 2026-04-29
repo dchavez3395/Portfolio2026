@@ -439,28 +439,10 @@ const projects = [
     demo: "https://reconciliationreport.telus.com/",
   },
   {
-    title: "IYMP",
-    domain: "iymp.ca",
-    image: iympImage,
-    demo: "https://iymp.ca/",
-  },
-  {
-    title: "MB Trades",
-    domain: "mbtrades.ca",
-    image: mbTradesImage,
-    demo: "https://www.mbtrades.ca/",
-  },
-  {
-    title: "Manitoba Advocate",
-    domain: "manitobaadvocate.ca",
-    image: manitobaAdvocateImage,
-    demo: "https://manitobaadvocate.ca/",
-  },
-  {
-    title: "CEDAWPG",
-    domain: "cedawpg.org",
-    image: cedawpgImage,
-    demo: "https://cedawpg.org/",
+    title: "Perimeter Aviation",
+    domain: "perimeter.ca",
+    image: perimeterImage,
+    demo: "https://perimeter.ca/",
   },
   {
     title: "First People's Economic Growth Fund",
@@ -475,10 +457,28 @@ const projects = [
     demo: "https://developmentserver.ravenspacepublishing.org/the-cherokee-natural-world/index",
   },
   {
-    title: "Perimeter Aviation",
-    domain: "perimeter.ca",
-    image: perimeterImage,
-    demo: "https://perimeter.ca/",
+    title: "IYMP",
+    domain: "iymp.ca",
+    image: iympImage,
+    demo: "https://iymp.ca/",
+  },
+  {
+    title: "Manitoba Advocate",
+    domain: "manitobaadvocate.ca",
+    image: manitobaAdvocateImage,
+    demo: "https://manitobaadvocate.ca/",
+  },
+  {
+    title: "MB Trades",
+    domain: "mbtrades.ca",
+    image: mbTradesImage,
+    demo: "https://www.mbtrades.ca/",
+  },
+  {
+    title: "CEDAWPG",
+    domain: "cedawpg.org",
+    image: cedawpgImage,
+    demo: "https://cedawpg.org/",
   },
 ];
 
