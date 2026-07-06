@@ -846,26 +846,6 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               className="h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent"
             />
 
-            {/* Stats grid — 3 key metrics */}
-            <div>
-              <p className="sr-only">{t.hero.statsLabel ?? "Key metrics"}</p>
-              <div className="grid grid-cols-3 gap-4">
-                {t.hero.stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="flex flex-col items-center justify-center rounded-[1.4rem] border border-border/50 bg-surface px-3 py-5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.14)]"
-                  >
-                    <span className="font-display text-3xl font-bold tracking-[-0.04em] gradient-text">
-                      {stat.value}
-                    </span>
-                    <span className="mt-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted leading-tight">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Tech stack pill badges */}
             <div>
               <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">

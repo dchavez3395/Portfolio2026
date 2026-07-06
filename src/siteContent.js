@@ -208,12 +208,6 @@ export const translations = {
       visualTitle: "Useful across the build.",
       visualBody:
         "I can work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
-      statsLabel: "Key metrics",
-      stats: [
-        { value: "3+", label: "Years Experience" },
-        { value: "20+", label: "Projects Shipped" },
-        { value: "8+", label: "Happy Clients" },
-      ],
       techStackLabel: "Tech stack",
       techStack: [
         "React",
@@ -490,12 +484,6 @@ export const translations = {
       visualTitle: "Útil en varias partes del build.",
       visualBody:
         "Puedo trabajar desde Figma o desde código existente, construir interfaces responsivas, resolver problemas de CMS y comunicarme con claridad con diseño, PM, QA y stakeholders.",
-      statsLabel: "Métricas clave",
-      stats: [
-        { value: "3+", label: "Años de experiencia" },
-        { value: "20+", label: "Proyectos lanzados" },
-        { value: "8+", label: "Clientes satisfechos" },
-      ],
       techStackLabel: "Stack tecnológico",
       techStack: [
         "React",
