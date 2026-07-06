@@ -584,7 +584,7 @@ const BrandLogo = ({ className = "" }) => (
     className={`relative flex items-center justify-center rounded-2xl ${className}`}
   >
     <img
-      src="/daniel-logo.svg"
+      src="/dc-logo.webp"
       alt="Daniel Chavez brand logo"
       className="h-28 w-28 object-contain"
       loading="eager"

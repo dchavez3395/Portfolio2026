@@ -1464,7 +1464,7 @@ function SiteApp() {
               className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               <img
-                src="/daniel-logo.svg"
+                src="/dc-logo.webp"
                 alt="Daniel Chavez"
                 className="h-10 w-10 object-contain"
                 loading="eager"
