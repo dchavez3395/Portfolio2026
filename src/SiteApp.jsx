@@ -734,112 +734,99 @@ function ProjectCard({ project, visitLabel, language }) {
 function HomePage({ t, language, sectionLink, socialLinks }) {
   return (
     <>
+      {/* ─── HERO: text-first, single-column centred ─── */}
       <section
         id="home"
-        className="section-shell overflow-hidden px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24"
+        className="section-shell flex min-h-[92vh] flex-col justify-center overflow-hidden px-4 pb-24 pt-20 sm:px-6 lg:px-8"
       >
+        {/* Ambient orbs */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <div className="animate-orb-1 absolute -top-16 -left-16 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
-          <div className="animate-orb-2 absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-teal/8 blur-3xl" />
+          <div className="animate-orb-1 absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-gold/8 blur-3xl" />
+          <div className="animate-orb-2 absolute bottom-0 right-0 h-64 w-64 rounded-full bg-teal/8 blur-3xl" />
         </div>
 
-        <div className="mx-auto grid max-w-screen-xl gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
 
-          {/* LEFT: Animated terminal */}
+          {/* Brand mark: bold geometric "D" in gold */}
           <div
-            className="relative z-10"
-            data-aos="fade-right"
+            className="mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 shadow-[0_0_60px_rgba(240,192,64,0.18)]"
+            aria-hidden="true"
           >
-            <div
-              aria-hidden="true"
-              className="animate-orb-1 absolute -top-10 left-4 h-28 w-28 rounded-full bg-gold/18 blur-3xl"
-            />
-            <div
-              aria-hidden="true"
-              className="animate-orb-2 absolute -bottom-8 right-0 h-24 w-24 rounded-full bg-teal/15 blur-3xl"
-            />
-            <AnimatedTerminal className="rounded-[2rem]" />
+            <span className="font-display text-6xl font-bold leading-none text-gold select-none tracking-[-0.05em]">
+              D
+            </span>
           </div>
 
-          {/* RIGHT: text content + CTAs + tech stack */}
-          <div
-            className="relative z-10 flex flex-col gap-6"
-            data-aos="fade-left"
-            data-aos-delay="160"
-          >
-            {/* Eyebrow */}
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
-              {t.hero.eyebrow}
-            </p>
+          {/* Eyebrow */}
+          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
+            {t.hero.eyebrow}
+          </p>
 
-            {/* Title */}
-            <h1 className="font-display text-5xl font-bold leading-[0.95] tracking-[-0.06em] text-ink sm:text-6xl xl:text-6xl">
-              {t.hero.title}
-            </h1>
+          {/* Headline — two lines for visual rhythm */}
+          <h1 className="mt-5 font-display text-5xl font-bold leading-[0.93] tracking-[-0.05em] text-ink sm:text-6xl lg:text-7xl">
+            {t.hero.title.split('\n').map((line, i) => (
+              <span key={i} className="block">{line}</span>
+            ))}
+          </h1>
 
-            {/* Description */}
-            <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
-              {t.hero.description}
-            </p>
+          {/* Description */}
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+            {t.hero.description}
+          </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to={sectionLink("#portfolio")}
-                className="group relative inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-canvas shadow-[0_18px 45px_rgba(240,192,64,0.22)] transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 rounded-full animate-shimmer"
-                />
-                <span className="relative flex items-center gap-2">
-                  {t.hero.primaryCta}
-                  <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
-              <Link
-                to="/accessibility"
-                className="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-gold/5 px-6 py-3 text-sm font-semibold text-gold transition hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
-              >
-                {t.hero.secondaryCta}
-                <ArrowIcon className="h-4 w-4" />
-              </Link>
-              <a
-                href={CONTACT_EMAIL_MAILTO}
-                className="inline-flex items-center gap-2 rounded-full border border-border/55 bg-surface px-6 py-3 text-sm font-semibold text-muted transition hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
-              >
-                {t.hero.tertiaryCta}
-                <MailIcon className="h-4 w-4" />
-              </a>
-            </div>
+          {/* CTAs */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              to={sectionLink("#portfolio")}
+              className="group relative inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-bold text-canvas shadow-[0_18px_45px_rgba(240,192,64,0.22)] transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            >
+              <span aria-hidden="true" className="absolute inset-0 rounded-full animate-shimmer" />
+              <span className="relative flex items-center gap-2">
+                {t.hero.primaryCta}
+                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+            <Link
+              to="/accessibility"
+              className="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-gold/5 px-7 py-3.5 text-sm font-semibold text-gold transition hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            >
+              {t.hero.secondaryCta}
+              <ArrowIcon className="h-4 w-4" />
+            </Link>
+            <a
+              href={CONTACT_EMAIL_MAILTO}
+              className="inline-flex items-center gap-2 rounded-full border border-border/55 bg-surface px-7 py-3.5 text-sm font-semibold text-muted transition hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            >
+              {t.hero.tertiaryCta}
+              <MailIcon className="h-4 w-4" />
+            </a>
+          </div>
 
-            {/* Social links */}
-            <div aria-label={t.socialLabel ?? "Connect"} className="flex flex-wrap gap-3">
-              {socialLinks.map((link) => (
-                <SocialPill key={link.label} link={link} />
+          {/* Tech stack badges */}
+          <div className="mt-10">
+            <p className="sr-only">{t.hero.techStackLabel ?? "Tech stack"}</p>
+            <ul className="flex flex-wrap justify-center gap-2" role="list">
+              {t.hero.techStack.map((tech) => (
+                <li key={tech}>
+                  <span className="inline-block rounded-full border border-border/55 bg-surface px-4 py-1.5 text-[0.74rem] font-semibold text-muted shadow-[0_6px_18px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas">
+                    {tech}
+                  </span>
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
 
-            {/* Divider */}
-            <div
-              aria-hidden="true"
-              className="h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent"
-            />
+          {/* Social links */}
+          <div aria-label={t.socialLabel ?? "Connect"} className="mt-6 flex flex-wrap justify-center gap-3">
+            {socialLinks.map((link) => (
+              <SocialPill key={link.label} link={link} />
+            ))}
+          </div>
 
-            {/* Tech stack pill badges */}
-            <div>
-              <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">
-                {t.hero.techStackLabel ?? "Tech stack"}
-              </p>
-              <ul className="flex flex-wrap gap-2" role="list">
-                {t.hero.techStack.map((tech) => (
-                  <li key={tech}>
-                    <span className="inline-block rounded-full border border-border/55 bg-surface px-3.5 py-1.5 text-[0.74rem] font-semibold text-muted shadow-[0_6px 18px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas">
-                      {tech}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+          {/* Scroll cue */}
+          <div className="mt-16 animate-float-soft" aria-hidden="true">
+            <div className="mx-auto flex h-10 w-6 flex-col items-center justify-start gap-1 rounded-full border border-border/40 bg-surface/60 p-1">
+              <div className="h-1.5 w-1.5 rounded-full bg-gold/70" />
             </div>
           </div>
         </div>
@@ -930,11 +917,17 @@ function HomePageEnd({ t, socialLinks }) {
         className="section-shell bg-surface/20 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
       >
         <div className="mx-auto max-w-screen-xl">
-          <SectionHeading
-            eyebrow={t.skills.eyebrow}
-            title={t.skills.title}
-            description={t.skills.intro}
-          />
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
+            <SectionHeading
+              eyebrow={t.skills.eyebrow}
+              title={t.skills.title}
+              description={t.skills.intro}
+            />
+            {/* AnimatedTerminal: relocated here — not a hero prop, but a useful context signal */}
+            <div className="hidden lg:block" aria-hidden="true">
+              <AnimatedTerminal className="max-w-[18rem] rounded-[1.4rem] opacity-80" />
+            </div>
+          </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {t.skills.groups.map((group) => (

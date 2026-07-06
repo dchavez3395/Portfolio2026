@@ -193,9 +193,9 @@ export const translations = {
     },
     hero: {
       eyebrow: "Full-stack developer — Manitoba",
-      title: "Production websites. Built to last.",
+      title: "Production websites.\nBuilt to last.",
       description:
-        "Full-stack dev with a production mindset. I build accessible, maintainable sites, support CMS platforms, and work across the full lifecycle from initial build to ongoing improvement. Manitoba-based, open to remote.",
+        "Accessible, maintainable sites — from initial build through ongoing improvement. Manitoba-based, open to remote.",
       primaryCta: "View Work",
       secondaryCta: "Accessibility",
       tertiaryCta: "Email Me",
@@ -469,9 +469,9 @@ export const translations = {
     },
     hero: {
       eyebrow: "Desarrollador full-stack — Manitoba",
-      title: "Sitios de producción. Construidos para durar.",
+      title: "Sitios de producción.\nConstruidos para durar.",
       description:
-        "Desarrollador full-stack con mentalidad de producción. Construyo sitios accesibles y fáciles de mantener, doy soporte a plataformas CMS, y trabajo en todo el ciclo de vida, desde el build inicial hasta la mejora continua. Con base en Manitoba, abierto a trabajo remoto.",
+        "Sitios accesibles y fáciles de mantener — desde el build inicial hasta la mejora continua. Con base en Manitoba, abierto a trabajo remoto.",
       primaryCta: "Ver trabajo",
       secondaryCta: "Accesibilidad",
       tertiaryCta: "Escríbeme",
