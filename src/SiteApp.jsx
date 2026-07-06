@@ -693,18 +693,13 @@ function ProjectCard({ project, visitLabel, language }) {
           <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gold/15 blur-2xl transition-transform duration-700 group-hover:scale-110" />
           <div className="absolute -bottom-6 -left-6 h-20 w-20 rounded-full bg-gold/10 blur-2xl transition-transform duration-700 group-hover:scale-110" />
         </div>
-        <div className="relative z-10 flex h-44 flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-canvas p-3 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),0_18px_45px_rgba(0,0,0,0.2)] transition duration-500 group-hover:scale-[1.02]">
+        <div className="relative z-10 flex h-44 flex-col items-center justify-center rounded-[1.35rem] border border-white/10 bg-canvas p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),0_18px_45px_rgba(0,0,0,0.2)] transition duration-500 group-hover:scale-[1.02]">
           <img
             src={project.image}
             alt={`Preview of ${project.title}`}
             loading="lazy"
-            className="max-h-20 w-auto object-contain"
+            className="max-h-20 w-auto object-contain invert"
           />
-          {project.logo && (
-            <span className="mt-2 text-center text-xs font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
-              {project.logo}
-            </span>
-          )}
         </div>
       </div>
 
