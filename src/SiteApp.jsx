@@ -693,7 +693,7 @@ function ProjectCard({ project, visitLabel, language }) {
           <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gold/15 blur-2xl transition-transform duration-700 group-hover:scale-110" />
           <div className="absolute -bottom-6 -left-6 h-20 w-20 rounded-full bg-gold/10 blur-2xl transition-transform duration-700 group-hover:scale-110" />
         </div>
-        <div className="relative z-10 flex h-44 items-center justify-center rounded-[1.35rem] border border-white/10 bg-canvas/90 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),0_18px_45px_rgba(0,0,0,0.2)] transition duration-500 group-hover:scale-[1.02]">
+        <div className="relative z-10 flex h-44 items-center justify-center rounded-[1.35rem] border border-white/10 bg-canvas p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),0_18px_45px_rgba(0,0,0,0.2)] transition duration-500 group-hover:scale-[1.02]">
           <img
             src={project.image}
             alt={`Preview of ${project.title}`}
@@ -818,7 +818,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
           </div>
 
           {/* Scroll cue */}
-          <div className="mt-16 animate-float-soft" aria-hidden="true">
+          <div className="mt-16 motion-safe:animate-float-soft" aria-hidden="true">
             <div className="mx-auto flex h-10 w-6 flex-col items-center justify-start gap-1 rounded-full border border-border/40 bg-surface/60 p-1">
               <div className="h-1.5 w-1.5 rounded-full bg-gold/70" />
             </div>
@@ -847,7 +847,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {t.story.cards.map((card, index) => (
                 <article
                   key={card.title}
@@ -882,7 +882,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
             />
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard
                 key={project.title}
