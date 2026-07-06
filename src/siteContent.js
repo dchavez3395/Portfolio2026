@@ -228,7 +228,7 @@ export const translations = {
         "I build and support accessible websites, work with production CMS platforms, and contribute across the full development lifecycle from initial build through ongoing maintenance.",
       body:
         "Most of my recent work has been with agencies and partner teams, building and supporting websites for organizations that need reliability more than novelty. I join existing codebases, understand how things actually work, and make steady improvements that stick.",
-      quote: "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program. — Linus Torvalds",
+
       cards: [
         {
           title: "Production Mindset",
@@ -504,7 +504,7 @@ export const translations = {
         "Construyo y doy soporte a sitios accesibles, trabajo con plataformas CMS en producción y contribuyo en todo el ciclo de desarrollo, desde el build inicial hasta el mantenimiento continuo.",
       body:
         "La mayor parte de mi trabajo reciente ha sido con agencias y equipos aliados, construyendo y dando soporte a sitios para organizaciones que necesitan confiabilidad más que novedad. Entro en bases de código existentes, profundizo en cómo funcionan las cosas y hago mejoras constantes que perduran.",
-      quote: "La mayoría de los buenos programadores programan no porque esperen que les paguen o que el público los adore, sino porque les divierte programar. — Linus Torvalds",
+
       cards: [
         {
           title: "Mentalidad de producción",

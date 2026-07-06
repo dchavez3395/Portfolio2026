@@ -850,9 +850,6 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               <div className="textile-band" />
               <div className="p-7 sm:p-9">
                 <p className="text-base leading-8 text-muted sm:text-lg">{t.story.body}</p>
-                <blockquote className="mt-8 rounded-[1.5rem] border border-gold/20 bg-canvas/60 px-6 py-6 font-display text-xl font-semibold leading-snug tracking-[-0.03em] text-ink sm:text-2xl">
-                  &ldquo;{t.story.quote}&rdquo;
-                </blockquote>
               </div>
             </div>
 
