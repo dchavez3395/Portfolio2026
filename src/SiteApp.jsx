@@ -10,44 +10,6 @@ import {
   translations,
 } from "./siteContent";
 
-const THEME_STORAGE_KEY = "portfolio-theme";
-const THEME_OPTIONS = ["dark", "light"];
-
-function readStoredTheme() {
-  if (typeof window === "undefined") {
-    return null;
-  }
-
-  try {
-    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-    return THEME_OPTIONS.includes(storedTheme) ? storedTheme : null;
-  } catch {
-    return null;
-  }
-}
-
-function getSystemTheme() {
-  if (typeof window === "undefined") {
-    return "dark";
-  }
-
-  return window.matchMedia("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
-}
-
-function getInitialTheme() {
-  return readStoredTheme() ?? getSystemTheme();
-}
-
-function writeStoredTheme(theme) {
-  try {
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-  } catch {
-    // The theme still changes even if browser storage is unavailable.
-  }
-}
-
 function ArrowIcon({ className = "" }) {
   return (
     <svg
@@ -175,50 +137,6 @@ function ResumeIcon({ className = "" }) {
   );
 }
 
-function SunIcon({ className = "" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2" />
-      <path d="M12 20v2" />
-      <path d="m4.93 4.93 1.41 1.41" />
-      <path d="m17.66 17.66 1.41 1.41" />
-      <path d="M2 12h2" />
-      <path d="M20 12h2" />
-      <path d="m6.34 17.66-1.41 1.41" />
-      <path d="m19.07 4.93-1.41 1.41" />
-    </svg>
-  );
-}
-
-function MoonIcon({ className = "" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M21 14.8A8.5 8.5 0 0 1 9.2 3a7 7 0 1 0 11.8 11.8Z" />
-    </svg>
-  );
-}
-
 function AnimatedTerminal({ className = "" }) {
   const lines = [
     { indent: 0, text: "const developer = {", color: "text-muted" },
@@ -339,23 +257,6 @@ function IconCircleLink({ link }) {
     >
       <Icon className="h-5 w-5" />
     </a>
-  );
-}
-
-function ThemeToggleButton({ theme, label, onToggle }) {
-  const Icon = theme === "dark" ? SunIcon : MoonIcon;
-
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      title={label}
-      onClick={onToggle}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-surface text-muted shadow-[0_12px 30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
-    >
-      <Icon className="h-4 w-4" />
-      <span className="sr-only">{label}</span>
-    </button>
   );
 }
 
@@ -839,32 +740,25 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
             description={t.story.intro}
           />
 
-          <div className="mt-12 grid gap-6 xl:grid-cols-[1.05fr,0.95fr]">
-            <div className="glass-panel overflow-hidden rounded-[2rem]" data-aos="fade-up">
-              <div className="textile-band" />
-              <div className="p-7 sm:p-9">
-                <p className="text-base leading-8 text-muted sm:text-lg">{t.story.body}</p>
-              </div>
-            </div>
+          <p className="mt-8 text-base leading-8 text-muted sm:text-lg max-w-3xl">{t.story.body}</p>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {t.story.cards.map((card, index) => (
-                <article
-                  key={card.title}
-                  className="relative overflow-hidden rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px 45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 120}
-                >
-                  <div className="card-motif absolute inset-0 opacity-20" />
-                  <div className="relative">
-                    <h3 className="mt-3 text-2xl font-semibold text-ink">
-                      {card.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-muted">{card.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {t.story.cards.map((card, index) => (
+              <article
+                key={card.title}
+                className="overflow-hidden rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
+                data-aos="fade-up"
+                data-aos-delay={index * 120}
+              >
+                <div className="card-motif absolute inset-0 opacity-20" />
+                <div className="relative">
+                  <h3 className="text-xl font-semibold text-ink">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-muted">{card.body}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -1245,7 +1139,6 @@ function SiteFooter({ t, socialLinks, currentYear, sectionLink }) {
 }
 
 function SiteApp() {
-  const [theme, setTheme] = useState(getInitialTheme);
   const [navOpen, setNavOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -1256,18 +1149,9 @@ function SiteApp() {
   const currentYear = new Date().getFullYear();
   const sectionLink = (href) => (href.startsWith("#") ? `/${href}` : href);
   const closeNav = () => setNavOpen(false);
-  const nextTheme = theme === "dark" ? "light" : "dark";
-  const themeToggleLabel = t.nav.themeToggle[nextTheme];
   const handleLanguageChange = (nextLanguage) => {
     setLanguage(nextLanguage);
     closeNav();
-  };
-  const handleThemeToggle = () => {
-    setTheme((currentTheme) => {
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      writeStoredTheme(newTheme);
-      return newTheme;
-    });
   };
   const handleBackToTop = () => {
     closeNav();
@@ -1380,27 +1264,6 @@ function SiteApp() {
   }, [language]);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.style.colorScheme = theme;
-  }, [theme]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-    const handleSystemThemeChange = (event) => {
-      if (readStoredTheme()) {
-        return;
-      }
-
-      setTheme(event.matches ? "light" : "dark");
-    };
-
-    mediaQuery.addEventListener("change", handleSystemThemeChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleSystemThemeChange);
-    };
-  }, []);
-
-  useEffect(() => {
     document.title = isAccessibilityPage
       ? t.meta.accessibilityTitle
       : t.meta.homeTitle;
@@ -1507,13 +1370,6 @@ function SiteApp() {
                     </button>
                   ))}
                 </div>
-                <div aria-label={t.nav.themeLabel}>
-                  <ThemeToggleButton
-                    theme={theme}
-                    label={themeToggleLabel}
-                    onToggle={handleThemeToggle}
-                  />
-                </div>
               </div>
             </div>
 
@@ -1581,13 +1437,6 @@ function SiteApp() {
                   ))}
                 </div>
 
-                <div aria-label={t.nav.themeLabel}>
-                  <ThemeToggleButton
-                    theme={theme}
-                    label={themeToggleLabel}
-                    onToggle={handleThemeToggle}
-                  />
-                </div>
               </div>
             </div>
           </div>
