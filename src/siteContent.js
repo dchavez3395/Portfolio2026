@@ -1,4 +1,5 @@
-﻿import telusImage from "./assets/telus.webp";
+﻿import puchicaImage from "./assets/puchica.webp";
+import telusImage from "./assets/telus.webp";
 import iympImage from "./assets/iymp.png";
 import mbTradesImage from "./assets/mbt.png";
 import manitobaAdvocateImage from "./assets/macy.png";
@@ -18,6 +19,22 @@ export const languageOptions = [
 ];
 
 export const projects = [
+  {
+    title: "Puchica",
+    domain: "shop.puchica.ca",
+    image: puchicaImage,
+    demo: "https://shop.puchica.ca/",
+    accent: "from-berry via-night to-canvas",
+    preview: "from-berry/15 via-night/10 to-canvas",
+    category: {
+      en: "E-commerce",
+      es: "Comercio electrónico",
+    },
+    summary: {
+      en: "Built a full Shopify Hydrogen storefront from scratch for a curated Canadian e-commerce brand. Custom React components, SEO infrastructure, collection taxonomy, and Shopify Admin API integration.",
+      es: "Construí un storefront completo de Shopify Hydrogen desde cero para una marca de comercio electrónico canadiense. Componentes React personalizados, infraestructura SEO, taxonomía de colecciones e integración con la API de Admin de Shopify.",
+    },
+  },
   {
     title: "TELUS Reconciliation Report",
     domain: "reconciliationreport.telus.com",
