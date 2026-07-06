@@ -705,7 +705,7 @@ function ProjectCard({ project, visitLabel, language }) {
 
       {/* Content */}
       <div className="relative flex flex-1 flex-col p-5">
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-gold/90">
+        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-gold">
           {project.category[language]}
         </p>
         <h3 className="mt-3 text-xl font-semibold leading-snug text-ink transition-colors duration-300 group-hover:text-gold">
@@ -716,7 +716,7 @@ function ProjectCard({ project, visitLabel, language }) {
         </p>
         <div className="mt-6 flex items-center justify-end border-t border-border/45 pt-4">
           <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-all duration-300 group-hover:gap-3 group-hover:text-ink">
-            {visitLabel}
+            <span className="rounded-full bg-night/70 px-2 py-0.5 group-hover:bg-night/90 transition-colors duration-300">{visitLabel}</span>
             <ArrowIcon className="h-4 w-4" />
           </span>
         </div>
