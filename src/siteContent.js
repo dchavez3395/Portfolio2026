@@ -192,10 +192,10 @@ export const translations = {
       backToTop: "Back to top",
     },
     hero: {
-      eyebrow: "Full-Stack Web Developer",
-      title: "I build accessible websites that are easy to maintain.",
+      eyebrow: "Full-stack developer, Toronto",
+      title: "I build web stuff — and I do it right.",
       description:
-        "I’m a Manitoba-based full-stack developer who builds accessible, maintainable websites and supports production CMS platforms. I’m looking for a full-time role where I can contribute to thoughtful builds, improve existing systems, and help teams ship reliable web work.",
+        "Manitoba-based full-stack dev building accessible, maintainable websites and supporting production CMS platforms. Looking for a team where quality, accessibility, and clean code actually matter.",
       primaryCta: "View Work",
       secondaryCta: "Accessibility",
       tertiaryCta: "Email Me",
@@ -208,21 +208,32 @@ export const translations = {
       visualTitle: "Useful across the build.",
       visualBody:
         "I can work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
+      statsLabel: "Key metrics",
       stats: [
-        { value: "3+ years", label: "Production Web Development" },
-        { value: "CMS + front end", label: "WordPress, PHP, React, Tailwind" },
-        { value: "Accessibility", label: "Semantic HTML, Keyboard Flow, Contrast" },
-        { value: "Team-ready", label: "Clear Handoffs, QA, Launch Support" },
+        { value: "3+", label: "Years Experience" },
+        { value: "20+", label: "Projects Shipped" },
+        { value: "8+", label: "Happy Clients" },
+      ],
+      techStackLabel: "Tech stack",
+      techStack: [
+        "React",
+        "Next.js",
+        "PHP",
+        "WordPress",
+        "Node.js",
+        "Tailwind",
+        "Vue",
+        "PostgreSQL",
       ],
       socialLabel: "Social and resume links",
     },
     story: {
       eyebrow: "About",
-      title: "Critical, practical web work for production teams.",
+      title: "What I build for production teams.",
       intro:
-        "I bring a practical approach to web development and a diverse toolkit for production teams",
+        "I build and support accessible websites, work with production CMS platforms, and contribute across the full development lifecycle from initial build through ongoing maintenance.",
       body:
-        "Most of my recent work has been with Vincent Design and partner teams, building and supporting websites for organizations that need reliability more than novelty. I am comfortable joining an existing codebase, asking the right questions, and making steady improvements without adding noise.",
+        "Most of my recent work has been with Vincent Design and partner teams, building and supporting websites for organizations that need reliability more than novelty. I join existing codebases, dig into how things actually work, and make steady improvements that stick.",
       quote: "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program. — Linus Torvalds",
       cards: [
         {
@@ -463,10 +474,10 @@ export const translations = {
       backToTop: "Volver arriba",
     },
     hero: {
-      eyebrow: "Desarrollador web full-stack",
-      title: "Construyo sitios accesibles y fáciles de mantener.",
+      eyebrow: "Desarrollador full-stack, Toronto",
+      title: "Construyo web stuff — y lo hago bien.",
       description:
-        "Soy un desarrollador full-stack con base en Manitoba que construye sitios accesibles y fáciles de mantener, y apoyo plataformas CMS en producción. Busco un rol de tiempo completo donde pueda contribuir a proyectos bien pensados, mejorar sistemas existentes y ayudar a los equipos a entregar trabajo web confiable.",
+        "Desarrollador full-stack con base en Manitoba que construye sitios accesibles y fáciles de mantener, y da soporte a plataformas CMS en producción. Busco un equipo donde importen la calidad, la accesibilidad y el código limpio.",
       primaryCta: "Ver trabajo",
       secondaryCta: "Accesibilidad",
       tertiaryCta: "Escríbeme",
@@ -479,21 +490,32 @@ export const translations = {
       visualTitle: "Útil en varias partes del build.",
       visualBody:
         "Puedo trabajar desde Figma o desde código existente, construir interfaces responsivas, resolver problemas de CMS y comunicarme con claridad con diseño, PM, QA y stakeholders.",
+      statsLabel: "Métricas clave",
       stats: [
-        { value: "3+ años", label: "desarrollo web en producción" },
-        { value: "CMS + front end", label: "WordPress, PHP, React, Tailwind" },
-        { value: "Accesibilidad", label: "HTML semántico, teclado, contraste" },
-        { value: "Listo para equipo", label: "handoffs claros, QA y soporte" },
+        { value: "3+", label: "Años de experiencia" },
+        { value: "20+", label: "Proyectos lanzados" },
+        { value: "8+", label: "Clientes satisfechos" },
+      ],
+      techStackLabel: "Stack tecnológico",
+      techStack: [
+        "React",
+        "Next.js",
+        "PHP",
+        "WordPress",
+        "Node.js",
+        "Tailwind",
+        "Vue",
+        "PostgreSQL",
       ],
       socialLabel: "Enlaces sociales y CV",
     },
     story: {
       eyebrow: "Sobre mí",
-      title: "Un desarrollador práctico para equipos de producción.",
+      title: "Lo que construyo para equipos de producción.",
       intro:
-        "Me interesan las partes del trabajo web donde los detalles importan: layouts responsivos, estructura de contenido, accesibilidad, diferencias entre navegadores y el paso de diseño a desarrollo.",
+        "Construyo y doy soporte a sitios accesibles, trabajo con plataformas CMS en producción y contribuyo en todo el ciclo de desarrollo, desde el build inicial hasta el mantenimiento continuo.",
       body:
-        "La mayor parte de mi trabajo reciente ha sido con Vincent Design y equipos aliados, construyendo y dando soporte a sitios para organizaciones que necesitan confiabilidad más que novedad. Me siento cómodo entrando a una base de código existente, haciendo buenas preguntas y mejorando sin agregar ruido.",
+        "La mayor parte de mi trabajo reciente ha sido con Vincent Design y equipos aliados, construyendo y dando soporte a sitios para organizaciones que necesitan confiabilidad más que novedad. Entro en bases de código existentes, profundizo en cómo funcionan las cosas y hago mejoras constantes que perduran.",
       quote: "La mayoría de los buenos programadores programan no porque esperen que les paguen o que el público los adore, sino porque les divierte programar. — Linus Torvalds",
       cards: [
         {

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Favicon: 32x32 version of the bold geometric D -->
+  <rect width="32" height="32" rx="6" fill="#1a1a2e"/>
+  <rect x="8" y="7" width="3" height="18" rx="1" fill="#f0c040"/>
+  <rect x="8" y="7" width="9" height="3" rx="1" fill="#f0c040"/>
+  <rect x="8" y="22" width="9" height="3" rx="1" fill="#f0c040"/>
+  <path d="M 17 10 Q 23 10 24 16 Q 23 22 17 22" stroke="#f0c040" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <rect x="24" y="7" width="1.5" height="1.5" rx="0.3" fill="#d4a574" opacity="0.8"/>
+  <rect x="26.5" y="7" width="1.5" height="1.5" rx="0.3" fill="#d4a574" opacity="0.5"/>
+</svg>

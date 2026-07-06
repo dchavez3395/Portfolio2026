@@ -581,20 +581,16 @@ const ResumeIcon = ({ className = "" }) => (
   </svg>
 );
 
-const WavingAvatar = ({ className = "", imageClassName = "" }) => (
+const BrandLogo = ({ className = "" }) => (
   <div
-    className={`relative flex rounded-full animate-float ${className}`}
+    className={`relative flex items-center justify-center rounded-2xl ${className}`}
   >
     <img
-      src={yangManGif}
-      alt="Animated avatar waving"
-      className={`h-36 w-36 rounded-full object-contain ${imageClassName}`}
-      loading="lazy"
+      src="/daniel-logo.svg"
+      alt="Daniel Chavez brand logo"
+      className="h-28 w-28 object-contain"
+      loading="eager"
     />
-    <span
-      aria-hidden="true"
-      className="pointer-events-none absolute -right-3 -top-3 h-12 w-12 rounded-full bg-accent/20 blur-xl"
-    ></span>
   </div>
 );
 
@@ -1036,7 +1032,7 @@ function App() {
               className="flex flex-col justify-center w-full max-w-2xl text-left"
             >
               <div className="mb-4">
-                <WavingAvatar className="h-28 w-28" imageClassName="h-20 w-20" />
+                <BrandLogo className="h-28 w-28" />
               </div>
               <p className="text-base md:text-lg font-semibold text-accent tracking-wide">
                 {t.hero.greeting}

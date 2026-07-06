@@ -757,24 +757,61 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
           <div className="animate-glow-pulse absolute top-1/3 right-1/4 h-44 w-44 rounded-full bg-berry/8 blur-3xl" />
         </div>
 
-        <div className="mx-auto grid max-w-screen-xl gap-12 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-          <div className="relative z-10" data-aos="fade-up">
+        {/*
+          Split two-column hero layout:
+          LEFT  — AnimatedTerminal (existing component, preserved as-is)
+          RIGHT — eyebrow, title, description, CTAs, social links,
+                   stats grid (3 metrics), tech stack pill badges
+        */}
+        <div className="mx-auto grid max-w-screen-xl gap-10 lg:grid-cols-2 lg:items-center">
+
+          {/* ── LEFT: Animated terminal ─────────────────────── */}
+          <div
+            className="relative z-10"
+            data-aos="fade-right"
+          >
+            <div
+              aria-hidden="true"
+              className="animate-orb-1 absolute -top-10 left-4 h-28 w-28 rounded-full bg-gold/20 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="animate-orb-2 absolute -bottom-8 right-0 h-24 w-24 rounded-full bg-teal/18 blur-3xl"
+            />
+            <AnimatedTerminal className="rounded-[2rem]" />
+          </div>
+
+          {/* ── RIGHT: text content + stats + tech badges ───── */}
+          <div
+            className="relative z-10 flex flex-col gap-6"
+            data-aos="fade-left"
+            data-aos-delay="160"
+          >
+            {/* Eyebrow */}
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] gradient-text">
-              {t.hero.greeting}
+              {t.hero.eyebrow}
             </p>
-            <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-[-0.06em] text-ink sm:text-6xl xl:text-7xl">
+
+            {/* Title */}
+            <h1 className="font-display text-5xl font-bold leading-[0.95] tracking-[-0.06em] text-ink sm:text-6xl xl:text-6xl">
               {t.hero.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+
+            {/* Description */}
+            <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
               {t.hero.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-3">
               <Link
                 to={sectionLink("#portfolio")}
                 className="group relative inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-canvas shadow-[0_18px_45px_rgba(245,196,71,0.22)] transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
-                <span className="absolute inset-0 rounded-full animate-shimmer" aria-hidden="true" />
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 rounded-full animate-shimmer"
+                />
                 <span className="relative flex items-center gap-2">
                   {t.hero.primaryCta}
                   <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -796,17 +833,54 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               </a>
             </div>
 
-            <div aria-label={t.socialLabel ?? "Connect"} className="mt-8 flex flex-wrap gap-3">
+            {/* Social links */}
+            <div aria-label={t.socialLabel ?? "Connect"} className="flex flex-wrap gap-3">
               {socialLinks.map((link) => (
                 <SocialPill key={link.label} link={link} />
               ))}
             </div>
-          </div>
 
-          <div className="relative z-10 lg:pl-4" data-aos="fade-left" data-aos-delay="160">
-            <div className="animate-orb-1 absolute -top-10 right-8 h-28 w-28 rounded-full bg-gold/20 blur-3xl" />
-            <div className="animate-orb-2 absolute -bottom-8 left-0 h-24 w-24 rounded-full bg-teal/18 blur-3xl" />
-            <AnimatedTerminal className="rounded-[2rem]" />
+            {/* Divider */}
+            <div
+              aria-hidden="true"
+              className="h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent"
+            />
+
+            {/* Stats grid — 3 key metrics */}
+            <div>
+              <p className="sr-only">{t.hero.statsLabel ?? "Key metrics"}</p>
+              <div className="grid grid-cols-3 gap-4">
+                {t.hero.stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col items-center justify-center rounded-[1.4rem] border border-border/50 bg-surface px-3 py-5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.14)]"
+                  >
+                    <span className="font-display text-3xl font-bold tracking-[-0.04em] gradient-text">
+                      {stat.value}
+                    </span>
+                    <span className="mt-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted leading-tight">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tech stack pill badges */}
+            <div>
+              <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">
+                {t.hero.techStackLabel ?? "Tech stack"}
+              </p>
+              <ul className="flex flex-wrap gap-2" role="list">
+                {t.hero.techStack.map((tech) => (
+                  <li key={tech}>
+                    <span className="inline-block rounded-full border border-border/55 bg-surface px-3.5 py-1.5 text-[0.74rem] font-semibold text-muted shadow-[0_6px_18px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas">
+                      {tech}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -1408,13 +1482,17 @@ function SiteApp() {
             <Link
               to={sectionLink("#home")}
               onClick={closeNav}
-              className="rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+              className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
-              <div className="font-display text-3xl font-semibold leading-none tracking-[-0.04em] text-ink sm:text-4xl">
-                Daniel Chavez
-              </div>
-              <div className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-muted">
-                Full-stack web developer
+              <img
+                src="/daniel-logo.svg"
+                alt="Daniel Chavez"
+                className="h-10 w-10 object-contain"
+                loading="eager"
+              />
+              <div className="font-display text-2xl font-semibold leading-none tracking-[-0.04em] text-ink sm:text-3xl">
+                <span className="hidden sm:inline">Daniel Chavez</span>
+                <span className="sm:hidden">DC</span>
               </div>
             </Link>
 
