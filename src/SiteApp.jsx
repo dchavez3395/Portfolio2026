@@ -1463,16 +1463,10 @@ function SiteApp() {
               onClick={closeNav}
               className="flex items-center gap-3 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
-              <img
-                src="/dc-logo.webp"
-                alt="Daniel Chavez"
-                className="h-10 w-10 object-contain"
-                loading="eager"
-              />
-              <div className="font-display text-2xl font-semibold leading-none tracking-[-0.04em] text-ink sm:text-3xl">
+              <span className="font-display text-2xl font-semibold leading-none tracking-[-0.04em] text-ink sm:text-3xl">
                 <span className="hidden sm:inline">Daniel Chavez</span>
                 <span className="sm:hidden">DC</span>
-              </div>
+              </span>
             </Link>
 
             <div className="hidden items-center gap-6 lg:flex">

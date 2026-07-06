@@ -579,19 +579,6 @@ const ResumeIcon = ({ className = "" }) => (
   </svg>
 );
 
-const BrandLogo = ({ className = "" }) => (
-  <div
-    className={`relative flex items-center justify-center rounded-2xl ${className}`}
-  >
-    <img
-      src="/dc-logo.webp"
-      alt="Daniel Chavez brand logo"
-      className="h-28 w-28 object-contain"
-      loading="eager"
-    />
-  </div>
-);
-
 const AccessibilityPage = ({ t, sectionLink }) => (
   <>
     <header className="relative w-full bg-gradient-to-b from-surface-muted via-surface to-surface-muted overflow-hidden">
@@ -1029,9 +1016,6 @@ function App() {
             <div
               className="flex flex-col justify-center w-full max-w-2xl text-left"
             >
-              <div className="mb-4">
-                <BrandLogo className="h-28 w-28" />
-              </div>
               <p className="text-base md:text-lg font-semibold text-accent tracking-wide">
                 {t.hero.greeting}
               </p>
