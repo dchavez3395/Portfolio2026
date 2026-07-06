@@ -23,8 +23,8 @@ export const projects = [
     domain: "shop.puchica.ca",
     image: "/puchica-logo.svg",
     demo: "https://shop.puchica.ca/",
-    accent: "from-berry via-night to-canvas",
-    preview: "from-berry/15 via-night/10 to-canvas",
+    accent: "from-[#6D4CFF] via-[#8A78FA] to-[#241B9B]",
+    preview: "from-[#6D4CFF]/20 via-[#8A78FA]/10 to-transparent",
     category: {
       en: "E-commerce",
       es: "Comercio electrónico",
@@ -39,14 +39,14 @@ export const projects = [
     domain: "reconciliationreport.telus.com",
     image: telusImage,
     demo: "https://reconciliationreport.telus.com/",
-    accent: "from-berry via-clay to-gold",
-    preview: "from-berry/15 via-gold/10 to-canvas",
+    accent: "from-gold via-clay to-berry",
+    preview: "from-gold/20 via-clay/10 to-transparent",
     category: {
-      en: "TELUS Mobility",
+      en: "Annual Report",
       es: "Reporte anual",
     },
     summary: {
-      en: "TELUS’ seventh annual report shares inspiring stories of real change that will be felt for generations.",
+      en: "TELUS' seventh annual report shares inspiring stories of real change that will be felt for generations.",
       es: "El séptimo informe anual de TELUS comparte historias inspiradoras de cambios reales que se sentirán durante generaciones.",
     },
   },
@@ -55,11 +55,11 @@ export const projects = [
     domain: "perimeter.ca",
     image: perimeterImage,
     demo: "https://perimeter.ca/",
-    accent: "from-clay via-gold to-teal",
-    preview: "from-clay/15 via-gold/10 to-canvas",
+    accent: "from-gold via-teal to-night",
+    preview: "from-gold/20 via-teal/10 to-transparent",
     category: {
-      en: "Aviation and cargo",
-      es: "Aviación y carga",
+      en: "Aviation",
+      es: "Aviación",
     },
     summary: {
       en: "Perimeter Aviation and Bearskin Airlines connect communities across Manitoba and Ontario through passenger travel, cargo, and charter services.",
@@ -72,9 +72,9 @@ export const projects = [
     image: fpegfImage,
     demo: "https://firstpeoplesfund.ca/",
     accent: "from-jade via-gold to-clay",
-    preview: "from-jade/15 via-gold/10 to-canvas",
+    preview: "from-jade/20 via-gold/10 to-transparent",
     category: {
-      en: "Funding programs",
+      en: "Funding Programs",
       es: "Programas de financiamiento",
     },
     summary: {
@@ -83,14 +83,14 @@ export const projects = [
     },
   },
   {
-    title: "Raven Space: Cherokee Natural World",
+    title: "Raven Space",
     domain: "ravenspacepublishing.org",
     image: ravenSpaceImage,
     demo: "https://developmentserver.ravenspacepublishing.org/the-cherokee-natural-world/index",
     accent: "from-night via-teal to-jade",
-    preview: "from-night/15 via-teal/10 to-canvas",
+    preview: "from-night/20 via-teal/10 to-transparent",
     category: {
-      en: "Interactive publication",
+      en: "Interactive Publication",
       es: "Publicación interactiva",
     },
     summary: {
@@ -104,13 +104,13 @@ export const projects = [
     image: iympImage,
     demo: "https://iymp.ca/",
     accent: "from-teal via-jade to-gold",
-    preview: "from-teal/15 via-jade/10 to-canvas",
+    preview: "from-teal/20 via-jade/10 to-transparent",
     category: {
-      en: "Youth mentorship",
+      en: "Youth Mentorship",
       es: "Mentoría juvenil",
     },
     summary: {
-      en: "IYMP is a communal, relationship-based, after-school healthy living program",
+      en: "IYMP is a communal, relationship-based, after-school healthy living program.",
       es: "IYMP es un programa comunitario de vida saludable basado en las relaciones, que se lleva a cabo después de la escuela.",
     },
   },
@@ -119,11 +119,11 @@ export const projects = [
     domain: "manitobaadvocate.ca",
     image: manitobaAdvocateImage,
     demo: "https://manitobaadvocate.ca/",
-    accent: "from-gold via-clay to-berry",
-    preview: "from-gold/18 via-clay/10 to-canvas",
+    accent: "from-gold via-berry to-night",
+    preview: "from-gold/20 via-berry/10 to-transparent",
     category: {
-      en: "Youth advocacy",
-      es: "defensores de la juventud",
+      en: "Youth Advocacy",
+      es: "Defensores de la juventud",
     },
     summary: {
       en: "The Manitoba Advocate for Children and Youth (MACY) is here to make sure the voices of young people are heard.",
@@ -135,14 +135,14 @@ export const projects = [
     domain: "mbtrades.ca",
     image: mbTradesImage,
     demo: "https://www.mbtrades.ca/",
-    accent: "from-night via-berry to-clay",
-    preview: "from-night/15 via-berry/10 to-canvas",
+    accent: "from-night via-berry to-gold",
+    preview: "from-night/20 via-berry/10 to-transparent",
     category: {
       en: "Building Trades",
       es: "Trabajos de construcción",
     },
     summary: {
-      en: "Manitoba Building Trades (MBT) represents the common goals of over 8,000 construction and trade professionals across our 13 member unions.",
+      en: "Manitoba Building Trades (MBT) represents the common goals of over 8,000 construction and trade professionals across 13 member unions.",
       es: "Manitoba Building Trades (MBT) representa los objetivos comunes de más de 8.000 profesionales de la construcción y oficios relacionados, pertenecientes a nuestros 13 sindicatos miembros.",
     },
   },
@@ -152,14 +152,14 @@ export const projects = [
     image: cedawpgImage,
     demo: "https://cedawpg.org/",
     accent: "from-berry via-night to-teal",
-    preview: "from-berry/15 via-night/10 to-canvas",
+    preview: "from-berry/20 via-night/10 to-transparent",
     category: {
       en: "Community Education",
-      es: "educación comunitaria",
+      es: "Educación comunitaria",
     },
     summary: {
-      en: "The Community Education Development Association (CEDA) is a beacon of hope and progress, dedicated to nurturing the hearts and minds of students, families, teachers, and school administrators in Winnipeg, Manitoba.",
-      es: "La Asociación para el Desarrollo de la Educación Comunitaria (CEDA, por sus siglas en inglés) es un faro de esperanza y progreso, dedicada a cultivar los corazones y las mentes de los estudiantes, las familias, los maestros y los administradores escolares en Winnipeg, Manitoba.",
+      en: "The Community Education Development Association (CEDA) is dedicated to nurturing the hearts and minds of students, families, teachers, and school administrators in Winnipeg.",
+      es: "La Asociación para el Desarrollo de la Educación Comunitaria (CEDA) es un faro de esperanza y progreso, dedicada a cultivar los corazones y las mentes de los estudiantes, las familias, los maestros y los administradores escolares en Winnipeg, Manitoba.",
     },
   },
 ];
@@ -192,22 +192,22 @@ export const translations = {
       backToTop: "Back to top",
     },
     hero: {
-      eyebrow: "Full-stack developer, Toronto",
-      title: "I build web stuff — and I do it right.",
+      eyebrow: "Full-stack developer — Manitoba",
+      title: "Production websites. Built to last.",
       description:
-        "Manitoba-based full-stack dev building accessible, maintainable websites and supporting production CMS platforms. Looking for a team where quality, accessibility, and clean code actually matter.",
+        "Full-stack dev with a production mindset. I build accessible, maintainable sites, support CMS platforms, and work across the full lifecycle from initial build to ongoing improvement. Manitoba-based, open to remote.",
       primaryCta: "View Work",
       secondaryCta: "Accessibility",
       tertiaryCta: "Email Me",
       badges: [
         "React, WordPress, PHP, Node",
-        "Accessible Front-End Work",
-        "CMS Builds and Support",
+        "Accessible Front-End",
+        "CMS Build & Support",
       ],
       visualEyebrow: "What I bring",
       visualTitle: "Useful across the build.",
       visualBody:
-        "I can work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
+        "I work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
       techStackLabel: "Tech stack",
       techStack: [
         "React",
@@ -227,7 +227,7 @@ export const translations = {
       intro:
         "I build and support accessible websites, work with production CMS platforms, and contribute across the full development lifecycle from initial build through ongoing maintenance.",
       body:
-        "Most of my recent work has been with Vincent Design and partner teams, building and supporting websites for organizations that need reliability more than novelty. I join existing codebases, dig into how things actually work, and make steady improvements that stick.",
+        "Most of my recent work has been with agencies and partner teams, building and supporting websites for organizations that need reliability more than novelty. I join existing codebases, understand how things actually work, and make steady improvements that stick.",
       quote: "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program. — Linus Torvalds",
       cards: [
         {
@@ -245,14 +245,14 @@ export const translations = {
       ],
     },
     work: {
-      eyebrow: "Current work",
+      eyebrow: "Selected work",
       title: "Production sites I have helped ship and support.",
       intro:
-        "These are some of the projects I have worked on with Vincent Design and partner teams.",
+        "A selection of projects spanning annual reports, non-profits, public information, membership sites, and e-commerce.",
       visit: "Visit Site",
     },
     practice: {
-      eyebrow: "Team contribution",
+      eyebrow: "How I work",
       title: "How I show up on a project.",
       intro:
         "I am looking for a role where I can contribute steadily across build, QA, launch, and ongoing site improvement.",
@@ -335,7 +335,7 @@ export const translations = {
     },
     contact: {
       eyebrow: "Next role",
-      title: "I am open to full-time web developer roles.",
+      title: "Open to full-time web developer roles.",
       body: "I am looking for a team where I can contribute to production websites, CMS work, front-end systems, accessibility QA, and ongoing improvement.",
       primaryCta: "Email Me",
       secondaryCta: "View Resume",
@@ -468,10 +468,10 @@ export const translations = {
       backToTop: "Volver arriba",
     },
     hero: {
-      eyebrow: "Desarrollador full-stack, Toronto",
-      title: "Construyo web stuff — y lo hago bien.",
+      eyebrow: "Desarrollador full-stack — Manitoba",
+      title: "Sitios de producción. Construidos para durar.",
       description:
-        "Desarrollador full-stack con base en Manitoba que construye sitios accesibles y fáciles de mantener, y da soporte a plataformas CMS en producción. Busco un equipo donde importen la calidad, la accesibilidad y el código limpio.",
+        "Desarrollador full-stack con mentalidad de producción. Construyo sitios accesibles y fáciles de mantener, doy soporte a plataformas CMS, y trabajo en todo el ciclo de vida, desde el build inicial hasta la mejora continua. Con base en Manitoba, abierto a trabajo remoto.",
       primaryCta: "Ver trabajo",
       secondaryCta: "Accesibilidad",
       tertiaryCta: "Escríbeme",
@@ -503,7 +503,7 @@ export const translations = {
       intro:
         "Construyo y doy soporte a sitios accesibles, trabajo con plataformas CMS en producción y contribuyo en todo el ciclo de desarrollo, desde el build inicial hasta el mantenimiento continuo.",
       body:
-        "La mayor parte de mi trabajo reciente ha sido con Vincent Design y equipos aliados, construyendo y dando soporte a sitios para organizaciones que necesitan confiabilidad más que novedad. Entro en bases de código existentes, profundizo en cómo funcionan las cosas y hago mejoras constantes que perduran.",
+        "La mayor parte de mi trabajo reciente ha sido con agencias y equipos aliados, construyendo y dando soporte a sitios para organizaciones que necesitan confiabilidad más que novedad. Entro en bases de código existentes, profundizo en cómo funcionan las cosas y hago mejoras constantes que perduran.",
       quote: "La mayoría de los buenos programadores programan no porque esperen que les paguen o que el público los adore, sino porque les divierte programar. — Linus Torvalds",
       cards: [
         {
@@ -524,12 +524,11 @@ export const translations = {
       eyebrow: "Trabajo seleccionado",
       title: "Sitios de producción que he ayudado a lanzar y mantener.",
       intro:
-        "Una muestra de trabajo para reportes, organizaciones sin fines de lucro, información pública, membresías y servicios.",
-      note: "Realizado en colaboración con Vincent Design y equipos aliados.",
+        "Una selección de proyectos que incluyen reportes anuales, organizaciones sin fines de lucro, información pública, membresías y comercio electrónico.",
       visit: "Visitar sitio",
     },
     practice: {
-      eyebrow: "Contribución al equipo",
+      eyebrow: "Cómo trabajo",
       title: "Cómo aporto en un proyecto.",
       intro:
         "Busco un rol donde pueda contribuir de forma constante en build, QA, lanzamiento y mejora continua de sitios.",
@@ -612,7 +611,7 @@ export const translations = {
     },
     contact: {
       eyebrow: "Próximo rol",
-      title: "Estoy abierto a roles de desarrollador web de tiempo completo.",
+      title: "Abierto a roles de desarrollador web de tiempo completo.",
       body: "Busco un equipo donde pueda contribuir a sitios en producción, trabajo de CMS, sistemas front-end, QA de accesibilidad y mejora continua.",
       primaryCta: "Escríbeme",
       secondaryCta: "Ver CV",

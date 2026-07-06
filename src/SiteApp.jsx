@@ -175,75 +175,6 @@ function ResumeIcon({ className = "" }) {
   );
 }
 
-function AnimatedTerminal({ className = "" }) {
-  const lines = [
-    { indent: 0, text: "const developer = {", color: "text-muted" },
-    { indent: 1, text: "name: \"Daniel Chavez\",", color: "text-gold" },
-    { indent: 1, text: "role: \"Full-Stack Developer\",", color: "text-teal" },
-    { indent: 1, text: "focus: \"Accessible Web\",", color: "text-berry" },
-    { indent: 1, text: "passion: \"Clean, semantic code\"", color: "text-jade" },
-    { indent: 0, text: "};", color: "text-muted" },
-  ];
-
-  const [displayedLines, setDisplayedLines] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
-
-  useEffect(() => {
-    if (displayedLines < lines.length) {
-      const t = setTimeout(() => setDisplayedLines((d) => d + 1), 380);
-      return () => clearTimeout(t);
-    }
-  }, [displayedLines, lines.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => setShowCursor((s) => !s), 530);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div
-      className={`rounded-[1.6rem] border border-border/60 bg-canvas/95 font-mono text-sm shadow-[0_28px_90px_rgba(0,0,0,0.38)] overflow-hidden ${className}`}
-      aria-label="Animated code terminal"
-      role="status"
-    >
-      {/* Title bar */}
-      <div className="flex items-center gap-2 border-b border-border/50 bg-surface/90 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-        <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-        <span className="h-3 w-3 rounded-full bg-[#28c940]" />
-        <span className="ml-2 text-xs text-muted">terminal</span>
-      </div>
-
-      {/* Code area */}
-      <div className="p-5 sm:p-6 space-y-0.5">
-        {lines.slice(0, displayedLines).map((line, i) => (
-          <div key={i} className="flex" style={{ paddingLeft: `${line.indent * 1.25}rem` }}>
-            <span className={`${line.color} select-all`}>{line.text}</span>
-          </div>
-        ))}
-        {displayedLines < lines.length && (
-          <div className="flex" style={{ paddingLeft: `${lines[displayedLines]?.indent * 1.25 ?? 0}rem` }}>
-            <span className={`${lines[displayedLines]?.color ?? "text-muted"}`}>
-              {lines[displayedLines]?.text.slice(0, Math.floor(Math.random() * 3))}
-            </span>
-            <span className="cursor-blink" aria-hidden="true" />
-          </div>
-        )}
-        {displayedLines === lines.length && (
-          <div className="flex items-center gap-2 pt-1">
-            <span className="text-jade text-xs">✔</span>
-            <span className="text-muted text-xs">Ready to build something amazing.</span>
-            <span className="cursor-blink" aria-hidden="true" />
-          </div>
-        )}
-      </div>
-
-      {/* Bottom glow line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-    </div>
-  );
-}
-
 function SunIcon({ className = "" }) {
   return (
     <svg
@@ -288,28 +219,86 @@ function MoonIcon({ className = "" }) {
   );
 }
 
-function SectionHeading({ eyebrow, title, description, center = false, inverted = false, gradient = false }) {
+function AnimatedTerminal({ className = "" }) {
+  const lines = [
+    { indent: 0, text: "const developer = {", color: "text-muted" },
+    { indent: 1, text: "name: \"Daniel Chavez\",", color: "text-gold" },
+    { indent: 1, text: "role: \"Full-Stack Developer\",", color: "text-teal" },
+    { indent: 1, text: "focus: \"Production Web\",", color: "text-muted" },
+    { indent: 1, text: "passion: \"Clean, semantic code\"", color: "text-muted" },
+    { indent: 0, text: "};", color: "text-muted" },
+  ];
+
+  const [displayedLines, setDisplayedLines] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (displayedLines < lines.length) {
+      const t = setTimeout(() => setDisplayedLines((d) => d + 1), 380);
+      return () => clearTimeout(t);
+    }
+  }, [displayedLines, lines.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => setShowCursor((s) => !s), 530);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className={`rounded-[1.6rem] border border-border/60 bg-canvas/95 font-mono text-sm shadow-[0_28px 90px_rgba(0,0,0,0.38)] overflow-hidden ${className}`}
+      aria-label="Animated code terminal"
+      role="status"
+    >
+      <div className="flex items-center gap-2 border-b border-border/50 bg-surface/90 px-4 py-3">
+        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+        <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
+        <span className="h-3 w-3 rounded-full bg-[#28c940]" />
+        <span className="ml-2 text-xs text-muted">terminal</span>
+      </div>
+
+      <div className="p-5 sm:p-6 space-y-0.5">
+        {lines.slice(0, displayedLines).map((line, i) => (
+          <div key={i} className="flex" style={{ paddingLeft: `${line.indent * 1.25}rem` }}>
+            <span className={`${line.color} select-all`}>{line.text}</span>
+          </div>
+        ))}
+        {displayedLines < lines.length && (
+          <div className="flex" style={{ paddingLeft: `${lines[displayedLines]?.indent * 1.25 ?? 0}rem` }}>
+            <span className={`${lines[displayedLines]?.color ?? "text-muted"}`}>
+              {lines[displayedLines]?.text.slice(0, Math.floor(Math.random() * 3))}
+            </span>
+            <span className="cursor-blink" aria-hidden="true" />
+          </div>
+        )}
+        {displayedLines === lines.length && (
+          <div className="flex items-center gap-2 pt-1">
+            <span className="text-jade text-xs">✔</span>
+            <span className="text-muted text-xs">Ready to build.</span>
+            <span className="cursor-blink" aria-hidden="true" />
+          </div>
+        )}
+      </div>
+
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+    </div>
+  );
+}
+
+function SectionHeading({ eyebrow, title, description, center = false, inverted = false }) {
   return (
     <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
-      <p
-        className={`text-[0.72rem] font-semibold uppercase tracking-[0.32em] ${
-          gradient ? "gradient-text" : "text-gold"
-        }`}
-      >
+      <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
         {eyebrow}
       </p>
-      <h2
-        className={`mt-4 font-display text-4xl leading-tight sm:text-5xl ${
-          inverted ? "text-ink" : "text-ink"
-        }`}
-      >
+      <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl text-ink">
         {title}
       </h2>
       {description ? (
         <p
           className={`mt-5 max-w-2xl text-base leading-7 sm:text-lg ${
             center ? "mx-auto" : ""
-          } ${inverted ? "text-muted" : "text-muted"}`}
+          } text-muted`}
         >
           {description}
         </p>
@@ -351,7 +340,7 @@ function IconCircleLink({ link }) {
       href={link.href}
       target={link.external ? "_blank" : undefined}
       rel={link.external ? "noreferrer noopener" : undefined}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-border/55 bg-surface text-muted shadow-[0_12px_30px_rgba(0,0,0,0.22)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-border/55 bg-surface text-muted shadow-[0_12px 30px_rgba(0,0,0,0.22)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
       aria-label={link.label}
     >
       <Icon className="h-5 w-5" />
@@ -368,7 +357,7 @@ function ThemeToggleButton({ theme, label, onToggle }) {
       aria-label={label}
       title={label}
       onClick={onToggle}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-surface text-muted shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-surface text-muted shadow-[0_12px 30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
     >
       <Icon className="h-4 w-4" />
       <span className="sr-only">{label}</span>
@@ -498,7 +487,6 @@ function SkillIcon({ icon, className = "" }) {
       return (
         <svg {...iconProps}>
           <path d="m5 3 1.4 16L12 21l5.6-2L19 3Z" />
-          <path d="M9 8h6" />
           <path d="M15 12H9.4l.35 3.1 2.25.7 2.25-.7.2-1.8" />
         </svg>
       );
@@ -675,17 +663,15 @@ function SkillBadge({ skill }) {
 }
 
 function ProjectCard({ project, visitLabel, language }) {
-  const previewGradient = project.preview.replace("to-canvas", "to-white");
-
   return (
     <a
       href={project.demo}
       target="_blank"
       rel="noreferrer noopener"
-      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/55 bg-surface shadow-[0_22px_70px_rgba(0,0,0,0.26)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/50 hover:shadow-[0_32px_100px_rgba(0,0,0,0.42)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/55 bg-surface shadow-[0_22px 70px_rgba(0,0,0,0.26)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/50 hover:shadow-[0_32px 100px_rgba(0,0,0,0.42)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
       aria-label={`${visitLabel}: ${project.title}`}
     >
-      {/* Animated shimmer sweep on hover */}
+      {/* Shimmer on hover */}
       <span
         className="pointer-events-none absolute inset-0 z-20 rounded-[1.75rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         aria-hidden="true"
@@ -693,7 +679,7 @@ function ProjectCard({ project, visitLabel, language }) {
         <span className="absolute inset-0 rounded-[1.75rem] animate-shimmer" />
       </span>
 
-      {/* Top accent bar — animated gradient */}
+      {/* Top accent bar */}
       <div className="relative h-1.5 w-full overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-r ${project.accent}`} />
         <div
@@ -702,18 +688,18 @@ function ProjectCard({ project, visitLabel, language }) {
         />
       </div>
 
-      <div className="relative overflow-hidden bg-slate-100 px-5 py-6">
-        <div className={`absolute inset-0 bg-gradient-to-br ${previewGradient} opacity-95`} />
+      {/* Image area */}
+      <div className="relative overflow-hidden px-5 py-6">
+        <div className={`absolute inset-0 bg-gradient-to-br ${project.preview}`} />
         <div className="card-motif absolute inset-0 opacity-20 mix-blend-multiply" />
-        {/* Glow blob on hover */}
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           aria-hidden="true"
         >
-          <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gold/20 blur-2xl transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute -bottom-6 -left-6 h-20 w-20 rounded-full bg-teal/15 blur-2xl transition-transform duration-700 group-hover:scale-110" />
+          <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gold/15 blur-2xl transition-transform duration-700 group-hover:scale-110" />
+          <div className="absolute -bottom-6 -left-6 h-20 w-20 rounded-full bg-gold/10 blur-2xl transition-transform duration-700 group-hover:scale-110" />
         </div>
-        <div className="relative z-10 flex h-44 items-center justify-center rounded-[1.35rem] border border-white/80 bg-white/95 p-5 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.05),0_18px_45px_rgba(15,23,42,0.16)] transition duration-500 group-hover:scale-[1.02] group-hover:border-white/90">
+        <div className="relative z-10 flex h-44 items-center justify-center rounded-[1.35rem] border border-white/10 bg-canvas/90 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),0_18px_45px_rgba(0,0,0,0.2)] transition duration-500 group-hover:scale-[1.02]">
           <img
             src={project.image}
             alt={`Preview of ${project.title}`}
@@ -722,6 +708,8 @@ function ProjectCard({ project, visitLabel, language }) {
           />
         </div>
       </div>
+
+      {/* Content */}
       <div className="relative flex flex-1 flex-col p-5">
         <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-gold/90">
           {project.category[language]}
@@ -750,45 +738,37 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
         id="home"
         className="section-shell overflow-hidden px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24"
       >
-        {/* Ambient orbs */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="animate-orb-1 absolute -top-16 -left-16 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
-          <div className="animate-orb-2 absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
-          <div className="animate-glow-pulse absolute top-1/3 right-1/4 h-44 w-44 rounded-full bg-berry/8 blur-3xl" />
+          <div className="animate-orb-2 absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-teal/8 blur-3xl" />
         </div>
 
-        {/*
-          Split two-column hero layout:
-          LEFT  — AnimatedTerminal (existing component, preserved as-is)
-          RIGHT — eyebrow, title, description, CTAs, social links,
-                   stats grid (3 metrics), tech stack pill badges
-        */}
         <div className="mx-auto grid max-w-screen-xl gap-10 lg:grid-cols-2 lg:items-center">
 
-          {/* ── LEFT: Animated terminal ─────────────────────── */}
+          {/* LEFT: Animated terminal */}
           <div
             className="relative z-10"
             data-aos="fade-right"
           >
             <div
               aria-hidden="true"
-              className="animate-orb-1 absolute -top-10 left-4 h-28 w-28 rounded-full bg-gold/20 blur-3xl"
+              className="animate-orb-1 absolute -top-10 left-4 h-28 w-28 rounded-full bg-gold/18 blur-3xl"
             />
             <div
               aria-hidden="true"
-              className="animate-orb-2 absolute -bottom-8 right-0 h-24 w-24 rounded-full bg-teal/18 blur-3xl"
+              className="animate-orb-2 absolute -bottom-8 right-0 h-24 w-24 rounded-full bg-teal/15 blur-3xl"
             />
             <AnimatedTerminal className="rounded-[2rem]" />
           </div>
 
-          {/* ── RIGHT: text content + stats + tech badges ───── */}
+          {/* RIGHT: text content + CTAs + tech stack */}
           <div
             className="relative z-10 flex flex-col gap-6"
             data-aos="fade-left"
             data-aos-delay="160"
           >
             {/* Eyebrow */}
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] gradient-text">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
               {t.hero.eyebrow}
             </p>
 
@@ -806,7 +786,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
             <div className="flex flex-wrap gap-3">
               <Link
                 to={sectionLink("#portfolio")}
-                className="group relative inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-canvas shadow-[0_18px_45px_rgba(245,196,71,0.22)] transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-canvas shadow-[0_18px 45px_rgba(240,192,64,0.22)] transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
                 <span
                   aria-hidden="true"
@@ -854,7 +834,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               <ul className="flex flex-wrap gap-2" role="list">
                 {t.hero.techStack.map((tech) => (
                   <li key={tech}>
-                    <span className="inline-block rounded-full border border-border/55 bg-surface px-3.5 py-1.5 text-[0.74rem] font-semibold text-muted shadow-[0_6px_18px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas">
+                    <span className="inline-block rounded-full border border-border/55 bg-surface px-3.5 py-1.5 text-[0.74rem] font-semibold text-muted shadow-[0_6px 18px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas">
                       {tech}
                     </span>
                   </li>
@@ -883,8 +863,8 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               <div className="textile-band" />
               <div className="p-7 sm:p-9">
                 <p className="text-base leading-8 text-muted sm:text-lg">{t.story.body}</p>
-                <blockquote className="mt-8 rounded-[1.5rem] border border-gold/25 bg-canvas px-5 py-5 font-display text-2xl font-semibold leading-tight tracking-[-0.04em] text-ink sm:text-3xl">
-                  "{t.story.quote}"
+                <blockquote className="mt-8 rounded-[1.5rem] border border-gold/20 bg-canvas/60 px-6 py-6 font-display text-xl font-semibold leading-snug tracking-[-0.03em] text-ink sm:text-2xl">
+                  &ldquo;{t.story.quote}&rdquo;
                 </blockquote>
               </div>
             </div>
@@ -893,7 +873,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
               {t.story.cards.map((card, index) => (
                 <article
                   key={card.title}
-                  className="relative overflow-hidden rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
+                  className="relative overflow-hidden rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px 45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
                   data-aos="fade-up"
                   data-aos-delay={index * 120}
                 >
@@ -960,7 +940,7 @@ function HomePageEnd({ t, socialLinks }) {
             {t.skills.groups.map((group) => (
               <article
                 key={group.title}
-                className="overflow-hidden rounded-[1.85rem] border border-border/55 bg-surface shadow-[0_16px_50px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
+                className="overflow-hidden rounded-[1.85rem] border border-border/55 bg-surface shadow-[0_16px 50px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
                 data-aos="fade-up"
               >
                 <div className="textile-band textile-band-muted" />
@@ -981,7 +961,7 @@ function HomePageEnd({ t, socialLinks }) {
       <section className="section-shell px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-screen-xl">
           <div className="glass-panel relative overflow-hidden rounded-[2.3rem] px-6 py-8 text-ink sm:px-8 sm:py-10 lg:px-12 lg:py-12" data-aos="fade-up">
-            <div className="hero-motif absolute inset-0 opacity-45" />
+            <div className="hero-motif absolute inset-0 opacity-40" />
             <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
               <div>
                 <SectionHeading
@@ -1094,7 +1074,7 @@ function AccessibilityPage({ t, sectionLink }) {
         </nav>
 
         <section className="glass-panel relative overflow-hidden rounded-[2.3rem] px-6 py-8 text-ink sm:px-8 sm:py-10 lg:px-12 lg:py-12" data-aos="fade-up">
-          <div className="hero-motif absolute inset-0 opacity-50" />
+          <div className="hero-motif absolute inset-0 opacity-40" />
           <div className="relative grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
             <div>
               <SectionHeading
@@ -1141,7 +1121,7 @@ function AccessibilityPage({ t, sectionLink }) {
           {t.accessibilityPage.principles.items.map((item) => (
             <article
               key={item.title}
-              className="rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
+              className="rounded-[1.8rem] border border-border/50 bg-surface p-6 shadow-[0_16px 45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-gold/40"
               data-aos="fade-up"
             >
               <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
@@ -1176,7 +1156,7 @@ function AccessibilityPage({ t, sectionLink }) {
             </div>
           </article>
 
-          <article className="rounded-[2rem] border border-border/55 bg-surface p-7 shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-9" data-aos="fade-up" data-aos-delay="120">
+          <article className="rounded-[2rem] border border-border/55 bg-surface p-7 shadow-[0_18px 60px_rgba(0,0,0,0.22)] sm:p-9" data-aos="fade-up" data-aos-delay="120">
             <h2 className="font-display text-4xl leading-tight text-ink">
               {t.accessibilityPage.engagement.title}
             </h2>
@@ -1447,7 +1427,7 @@ function SiteApp() {
 
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-shadow duration-300 ${
-          hasScrolled ? "shadow-[0_18px_55px_rgba(0,0,0,0.28)]" : ""
+          hasScrolled ? "shadow-[0_18px 55px_rgba(0,0,0,0.28)]" : ""
         }`}
       >
         <div className={`textile-band transition-opacity duration-300 ${hasScrolled ? "opacity-80" : "opacity-100"}`} />
@@ -1630,7 +1610,7 @@ function SiteApp() {
         title={t.nav.backToTop}
         tabIndex={showBackToTop ? 0 : -1}
         onClick={handleBackToTop}
-        className={`fixed bottom-5 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold text-canvas shadow-[0_18px_45px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas sm:bottom-6 sm:right-6 ${
+        className={`fixed bottom-5 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold text-canvas shadow-[0_18px 45px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas sm:bottom-6 sm:right-6 ${
           showBackToTop
             ? "translate-y-0 opacity-100"
             : "pointer-events-none translate-y-4 opacity-0"
