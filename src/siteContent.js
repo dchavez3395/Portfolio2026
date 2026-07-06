@@ -46,8 +46,8 @@ export const projects = [
       es: "Reporte anual",
     },
     summary: {
-      en: "TELUS' seventh annual report shares inspiring stories of real change that will be felt for generations.",
-      es: "El séptimo informe anual de TELUS comparte historias inspiradoras de cambios reales que se sentirán durante generaciones.",
+      en: "Built TELUS's annual reconciliation report site: multi-section React build with a client-controlled CMS, accessible data visualizations, and a publishing workflow for ongoing updates.",
+      es: "Construí el sitio del informe anual de reconciliación de TELUS: build React multisección con CMS controlado por el cliente, visualizaciones de datos accesibles y flujo de publicación para actualizaciones continuas.",
     },
   },
   {
@@ -62,8 +62,8 @@ export const projects = [
       es: "Aviación",
     },
     summary: {
-      en: "Perimeter Aviation and Bearskin Airlines connect communities across Manitoba and Ontario through passenger travel, cargo, and charter services.",
-      es: "Perimeter Aviation y Bearskin Airlines conectan comunidades de Manitoba y Ontario mediante viajes de pasajeros, carga y servicios charter.",
+      en: "Rebuilt Perimeter Aviation's public site: multi-page layout with route schedules, fleet information, and a CMS so staff can update schedules and content without developer involvement.",
+      es: "Reconstruí el sitio público de Perimeter Aviation: layout multipágina con horarios de rutas, información de flota y CMS para que el personal actualice horarios y contenido sin depender del desarrollador.",
     },
   },
   {
@@ -78,8 +78,8 @@ export const projects = [
       es: "Programas de financiamiento",
     },
     summary: {
-      en: "Empowering communities to foster resilience, drive innovation, and create lasting economic impact. Offering financial solutions to support the business ambitions of Manitoba First Nations and their members.",
-      es: "Empoderamos a las comunidades para fomentar la resiliencia, impulsar la innovación y generar un impacto económico duradero. Ofrecemos soluciones financieras para apoyar las ambiciones empresariales de las Primeras Naciones de Manitoba y sus miembros.",
+      en: "Built and maintained the FPEGF site: program application forms, grant management workflows, and a CMS that lets the fund team publish updates without touching code.",
+      es: "Construí y mantuve el sitio de FPEGF: formularios de solicitud de programas, flujos de trabajo para gestión de subvenciones y CMS que permite al equipo publicar actualizaciones sin tocar código.",
     },
   },
   {
@@ -94,8 +94,8 @@ export const projects = [
       es: "Publicación interactiva",
     },
     summary: {
-      en: "The Cherokee Natural World provides a different vision of our place in the world, one rooted in harmonious relationships that are crucial to our future.",
-      es: "El Mundo Natural Cherokee ofrece una visión diferente de nuestro lugar en el mundo, una visión arraigada en relaciones armoniosas que son cruciales para nuestro futuro.",
+      en: "Built an interactive digital publication for Raven Space Publishing: rich-text editorial layout, embedded media handling, and a CMS for managing book releases and author content.",
+      es: "Construí una publicación digital interactiva para Raven Space Publishing: layout editorial con texto enriquecido, manejo de medios embebidos y CMS para gestionar lanzamientos de libros y contenido de autores.",
     },
   },
   {
@@ -110,8 +110,8 @@ export const projects = [
       es: "Mentoría juvenil",
     },
     summary: {
-      en: "IYMP is a communal, relationship-based, after-school healthy living program.",
-      es: "IYMP es un programa comunitario de vida saludable basado en las relaciones, que se lleva a cabo después de la escuela.",
+      en: "Built and supported the IYMP site: multi-page layout with program information, event calendars, resource downloads, and a CMS the team uses to post updates and keep things current.",
+      es: "Construí y di soporte al sitio de IYMP: layout multipágina con información del programa, calendarios de eventos, descargas de recursos y CMS que el equipo usa para publicar actualizaciones.",
     },
   },
   {
@@ -126,8 +126,8 @@ export const projects = [
       es: "Defensores de la juventud",
     },
     summary: {
-      en: "The Manitoba Advocate for Children and Youth (MACY) is here to make sure the voices of young people are heard.",
-      es: "La Defensora de los Niños y Jóvenes de Manitoba (MACY, por sus siglas en inglés) está aquí para garantizar que se escuchen las voces de los jóvenes.",
+      en: "Built and maintained the MACY site: multi-page layout with reports, case data, and a CMS so staff can publish updates and keep pace with ongoing advocacy work.",
+      es: "Construí y mantuve el sitio de MACY: layout multipágina con informes, datos de casos y CMS para que el personal publique actualizaciones sin depender del desarrollador.",
     },
   },
   {
@@ -142,8 +142,8 @@ export const projects = [
       es: "Trabajos de construcción",
     },
     summary: {
-      en: "Manitoba Building Trades (MBT) represents the common goals of over 8,000 construction and trade professionals across 13 member unions.",
-      es: "Manitoba Building Trades (MBT) representa los objetivos comunes de más de 8.000 profesionales de la construcción y oficios relacionados, pertenecientes a nuestros 13 sindicatos miembros.",
+      en: "Built and maintained the MBT site: membership directory, apprenticeship resources, news section, and a CMS so union staff can publish updates without filing a ticket.",
+      es: "Construí y mantuve el sitio de MBT: directorio de membresías, recursos de aprendizaje, sección de noticias y CMS para que el personal sindical publique actualizaciones sin abrir un ticket.",
     },
   },
   {
@@ -158,8 +158,8 @@ export const projects = [
       es: "Educación comunitaria",
     },
     summary: {
-      en: "The Community Education Development Association (CEDA) is dedicated to nurturing the hearts and minds of students, families, teachers, and school administrators in Winnipeg.",
-      es: "La Asociación para el Desarrollo de la Educación Comunitaria (CEDA) es un faro de esperanza y progreso, dedicada a cultivar los corazones y las mentes de los estudiantes, las familias, los maestros y los administradores escolares en Winnipeg, Manitoba.",
+      en: "Built and maintained the CEDA site: multi-page layout with program information, event calendars, and a CMS so the team can keep content current without needing a developer for every update.",
+      es: "Construí y mantuve el sitio de CEDA: layout multipágina con información de programas, calendarios de eventos y CMS para que el equipo mantenga el contenido actualizado sin depender de un desarrollador.",
     },
   },
 ];
@@ -207,7 +207,7 @@ export const translations = {
       visualEyebrow: "What I bring",
       visualTitle: "Useful across the build.",
       visualBody:
-        "I work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and communicate clearly with designers, PMs, QA, and stakeholders.",
+        "I work from Figma or existing code, build responsive interfaces, troubleshoot CMS issues, and keep designers, PMs, and QA informed about what is happening.",
       techStackLabel: "Tech stack",
       techStack: [
         "React",
@@ -240,7 +240,7 @@ export const translations = {
         },
         {
           title: "Calm Communication",
-          body: "I keep status, blockers, and tradeoffs visible so designers, PMs, QA, and stakeholders know what is happening.",
+          body: "I keep status, blockers, and tradeoffs visible so the team knows what is happening and why.",
         },
       ],
     },
@@ -483,7 +483,7 @@ export const translations = {
       visualEyebrow: "Lo que aporto",
       visualTitle: "Útil en varias partes del build.",
       visualBody:
-        "Puedo trabajar desde Figma o desde código existente, construir interfaces responsivas, resolver problemas de CMS y comunicarme con claridad con diseño, PM, QA y stakeholders.",
+        "Puedo trabajar desde Figma o desde código existente, construir interfaces responsivas, resolver problemas de CMS y mantener a diseño, PM y QA informados sobre lo que está pasando.",
       techStackLabel: "Stack tecnológico",
       techStack: [
         "React",
@@ -516,7 +516,7 @@ export const translations = {
         },
         {
           title: "Comunicación tranquila",
-          body: "Mantengo visibles el estado, los bloqueos y los tradeoffs para que diseño, PM, QA y stakeholders sepan qué está pasando.",
+          body: "Mantengo visibles el estado, los bloqueos y los tradeoffs para que el equipo sepa qué está pasando y por qué.",
         },
       ],
     },

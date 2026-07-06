@@ -978,16 +978,16 @@ function HomePageEnd({ t, socialLinks }) {
                 </div>
               </div>
 
-              <div className="grid gap-4">
+              <ul className="grid gap-4" role="list">
                 {t.accessibilitySpotlight.points.map((point) => (
-                  <div
+                  <li
                     key={point}
-                    className="rounded-[1.6rem] border border-border/50 bg-canvas px-5 py-5 backdrop-blur-sm"
+                    className="rounded-[1.6rem] border border-border/50 bg-canvas px-5 py-5"
                   >
                     <p className="text-base leading-7 text-muted">{point}</p>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
