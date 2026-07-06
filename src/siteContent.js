@@ -1,5 +1,4 @@
-﻿import puchicaImage from "./assets/puchica.webp";
-import telusImage from "./assets/telus.webp";
+﻿import telusImage from "./assets/telus.webp";
 import iympImage from "./assets/iymp.png";
 import mbTradesImage from "./assets/mbt.png";
 import manitobaAdvocateImage from "./assets/macy.png";
@@ -22,7 +21,7 @@ export const projects = [
   {
     title: "Puchica",
     domain: "shop.puchica.ca",
-    image: puchicaImage,
+    image: "/puchica-logo.svg",
     demo: "https://shop.puchica.ca/",
     accent: "from-berry via-night to-canvas",
     preview: "from-berry/15 via-night/10 to-canvas",
