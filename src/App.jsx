@@ -8,8 +8,6 @@ import cedawpgImage from "./assets/ceda.webp";
 import fpegfImage from "./assets/FPEGF.png";
 import ravenSpaceImage from "./assets/ravenspace.png";
 import perimeterImage from "./assets/Perimeter.png";
-import yangManGif from "./assets/Yang man.gif";
-
 const translations = {
   en: {
     nav: {

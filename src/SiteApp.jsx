@@ -1314,6 +1314,41 @@ function SiteApp() {
     },
   ];
 
+  // Active nav item: for hash-navigation pages match the hash,
+  // for /accessibility match the pathname directly.
+  const isActiveNavItem = (itemHref) => {
+    if (itemHref.startsWith("#")) {
+      const hashTarget = location.hash === itemHref || location.pathname === `/${itemHref}`;
+      return hashTarget;
+    }
+    return location.pathname === itemHref;
+  };
+
+  // Mobile nav focus trap: when nav is open, keep focus within the nav
+  const handleMobileNavKeyDown = (e) => {
+    if (!navOpen) return;
+    const navContainer = document.getElementById("mobile-navigation");
+    if (!navContainer) return;
+    const focusable = navContainer.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.key === "Tab") {
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -1453,6 +1488,7 @@ function SiteApp() {
                     <li key={item.href}>
                       <Link
                         to={sectionLink(item.href)}
+                        aria-current={isActiveNavItem(item.href) ? "page" : undefined}
                         className="rounded-full px-3 py-2 transition hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
                       >
                         {item.label}
@@ -1515,6 +1551,7 @@ function SiteApp() {
             id="mobile-navigation"
             aria-hidden={!navOpen}
             className={`${navOpen ? "block" : "hidden"} border-t border-border/50 lg:hidden`}
+            onKeyDown={handleMobileNavKeyDown}
           >
             <nav aria-label={t.nav.primaryLabel} className="px-4 py-4 sm:px-6">
               <ul className="grid gap-2">
@@ -1523,6 +1560,7 @@ function SiteApp() {
                     <Link
                       to={sectionLink(item.href)}
                       onClick={closeNav}
+                      aria-current={isActiveNavItem(item.href) ? "page" : undefined}
                       className="block rounded-[1.2rem] border border-transparent bg-surface px-4 py-3 text-sm font-medium text-ink transition hover:border-gold/30 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
                     >
                       {item.label}
