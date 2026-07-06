@@ -22,6 +22,7 @@ export const projects = [
     title: "Puchica",
     domain: "shop.puchica.ca",
     image: "/puchica-logo.svg",
+    logo: "Puchica",
     demo: "https://shop.puchica.ca/",
     accent: "from-[#6D4CFF] via-[#8A78FA] to-[#241B9B]",
     preview: "from-[#6D4CFF]/20 via-[#8A78FA]/10 to-transparent",
