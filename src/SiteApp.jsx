@@ -818,7 +818,7 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
           </div>
 
           {/* Scroll cue */}
-          <div className="mt-16 motion-safe:animate-float-soft" aria-hidden="true">
+          <div className="mt-16" aria-hidden="true">
             <div className="mx-auto flex h-10 w-6 flex-col items-center justify-start gap-1 rounded-full border border-border/40 bg-surface/60 p-1">
               <div className="h-1.5 w-1.5 rounded-full bg-gold/70" />
             </div>
