@@ -27,47 +27,47 @@ const translations = {
       skipLink: "Skip to main content",
     },
     hero: {
-      greeting: "Hello, I'm Daniel",
-      title: "I deliver accessible, business-grade web platforms",
+      greeting: "Hey, I'm Daniel",
+      title: "I build web stuff — and I do it right",
       description:
-        "I'm a full-stack developer with over three years of experience delivering production work using PHP, React, Node, and modern tooling. I can contribute alongside designers, PMs, and QA or manage entire projects independently, always keeping web accessibility, performance, and transparent communication at the center of every delivery.",
-      portfolioCta: "View selected work",
+        "I'm a self-taught full-stack dev who spent years running a car dealership before deciding to actually build things instead of just managing them. Three years in, I've shipped production work for real clients using PHP, React, Node, and a good dose of obsession over accessibility and clean architecture. I'm looking for a team where I can keep growing.",
+      portfolioCta: "See the work",
       accessibilityCta: "Accessibility",
       resumeCta: "Resume",
-      imageAlt: "Portrait of Daniel",
+      imageAlt: "Daniel",
     },
     about: {
       title: "About",
-      lead: "Professional summary",
+      lead: "How I got here",
       body:
-        "I deploy production websites and web applications with a focus on responsive, accessible experiences. My toolkit spans PHP, WordPress (custom themes), Node.js, React, Blade, SCSS, Tailwind CSS, DNS, hosting, and modern deployment platforms. I pair Deque University accessibility training with a background in agency delivery and dealership leadership to keep performance, security, and business priorities aligned with engineering execution.",
-      highlightsTitle: "Experience highlights",
+        "I managed a car dealership for years. Good at it, too — but I wanted to build things, not just sell them. So I taught myself to code, kept at it until it was real, and never looked back.\n\nI specialize in building and shipping production websites and web applications with a focus on responsive, accessible experiences. I've worked with PHP, WordPress, Node.js, React, Blade, SCSS, and Tailwind. I bring Deque University accessibility training to every project, and I know how to run one because I used to run an entire dealership.",
+      highlightsTitle: "What I bring",
       highlights: [
         "Deque University Web Accessibility Training",
-        "End-to-end delivery from discovery through launch and support",
-        "Stakeholder alignment, executive reporting, and roadmap clarity",
-        "Accessibility-first delivery aligned with WCAG guidance",
-        "CMS architecture, migrations, and lifecycle maintenance",
+        "Built and shipped real client projects, end-to-end",
+        "Comfortable with stakeholders, deadlines, and owning the outcome",
+        "Accessibility-first by default — WCAG guidance is in my workflow, not an afterthought",
+        "CMS architecture, migrations, and ongoing maintenance",
       ],
     },
     portfolio: {
-      title: "Work Highlights",
+      title: "Selected Work",
       visit: "Visit site",
-      ctaTitle: "Seeking a developer who aligns technology with business outcomes?",
-      ctaButton: "Start a conversation",
-      note: "Projects delivered while collaborating with Vincent Design, my current team.",
+      ctaTitle: "Need a dev who gets it?",
+      ctaButton: "Let's talk",
+      note: "",
     },
     homeAccessibility: {
       title: "Why accessibility matters",
       body:
-        "WCAG compliance reduces legal and reputational risk, improves SEO, and makes digital products usable for more people. It is also a quality signal for enterprise buyers and public sector contracts.",
+        "WCAG compliance isn't just about doing the right thing — it reduces legal risk, improves SEO, and makes your product usable by more people. For enterprise and public sector clients, it's a baseline expectation.",
       button: "Learn about accessibility",
     },
     homeContact: {
-      title: "Ready to talk?",
+      title: "Want to work together?",
       body:
-        "Share your goals, timeline, and constraints. I will respond with next steps and availability.",
-      button: "Contact",
+        "Tell me what you're building. I'll get back to you with next steps and honest availability.",
+      button: "Get in touch",
     },
     accessibility: {
       breadcrumb: {
@@ -79,37 +79,37 @@ const translations = {
         label: "Accessibility",
         title: "Web accessibility, explained",
         subtitle:
-          "Accessible experiences reduce risk, expand reach, and improve usability for everyone.",
+          "Accessible experiences aren't just inclusive — they're better products for everyone.",
         ctaPrimary: "Back to home",
         ctaSecondary: "Contact",
       },
       why: {
         title: "Why accessibility still matters",
         paragraphs: [
-          "Accessibility is part of a reliable product experience and a responsible brand, not a checkbox at the end of development. Framing web access as a risk management practice keeps launches calm and lets teams protect customers who rely on screen readers, keyboard navigation, and adaptive hardware.",
-          "When accessibility is prioritized, the product becomes easier to understand on any device, performs better in low-bandwidth scenarios, and reaches the business and public sector buyers who expect inclusive delivery.",
+          "Accessibility is part of a solid product and a responsible brand — not a box to check at the end of development. Treating it as a practice reduces launch pressure and protects the people who rely on screen readers, keyboard navigation, and adaptive hardware.",
+          "When accessibility is a priority, the product works better on any device, performs better on slow connections, and scores better with enterprise and public sector buyers who expect inclusive delivery.",
         ],
       },
       principles: {
-        title: "Guiding principles for inclusive delivery",
+        title: "Principles for inclusive delivery",
         intro:
-          "Accessibility is built into design, content, and engineering workstreams. The goal is measurable improvements, not a surprise sprint at launch.",
+          "Accessibility gets built into design, content, and engineering. The goal is measurable improvements — not a surprise sprint at launch.",
         items: [
           {
             title: "Structure for people",
-            body: "Semantic HTML, consistent landmarks, and visible focus ensure everyone can navigate with a keyboard or assistive device.",
+            body: "Semantic HTML, consistent landmarks, and visible focus let everyone navigate with a keyboard or assistive device.",
           },
           {
             title: "Readable content",
-            body: "Contrast, typography, clear error handling, and straightforward language make content legible under different conditions.",
+            body: "Contrast, typography, clear error handling, and plain language make content legible across conditions.",
           },
           {
-            title: "Media ownership",
-            body: "Alt text, captions, transcripts, and descriptive controls keep images, video, and interactive components meaningful.",
+            title: "Media that means something",
+            body: "Alt text, captions, transcripts, and descriptive controls make images, video, and interactive components actually useful.",
           },
           {
-            title: "Process & partnership",
-            body: "Reviews at design and build, WCAG-aligned checklists, and documentation keep teams accountable without slowing delivery.",
+            title: "Process and partnership",
+            body: "Reviews at design and build, WCAG-aligned checklists, and documentation keep the team accountable without slowing delivery.",
           },
         ],
         closing:
@@ -130,13 +130,13 @@ const translations = {
       details: {
         title: "Professional accessibility support",
         intro:
-          "Accessibility programs work best when strategy, design, content, and engineering move together. I help teams turn requirements into measurable improvements without slowing delivery.",
+          "Accessibility programs work best when strategy, design, content, and engineering move together. I help teams turn requirements into real improvements without slowing delivery.",
         paragraphs: [
-          "A typical engagement starts with a discovery review of templates, components, and key user flows. I combine automated checks and manual testing with keyboard and screen reader patterns to confirm real-world issues.",
-          "From there, I deliver a prioritized remediation plan that maps fixes to WCAG 2.1 AA success criteria, effort, and business impact. That keeps stakeholders aligned and makes it easy to sequence work across sprints.",
-          "I also support content standards, accessible writing, and design system updates so fixes stay in place. The goal is not only compliance, but long-term usability and reduced support costs.",
+          "A typical engagement starts with a discovery review of templates, components, and key user flows. I combine automated checks and manual testing with keyboard and screen reader patterns to confirm real issues.",
+          "Then I deliver a prioritized remediation plan that maps fixes to WCAG 2.1 AA success criteria, effort, and impact. That keeps stakeholders aligned and makes it easy to sequence work across sprints.",
+          "I also support content standards, accessible writing, and design system updates so fixes stay in place.",
         ],
-        listTitle: "What you receive",
+        listTitle: "What you get",
         listItems: [
           "Clear audit notes with screenshots and code-level guidance",
           "Priority-based roadmap and validation plan",
@@ -144,7 +144,7 @@ const translations = {
           "Collaboration with designers, developers, and stakeholders",
         ],
         closing:
-          "If you need training, governance, or ongoing QA, I can build a lightweight process your team can keep.",
+          "If you need training, governance, or ongoing QA, I can build a lightweight process your team can maintain.",
       },
       note: "This page provides general information and is not legal advice.",
     },
@@ -206,8 +206,8 @@ const translations = {
     },
     footer: {
       name: "Daniel Chavez",
-      tagline: "Full-stack developer.",
-      availability: "open to full-time roles and freelance consulting.",
+      tagline: "Full-stack dev.",
+      availability: "Open to full-time roles and select consulting work.",
       navLabel: "Sections",
       socialLabel: "Connect",
       links: [
@@ -235,45 +235,45 @@ const translations = {
     },
     hero: {
       greeting: "Hola, soy Daniel",
-      title: "Diseno plataformas web accesibles y orientadas al negocio",
+      title: "Construyo web — y lo hago bien",
       description:
-        "Desarrollador full stack con tres anos de entrega en produccion y experiencia previa liderando desarrollo de negocio en concesionarias. Traduzco prioridades ejecutivas en soluciones confiables y escalables con React, WordPress, PHP, Blade, DNS y herramientas modernas.",
-      portfolioCta: "Ver trabajo destacado",
+        "Soy un dev full-stack autodidacta. Antes de escribir código, manejaba un concesionario de autos. Aprendí a construir cosas en lugar de solo administrarlas, y nunca miré atrás. Llevo tres años entregando trabajo en producción para clientes reales con PHP, React, Node y un buen nivel de obsesión con accesibilidad y arquitectura limpia.",
+      portfolioCta: "Ver el trabajo",
       accessibilityCta: "Accesibilidad",
       resumeCta: "CV",
-      imageAlt: "Retrato de Daniel",
+      imageAlt: "Daniel",
     },
     about: {
       title: "Acerca",
-      lead:
-        "Desarrollador full stack estrategico enfocado en resultados, claridad y ejecucion confiable.",
-      body: "En los ultimos tres anos he entregado sitios y aplicaciones en produccion, desde descubrimiento hasta lanzamiento y soporte. Mi rol anterior como gerente de desarrollo de negocio en concesionarias fortalecio mi enfoque en alineacion de interesados, estrategia de pipeline y disciplina operativa. Priorizo cumplimiento WCAG, rendimiento y arquitectura mantenible, con experiencia en WordPress, PHP, Blade, DNS, hosting y stacks modernos de front end.",
-      highlightsTitle: "Aspectos clave",
+      lead: "Cómo llegué aquí",
+      body: "Manejé un concesionario de autos durante años. Me iba bien — pero quería construir cosas, no solo venderlas. Así que aprendí a programar por mi cuenta, seguí hasta que se volvió real, y nunca miré atrás.\n\nMe especializo en construir y entregar sitios web y aplicaciones en producción con enfoque en experiencias responsivas y accesibles. He trabajado con PHP, WordPress, Node.js, React, Blade, SCSS y Tailwind. Llevo capacitación en accesibilidad Deque University en cada proyecto, y sé cómo manejar un proyecto completo porque antes manejaba un concesionario entero.",
+      highlightsTitle: "Lo que traigo",
       highlights: [
-        "Entrega de punta a punta desde descubrimiento hasta lanzamiento y soporte",
-        "Alineacion de interesados, reportes ejecutivos y claridad de roadmap",
-        "Entrega accesible alineada a guias WCAG",
-        "Arquitectura y migraciones de CMS con mantenimiento continuo",
+        "Capacitación en Accesibilidad Web de Deque University",
+        "Proyectos reales entregados de principio a fin",
+        "Cómodo con interesados, plazos y responsable del resultado",
+        "Accesibilidad primero — WCAG está en mi flujo, no como nota al margen",
+        "Arquitectura de CMS, migraciones y mantenimiento continuo",
       ],
     },
     portfolio: {
-      title: "Trabajo destacado",
+      title: "Trabajo Seleccionado",
       visit: "Ver sitio",
-      ctaTitle: "Busca un desarrollador que alinee tecnologia con resultados de negocio?",
-      ctaButton: "Iniciar conversacion",
-      note: "Proyectos entregados mientras colaboro con Vincent Design, mi equipo actual.",
+      ctaTitle: "Necesitas un dev que entienda?",
+      ctaButton: "Hablemos",
+      note: "",
     },
     homeAccessibility: {
-      title: "Por que importa la accesibilidad",
+      title: "Por qué importa la accesibilidad",
       body:
-        "Cumplir WCAG reduce riesgo legal, mejora SEO y abre tu sitio a mas personas. Tambien es una senal de calidad para clientes enterprise y sector publico.",
+        "Cumplir con WCAG no solo se trata de hacer lo correcto — reduce riesgo legal, mejora SEO y hace tu producto usable para más personas. Para clientes enterprise y del sector público, es una expectativa básica.",
       button: "Ver accesibilidad",
     },
     homeContact: {
-      title: "Listo para conversar?",
+      title: "Quieres trabajar juntos?",
       body:
-        "Comparte objetivos, tiempos y restricciones. Respondere con disponibilidad y siguientes pasos.",
-      button: "Contacto",
+        "Cuéntame qué estás construyendo. Te respondo con los siguientes pasos y disponibilidad real.",
+      button: "Contactar",
     },
     accessibility: {
       breadcrumb: {
@@ -285,25 +285,25 @@ const translations = {
         label: "Accesibilidad",
         title: "Accesibilidad web, explicada",
         subtitle:
-          "Las experiencias accesibles reducen riesgo, amplian el alcance y mejoran la usabilidad para todos.",
+          "Las experiencias accesibles no solo son inclusivas — son mejores productos para todos.",
         ctaPrimary: "Volver al inicio",
         ctaSecondary: "Contacto",
       },
       why: {
-        title: "Por que sigue importando la accesibilidad",
+        title: "Por qué sigue importando la accesibilidad",
         paragraphs: [
-          "La accesibilidad es parte de una experiencia confiable y una marca responsable, no un requisito que se valida al final. Considerarla reduce la presion de los lanzamientos y protege a personas que dependen de lectores de pantalla, navegacion por teclado y hardware adaptado.",
-          "Cuando la accesibilidad es prioridad, el producto funciona mejor en cualquier dispositivo, rinde en conexiones lentas y mejora la percepcion ante clientes corporativos y del sector publico que exigen experiencias inclusivas.",
+          "La accesibilidad es parte de un producto sólido y de una marca responsable — no un requisito que se valida al final. Tratarla como práctica reduce la presión en los lanzamientos y protege a las personas que dependen de lectores de pantalla, navegación por teclado y hardware adaptado.",
+          "Cuando la accesibilidad es prioridad, el producto funciona mejor en cualquier dispositivo, rinde en conexiones lentas, y mejora la percepción ante clientes corporativos y del sector público que exigen experiencias inclusivas.",
         ],
       },
       principles: {
-        title: "Principios orientadores para entregas inclusivas",
+        title: "Principios para entregas inclusivas",
         intro:
-          "La accesibilidad se incorpora a los flujos de diseño, contenido e ingeniería. Buscamos mejoras medibles sin sorpresas en la producción.",
+          "La accesibilidad se incorpora en diseño, contenido e ingeniería. El objetivo es mejoras medibles, no un sprint sorpresa al final.",
         items: [
           {
-            title: "Estructura centrada en personas",
-            body: "HTML semántico, puntos de referencia consistentes y foco visible permiten navegar con teclado o dispositivos de asistencia.",
+            title: "Estructura para personas",
+            body: "HTML semántico, landmarks consistentes y foco visible permiten navegar con teclado o dispositivos de asistencia.",
           },
           {
             title: "Contenido legible",
@@ -315,11 +315,11 @@ const translations = {
           },
           {
             title: "Proceso y colaboración",
-            body: "Revisiones en diseño y construcción, listas de verificación alineadas a WCAG y documentación mantienen a los equipos responsables sin retrasar entregas.",
+            body: "Revisiones en diseño y construcción, checklists alineados a WCAG y documentación mantienen al equipo responsable sin retrasar entregas.",
           },
         ],
         closing:
-          "Estos principios guían la evaluación, remediación y transferencia de conocimiento para que la accesibilidad crezca con el producto.",
+          "Estos principios guían evaluación, remediación y transferencia de conocimiento para que la accesibilidad crezca con el producto.",
       },
       context: {
         title: "Contexto legal y de cumplimiento",
@@ -336,10 +336,10 @@ const translations = {
       details: {
         title: "Soporte profesional de accesibilidad",
         intro:
-          "Los programas de accesibilidad funcionan mejor cuando estrategia, diseño, contenido y desarrollo avanzan juntos. Ayudo a equipos a convertir requisitos en mejoras medibles sin frenar entregas.",
+          "Los programas de accesibilidad funcionan mejor cuando estrategia, diseño, contenido y desarrollo avanzan juntos. Ayudo a equipos a convertir requisitos en mejoras reales sin frenar entregas.",
         paragraphs: [
           "Un proyecto típico empieza con una revisión de plantillas, componentes y flujos clave. Combino pruebas automáticas y manuales con teclado y lector de pantalla para confirmar problemas reales.",
-          "Luego entrego un plan de remediación priorizado que mapea cada ajuste a WCAG 2.1 AA, esfuerzo y riesgo. Esto alinea a los equipos y facilita planificar por sprints.",
+          "Después entrego un plan de remediación priorizado que mapea cada ajuste a WCAG 2.1 AA, esfuerzo e impacto. Esto mantiene al equipo alineado y facilita planificar por sprints.",
           "También apoyo estándares de contenido, redacción accesible y cambios en el sistema de diseño para que las mejoras se mantengan.",
         ],
         listTitle: "Lo que recibes",
@@ -412,8 +412,8 @@ const translations = {
     footer: {
       name: "Daniel Chavez",
       tagline:
-        "Desarrollador full stack.",
-      availability: "Disponible para roles full time y consultoria selecta.",
+        "Dev full-stack.",
+      availability: "Disponible para roles full-time y consultoría selecta.",
       navLabel: "Secciones",
       socialLabel: "Conectar",
       links: [

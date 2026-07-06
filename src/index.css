@@ -336,10 +336,114 @@
     box-shadow: 0 24px 80px rgb(94 72 42 / 0.16);
   }
 
+  /* ─── Typing cursor ─────────────────────────────── */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  .cursor-blink {
+    display: inline-block;
+    width: 2px;
+    height: 1.05em;
+    background: rgb(var(--color-gold));
+    vertical-align: text-bottom;
+    animation: blink 0.85s step-end infinite;
+  }
+
+  /* ─── Glow pulse ───────────────────────────────── */
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%       { opacity: 0.9;  transform: scale(1.06); }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3.2s ease-in-out infinite;
+  }
+
+  /* ─── Shimmer sweep ────────────────────────────── */
+  @keyframes shimmer-sweep {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      104deg,
+      transparent    15%,
+      rgb(var(--color-gold) / 0.45) 38%,
+      rgb(var(--color-teal) / 0.35) 52%,
+      transparent    85%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-sweep 3.2s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* ─── Gradient text ────────────────────────────── */
+  .gradient-text {
+    background: linear-gradient(
+      92deg,
+      rgb(var(--color-gold))   0%,
+      rgb(var(--color-teal))  50%,
+      rgb(var(--color-berry)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── Gradient border accent ───────────────────── */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-gold))  0%,
+      rgb(var(--color-teal)) 50%,
+      rgb(var(--color-berry)) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ─── Orb float variants ────────────────────────── */
+  @keyframes orb-drift-1 {
+    0%, 100% { transform: translate3d(0,   0,   0);   }
+    33%       { transform: translate3d(12px, -8px, 0); }
+    66%       { transform: translate3d(-8px,  6px, 0); }
+  }
+
+  @keyframes orb-drift-2 {
+    0%, 100% { transform: translate3d(0,  0,  0);    }
+    33%       { transform: translate3d(-10px, 10px, 0); }
+    66%       { transform: translate3d( 8px, -6px, 0); }
+  }
+
+  .animate-orb-1 { animation: orb-drift-1 11s ease-in-out infinite; }
+  .animate-orb-2 { animation: orb-drift-2 14s ease-in-out infinite; }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-float-soft,
-    .animate-drift {
+    .animate-drift,
+    .animate-glow-pulse,
+    .animate-shimmer,
+    .animate-orb-1,
+    .animate-orb-2 {
       animation: none;
     }
+    .cursor-blink { animation: none; opacity: 1; }
   }
 }
