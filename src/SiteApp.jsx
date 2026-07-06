@@ -230,7 +230,6 @@ function AnimatedTerminal({ className = "" }) {
   ];
 
   const [displayedLines, setDisplayedLines] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     if (displayedLines < lines.length) {
@@ -238,11 +237,6 @@ function AnimatedTerminal({ className = "" }) {
       return () => clearTimeout(t);
     }
   }, [displayedLines, lines.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => setShowCursor((s) => !s), 530);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div
@@ -264,9 +258,9 @@ function AnimatedTerminal({ className = "" }) {
           </div>
         ))}
         {displayedLines < lines.length && (
-          <div className="flex" style={{ paddingLeft: `${lines[displayedLines]?.indent * 1.25 ?? 0}rem` }}>
+          <div className="flex" style={{ paddingLeft: `${(lines[displayedLines]?.indent ?? 0) * 1.25}rem` }}>
             <span className={`${lines[displayedLines]?.color ?? "text-muted"}`}>
-              {lines[displayedLines]?.text.slice(0, Math.floor(Math.random() * 3))}
+              {lines[displayedLines]?.text}
             </span>
             <span className="cursor-blink" aria-hidden="true" />
           </div>
@@ -285,7 +279,7 @@ function AnimatedTerminal({ className = "" }) {
   );
 }
 
-function SectionHeading({ eyebrow, title, description, center = false, inverted = false }) {
+function SectionHeading({ eyebrow, title, description, center = false }) {
   return (
     <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
       <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
