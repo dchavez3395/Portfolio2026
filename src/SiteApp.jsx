@@ -616,8 +616,8 @@ function ProjectCard({ project, visitLabel, language }) {
           {project.summary[language]}
         </p>
         <div className="mt-6 flex items-center justify-end border-t border-border/45 pt-4">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-all duration-300 group-hover:gap-3 group-hover:text-ink">
-            <span className="rounded-full bg-night/70 px-2 py-0.5 group-hover:bg-night/90 transition-colors duration-300">{visitLabel}</span>
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-all duration-300 group-hover:gap-3">
+            <span className="rounded-full bg-night/70 px-2 py-0.5 transition-colors duration-300 group-hover:bg-night/90">{visitLabel}</span>
             <ArrowIcon className="h-4 w-4" />
           </span>
         </div>
