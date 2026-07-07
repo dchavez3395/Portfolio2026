@@ -642,16 +642,6 @@ function HomePage({ t, language, sectionLink, socialLinks }) {
 
         <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
 
-          {/* Brand mark: bold geometric "D" in gold */}
-          <div
-            className="mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 shadow-[0_0_60px_rgba(240,192,64,0.18)]"
-            aria-hidden="true"
-          >
-            <span className="font-display text-6xl font-bold leading-none text-gold select-none tracking-[-0.05em]">
-              D
-            </span>
-          </div>
-
           {/* Eyebrow */}
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-gold">
             {t.hero.eyebrow}
