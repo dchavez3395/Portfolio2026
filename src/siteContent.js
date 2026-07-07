@@ -35,6 +35,22 @@ export const projects = [
     },
   },
   {
+    title: "Tamalpais Trust",
+    domain: "tamalpaistrust.com",
+    image: "/tamalpais-logo.png",
+    demo: "https://tamalpaistrust.wpenginepowered.com/",
+    accent: "from-[#7B2D8B] via-[#D4A843] to-[#2D6B4F]",
+    preview: "from-[#7B2D8B]/20 via-[#D4A843]/10 to-transparent",
+    category: {
+      en: "Non-profit",
+      es: "Sin fines de lucro",
+    },
+    summary: {
+      en: "Built a public-facing site for an Indigenous-led grantmaking organization. Multi-region grant partner directory, interactive map, community investments showcase, and a publishing workflow for ongoing updates.",
+      es: "Construí un sitio público para una organización de financiamiento indígena. Directorio de socios receptores, mapa interactivo, portafolio de inversiones comunitarias y flujo de publicación para actualizaciones continuas.",
+    },
+  },
+  {
     title: "TELUS Reconciliation Report",
     domain: "reconciliationreport.telus.com",
     image: telusImage,
