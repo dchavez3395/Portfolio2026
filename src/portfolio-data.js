@@ -215,11 +215,11 @@ export const credentials = [
 export const principles = [
   {
     title: "Production mindset",
-    body: "I build past the first launch — content editing, component reuse, QA, deployment, and whatever the next person will need to understand.",
+    body: "I build past the first launch: content editing, component reuse, QA, deployment, and whatever the next person will need to understand.",
   },
   {
-    title: "Accessible by habit",
-    body: "Semantic markup, visible focus, readable contrast, and predictable interaction are just part of how I write front-end, not a phase at the end.",
+    title: "Inherited codebases",
+    body: "I join projects mid-flight, read the existing patterns, and leave the code cleaner than I found it. No rewrite unless asked.",
   },
   {
     title: "Calm communication",

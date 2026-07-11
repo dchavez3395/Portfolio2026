@@ -20,7 +20,7 @@ import {
 // ============================================================
 // HEADER
 // ============================================================
-function Header({ view, onNav, onNavHome, onNavWork, onNavResume, onNavA11y, mobileOpen, setMobileOpen }) {
+function Header({ onNavHome, onNavWork, onNavResume, onNavA11y, mobileOpen, setMobileOpen }) {
   const navBtn = (label, action, isEmail = false) => (
     <button
       className={isEmail ? "pk-nav__email" : "pk-nav__link"}
@@ -64,7 +64,7 @@ function Header({ view, onNav, onNavHome, onNavWork, onNavResume, onNavA11y, mob
 // ============================================================
 // FOOTER
 // ============================================================
-function Footer({ onNavHome }) {
+function Footer() {
   return (
     <footer className="pk-footer">
       <div className="pk-footer__inner">
@@ -250,7 +250,7 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
       </section>
 
       {/* APPROACH */}
-      <section id="about" className="pk-section">
+      <section id="approach" className="pk-section">
         <div className="pk-label-row">
           <span className="pk-label-row__primary">Approach</span>
         </div>
@@ -274,6 +274,7 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
         <div className="pk-label-row">
           <span className="pk-label-row__primary">Capabilities</span>
         </div>
+        <h2 className="pk-visually-hidden">Capabilities</h2>
         <div className="pk-skills-grid">
           {skillGroups.map((g, i) => (
             <div key={i}>
@@ -780,8 +781,6 @@ function App() {
       <div className="pk-grid-overlay" aria-hidden="true"></div>
 
       <Header
-        view={view}
-        onNav={() => {}}
         onNavHome={goHome}
         onNavWork={goWork}
         onNavResume={goResume}
@@ -814,7 +813,7 @@ function App() {
         )}
       </main>
 
-      <Footer onNavHome={goHome} />
+      <Footer />
 
       {showBackToTop && (
         <button
