@@ -408,6 +408,29 @@ button {
   border-bottom: 1px solid var(--hair);
   overflow: hidden;
   padding: 16px 0;
+  position: relative;
+}
+
+.pk-marquee__toggle {
+  position: absolute;
+  top: 50%;
+  right: clamp(20px, 5vw, 64px);
+  transform: translateY(-50%);
+  z-index: 2;
+  background: var(--bg);
+  border: 1px solid var(--hair-strong);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: "JetBrains Mono", monospace;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.pk-marquee__toggle:hover,
+.pk-marquee__toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .pk-marquee__track {
@@ -421,6 +444,10 @@ button {
   text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;
+}
+
+.pk-marquee__track--paused {
+  animation-play-state: paused;
 }
 
 /* Featured work grid */
@@ -1498,8 +1525,33 @@ button {
     clamp(64px, 10vh, 140px);
 }
 
+/* Skip link */
+.pk-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: top 0.2s;
+}
+
+.pk-skip-link:focus {
+  top: 0;
+  color: var(--bg);
+}
+
 /* Main */
 .pk-main {
   position: relative;
   z-index: 1;
+}
+
+.pk-main:focus {
+  outline: none;
 }

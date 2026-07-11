@@ -84,6 +84,7 @@ function Footer({ onNavHome }) {
 function HomeView({ goWork, goA11y, goResume, openCase }) {
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
+  const [marqueePaused, setMarqueePaused] = useState(false);
 
   return (
     <div>
@@ -118,8 +119,19 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
       </section>
 
       {/* STACK MARQUEE */}
-      <section className="pk-marquee" aria-hidden="true">
-        <div className="pk-marquee__track">
+      <section className="pk-marquee" aria-label="Tech stack">
+        <button
+          className="pk-marquee__toggle"
+          aria-label={marqueePaused ? "Play scrolling tech stack" : "Pause scrolling tech stack"}
+          aria-pressed={marqueePaused}
+          onClick={() => setMarqueePaused(!marqueePaused)}
+        >
+          {marqueePaused ? "▶" : "❚❚"}
+        </button>
+        <div
+          className={`pk-marquee__track ${marqueePaused ? "pk-marquee__track--paused" : ""}`}
+          aria-hidden="true"
+        >
           <span>
             &nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;Node.js&nbsp;&nbsp;/&nbsp;&nbsp;Express&nbsp;&nbsp;/&nbsp;&nbsp;JavaScript&nbsp;&nbsp;/&nbsp;&nbsp;PHP&nbsp;&nbsp;/&nbsp;&nbsp;WordPress&nbsp;&nbsp;/&nbsp;&nbsp;Tailwind&nbsp;&nbsp;/&nbsp;&nbsp;SCSS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Figma&nbsp;&nbsp;/&nbsp;&nbsp;
           </span>
@@ -658,6 +670,9 @@ function App() {
 
   return (
     <div className="pk-root">
+      <a href="#main-content" className="pk-skip-link">
+        Skip to main content
+      </a>
       <div className="pk-grid-overlay" aria-hidden="true"></div>
 
       <Header
@@ -671,7 +686,7 @@ function App() {
         setMobileOpen={setMobileOpen}
       />
 
-      <main id="top" className="pk-main">
+      <main id="main-content" className="pk-main" tabIndex={-1}>
         {view === "home" && (
           <HomeView
             goWork={goWork}
