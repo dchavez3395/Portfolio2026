@@ -170,6 +170,8 @@ button {
   align-items: center;
   gap: 11px;
   color: var(--text);
+  min-height: 24px;
+  padding: 4px 0;
 }
 
 .pk-logo__square {
@@ -194,11 +196,14 @@ button {
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
+  padding: 8px 4px;
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
   transition: color 0.2s;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .pk-nav__link:hover {
@@ -406,24 +411,24 @@ button {
 .pk-marquee {
   border-top: 1px solid var(--hair);
   border-bottom: 1px solid var(--hair);
-  overflow: hidden;
+  overflow: visible;
   padding: 16px 0;
   position: relative;
 }
 
 .pk-marquee__toggle {
   position: absolute;
-  top: 50%;
+  top: -20px;
   right: clamp(20px, 5vw, 64px);
-  transform: translateY(-50%);
   z-index: 2;
   background: var(--bg);
   border: 1px solid var(--hair-strong);
   color: var(--muted);
-  font-size: 11px;
-  padding: 6px 10px;
+  font-size: 13px;
+  padding: 6px 12px;
   cursor: pointer;
   font-family: "JetBrains Mono", monospace;
+  line-height: 1;
   transition: color 0.2s, border-color 0.2s;
 }
 
@@ -469,13 +474,15 @@ button {
   border: 1px solid var(--hair);
   border-radius: 5px;
   overflow: hidden;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   text-decoration: none;
   color: var(--text);
 }
 
 .pk-tile:hover {
   border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 20px 50px -20px rgba(199, 249, 78, 0.15);
+  transform: translateY(-3px);
   color: var(--text);
 }
 
@@ -485,6 +492,11 @@ button {
   display: grid;
   place-items: center;
   overflow: hidden;
+  transition: filter 0.3s;
+}
+
+.pk-tile:hover .pk-tile__top {
+  filter: brightness(1.1);
 }
 
 .pk-tile__chip {
@@ -581,13 +593,15 @@ button {
   border-radius: 5px;
   overflow: hidden;
   height: 224px;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
   text-decoration: none;
   color: var(--text);
 }
 
 .pk-shipped-card:hover {
-  border-color: var(--hair-strong);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 30px -16px rgba(199, 249, 78, 0.12);
+  transform: translateY(-2px);
   color: var(--text);
 }
 
@@ -668,6 +682,12 @@ button {
 .pk-principle {
   padding: 22px 0;
   border-top: 1px solid var(--hair);
+  transition: border-color 0.25s, padding-left 0.25s;
+}
+
+.pk-principle:hover {
+  border-top-color: var(--accent);
+  padding-left: 8px;
 }
 
 .pk-principle__h3 {
@@ -712,6 +732,11 @@ button {
   letter-spacing: -0.015em;
   margin: 0;
   color: var(--text);
+  transition: color 0.25s;
+}
+
+.pk-skill-group__items:hover {
+  color: var(--accent);
 }
 
 /* Accessibility block */
@@ -821,8 +846,12 @@ button {
 .pk-contact__link {
   border-bottom: 1px solid var(--hair-strong);
   padding-bottom: 3px;
+  padding-top: 4px;
   color: var(--muted);
   transition: all 0.2s;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .pk-contact__link:hover {
@@ -832,6 +861,34 @@ button {
 
 .pk-contact__location {
   margin-left: auto;
+}
+
+/* Back to top floating button */
+.pk-back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.2s;
+  animation: riseIn 0.2s ease-out;
+}
+
+.pk-back-to-top:hover {
+  box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.16), 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: var(--bg);
 }
 
 /* Footer */
@@ -879,6 +936,10 @@ button {
 .pk-breadcrumb__link {
   color: var(--muted);
   transition: color 0.2s;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 0;
 }
 
 .pk-breadcrumb__link:hover {
@@ -932,8 +993,16 @@ button {
 }
 
 .pk-a11y-principle {
-  border-top: 1px solid var(--hair);
-  padding-top: 20px;
+  border: 1px solid rgba(199, 249, 78, 0.15);
+  border-radius: 6px;
+  padding: 24px 20px;
+  background: rgba(199, 249, 78, 0.03);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.pk-a11y-principle:hover {
+  border-color: rgba(199, 249, 78, 0.35);
+  background: rgba(199, 249, 78, 0.06);
 }
 
 .pk-a11y-principle__h3 {
@@ -999,7 +1068,7 @@ button {
   gap: 16px;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--body);
+  color: var(--text);
   border-top: 1px solid var(--hair);
   padding: 16px 0;
 }
@@ -1010,12 +1079,30 @@ button {
   color: var(--accent);
 }
 
+/* A11y page — proof cards */
+.pk-a11y-proof-card:hover {
+  border-color: var(--accent) !important;
+}
+
 /* A11y page — phases */
 .pk-a11y-phases {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: clamp(20px, 3vw, 44px);
+  gap: clamp(16px, 2vw, 24px);
   margin-top: clamp(24px, 4vh, 44px);
+}
+
+.pk-a11y-phases > div {
+  border: 1px solid rgba(199, 249, 78, 0.15);
+  border-radius: 6px;
+  padding: 24px 20px;
+  background: rgba(199, 249, 78, 0.03);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.pk-a11y-phases > div:hover {
+  border-color: rgba(199, 249, 78, 0.35);
+  background: rgba(199, 249, 78, 0.06);
 }
 
 .pk-a11y-phase__h3 {
@@ -1232,17 +1319,19 @@ button {
   gap: 24px;
   align-items: center;
   border-top: 1px solid var(--hair);
-  padding: 18px 0;
+  padding: 18px 18px;
+  margin: 0 -18px;
   color: var(--text);
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .pk-resume-project-link:hover {
   background: linear-gradient(
     to right,
-    rgba(199, 249, 78, 0.06),
-    transparent 70%
+    rgba(199, 249, 78, 0.08),
+    transparent 80%
   );
+  border-top-color: var(--accent);
   color: var(--text);
 }
 
@@ -1483,6 +1572,7 @@ button {
   max-width: 1360px;
   margin: 0 auto;
   padding: clamp(56px, 9vh, 110px) clamp(20px, 5vw, 64px);
+  scroll-margin-top: 80px;
 }
 
 .pk-section--compact {
@@ -1541,9 +1631,12 @@ button {
   transition: top 0.2s;
 }
 
-.pk-skip-link:focus {
+.pk-skip-link:focus,
+.pk-skip-link:focus-visible {
   top: 0;
   color: var(--bg);
+  outline: 2px solid var(--bg);
+  outline-offset: 2px;
 }
 
 /* Main */

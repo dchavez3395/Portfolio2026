@@ -50,11 +50,11 @@ function Header({ view, onNav, onNavHome, onNavWork, onNavResume, onNavA11y, mob
         </nav>
         <button
           className="pk-nav__toggle"
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? "Close menu" : "Menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? "✕" : "Menu"}
+          <span aria-hidden="true">{mobileOpen ? "✕" : "Menu"}</span>
         </button>
       </div>
     </header>
@@ -70,9 +70,6 @@ function Footer({ onNavHome }) {
       <div className="pk-footer__inner">
         <span>Daniel Chavez — danieldev.ca</span>
         <span>© 2026 · Winnipeg, MB</span>
-        <button className="pk-footer__link" onClick={onNavHome} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit" }}>
-          Back to top ↑
-        </button>
       </div>
     </footer>
   );
@@ -126,7 +123,7 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
           aria-pressed={marqueePaused}
           onClick={() => setMarqueePaused(!marqueePaused)}
         >
-          {marqueePaused ? "▶" : "❚❚"}
+          <span aria-hidden="true">{marqueePaused ? "▶" : "❚❚"}</span>
         </button>
         <div
           className={`pk-marquee__track ${marqueePaused ? "pk-marquee__track--paused" : ""}`}
@@ -142,17 +139,48 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
       </section>
 
       {/* ABOUT */}
-      <section className="pk-section--tight" style={{ paddingTop: "clamp(48px, 7vh, 80px)", paddingBottom: "clamp(48px, 7vh, 80px)" }}>
+      <section id="about" className="pk-section--tight" style={{ paddingTop: "clamp(48px, 7vh, 80px)", paddingBottom: "clamp(48px, 7vh, 80px)" }}>
         <div className="pk-label-row">
           <span className="pk-label-row__primary">About</span>
         </div>
-        <p style={{ fontSize: "clamp(20px, 2.4vw, 32px)", lineHeight: 1.4, color: "var(--text)", margin: "clamp(24px, 4vh, 40px) 0 0", maxWidth: "52ch", fontWeight: 500, letterSpacing: "-0.015em" }}>
-          Full-stack developer with 3+ years shipping production web apps in
-          agency environments. Strongest in React, Node.js, and Express with
-          solid PHP and CMS depth. I own projects end to end, from design
-          handoff to deployment, and pair clean, accessible code with
-          AI-assisted workflows to ship faster without cutting corners.
-        </p>
+        <div className="pk-about-grid" style={{ marginTop: "clamp(24px, 4vh, 40px)" }}>
+          <h2 className="pk-about__h2">
+            3+ years shipping production web apps.
+          </h2>
+          <div>
+            <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", margin: "0 0 28px", maxWidth: "52ch" }}>
+              Full-stack developer with agency experience across React,
+              Node.js, Express, PHP, and WordPress. I own projects end to end,
+              from design handoff to deployment.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
+                  Accessible by habit
+                </h3>
+                <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
+                  WCAG-compliant front-end built by habit, not bolted on at the end.
+                </p>
+              </div>
+              <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
+                  AI-assisted workflows
+                </h3>
+                <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
+                  Cursor, Copilot, and Claude to ship faster without cutting corners.
+                </p>
+              </div>
+              <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
+                  CMS depth
+                </h3>
+                <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
+                  WordPress, Shopify, and custom CMS architecture that keeps editors self-sufficient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FEATURED WORK */}
@@ -318,7 +346,7 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
 // ============================================================
 // ACCESSIBILITY VIEW
 // ============================================================
-function AccessibilityView({ goHome }) {
+function AccessibilityView({ goHome, openCase }) {
   return (
     <div className="pk-page">
       <div className="pk-breadcrumb">
@@ -339,6 +367,7 @@ function AccessibilityView({ goHome }) {
         contrast, and content that's structured before it's styled.
       </p>
 
+      {/* Principles with a hairline break before them */}
       <div className="pk-a11y-principles">
         {a11yPrinciples.map((p, i) => (
           <div key={i} className="pk-a11y-principle">
@@ -348,9 +377,56 @@ function AccessibilityView({ goHome }) {
         ))}
       </div>
 
-      <div className="pk-a11y-standards">
+      {/* Proof — link to real projects */}
+      <div style={{ marginTop: "clamp(56px, 9vh, 110px)" }}>
+        <div className="pk-page-label">Where this shows up</div>
+        <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", maxWidth: "56ch", margin: "clamp(24px, 4vh, 40px) 0 0" }}>
+          Not theory. These are projects where accessibility shaped the build.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(16px, 2vw, 24px)", marginTop: "clamp(28px, 4vh, 44px)" }}>
+          <button
+            onClick={() => openCase("telus")}
+            style={{ textAlign: "left", background: "none", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", cursor: "pointer", color: "var(--text)", transition: "border-color 0.25s" }}
+            className="pk-a11y-proof-card"
+          >
+            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(19px, 2vw, 24px)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
+              TELUS Reconciliation Report
+            </h3>
+            <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
+              Data visualizations built to be read by screen readers and
+              operated by keyboard, not just looked at. A publishing workflow
+              their team controls.
+            </p>
+            <span style={{ display: "block", marginTop: "14px", fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>
+              Case study →
+            </span>
+          </button>
+          <button
+            onClick={() => openCase("tamalpais")}
+            style={{ textAlign: "left", background: "none", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", cursor: "pointer", color: "var(--text)", transition: "border-color 0.25s" }}
+            className="pk-a11y-proof-card"
+          >
+            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(19px, 2vw, 24px)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
+              Tamalpais Trust
+            </h3>
+            <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
+              An interactive map and grant-partner directory structured to
+              stay browsable and navigable as the network grows. Editor-run
+              publishing without a developer.
+            </p>
+            <span style={{ display: "block", marginTop: "14px", fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>
+              Case study →
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* Standards — not uppercase, sentence case for readability */}
+      <div className="pk-a11y-standards" style={{ marginTop: "clamp(56px, 9vh, 110px)" }}>
         <div>
-          <h2 className="pk-a11y-standards__h2">Standards &amp; risk, in plain terms.</h2>
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(26px, 3.4vw, 44px)", lineHeight: 1.06, letterSpacing: "-0.03em", margin: "0 0 20px", textTransform: "none" }}>
+            Standards &amp; risk, in plain terms.
+          </h2>
           <p className="pk-a11y-standards__lead">
             Teams use WCAG as a practical benchmark for quality, procurement,
             and reducing legal exposure. A few of the frameworks in play:
@@ -366,8 +442,12 @@ function AccessibilityView({ goHome }) {
         </ul>
       </div>
 
+      {/* How I help a team — with a section heading that has visual weight */}
       <div style={{ marginTop: "clamp(56px, 9vh, 110px)" }}>
         <div className="pk-page-label">How I help a team</div>
+        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 50px)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: "clamp(20px, 3vh, 32px) 0 0", textTransform: "uppercase", maxWidth: "20ch" }}>
+          Review, fix, document.
+        </h2>
         <div className="pk-a11y-phases">
           {a11yPhases.map((ph, i) => (
             <div key={i}>
@@ -378,10 +458,12 @@ function AccessibilityView({ goHome }) {
         </div>
       </div>
 
-      <div className="pk-a11y-closing">
-        <div className="pk-a11y-closing__bar" aria-hidden="true"></div>
-        <h2 className="pk-a11y-closing__h2">Build the fix, not just flag it.</h2>
-        <div className="pk-a11y-closing__buttons">
+      {/* Closing — different from home page's block, no raised panel */}
+      <div style={{ marginTop: "clamp(64px, 10vh, 120px)", borderTop: "1px solid var(--text)", paddingTop: "clamp(32px, 5vw, 56px)" }}>
+        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(26px, 4vw, 50px)", lineHeight: 1.02, letterSpacing: "-0.03em", margin: "0 0 24px", maxWidth: "20ch", textTransform: "uppercase" }}>
+          Build the fix, not just flag it.
+        </h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
           <a className="pk-btn-solid" href={EMAIL_HREF}>
             Email me →
           </a>
@@ -389,7 +471,9 @@ function AccessibilityView({ goHome }) {
             Back to home
           </button>
         </div>
-        <p className="pk-a11y-closing__note">General information, not legal advice.</p>
+        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "var(--muted)", margin: "28px 0 0" }}>
+          General information, not legal advice.
+        </p>
       </div>
     </div>
   );
@@ -668,6 +752,26 @@ function App() {
     document.documentElement.lang = "en";
   }, []);
 
+  useEffect(() => {
+    const titles = {
+      home: "Daniel Chavez — Full-stack web developer",
+      accessibility: "Accessibility — Daniel Chavez",
+      resume: "Résumé — Daniel Chavez",
+      case: caseId
+        ? `${projects.find((p) => p.id === caseId)?.title || "Case Study"} — Daniel Chavez`
+        : "Case Study — Daniel Chavez",
+    };
+    document.title = titles[view] || titles.home;
+  }, [view, caseId]);
+
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="pk-root">
       <a href="#main-content" className="pk-skip-link">
@@ -696,7 +800,7 @@ function App() {
           />
         )}
 
-        {view === "accessibility" && <AccessibilityView goHome={goHome} />}
+        {view === "accessibility" && <AccessibilityView goHome={goHome} openCase={openCase} />}
 
         {view === "resume" && <ResumeView goHome={goHome} />}
 
@@ -711,6 +815,16 @@ function App() {
       </main>
 
       <Footer onNavHome={goHome} />
+
+      {showBackToTop && (
+        <button
+          className="pk-back-to-top"
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 }

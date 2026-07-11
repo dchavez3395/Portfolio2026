@@ -52,7 +52,7 @@ export const projects = [
     domain: "ravenspacepublishing.org",
     demo: "https://developmentserver.ravenspacepublishing.org/the-cherokee-natural-world/index",
     discipline: "Interactive publication",
-    stack: "CMS · Editorial",
+    stack: "Scalar · CMS · Editorial",
     featured: true,
     brand: "#1C1A17",
     logo: "/ravenspace.png",
