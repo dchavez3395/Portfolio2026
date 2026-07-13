@@ -25,3 +25,7 @@ dist-ssr
 
 .vercel
 .superpowers/
+
+# Verification artifacts
+_verify_*.png
+_verify_*.mjs

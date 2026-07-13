@@ -54,7 +54,7 @@ function Header({ onNavHome, onNavWork, onNavResume, onNavA11y, mobileOpen, setM
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span aria-hidden="true">{mobileOpen ? "✕" : "Menu"}</span>
+          <span aria-hidden="true">{mobileOpen ? "✕" : "☰"}</span>
         </button>
       </div>
     </header>
