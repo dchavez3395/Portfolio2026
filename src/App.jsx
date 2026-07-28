@@ -5,6 +5,7 @@ import {
   pathItems,
   credentials,
   principles,
+  serviceOffers,
   skillGroups,
   a11yPoints,
   a11yPrinciples,
@@ -20,7 +21,7 @@ import {
 // ============================================================
 // HEADER
 // ============================================================
-function Header({ onNavHome, onNavWork, onNavResume, onNavA11y, mobileOpen, setMobileOpen }) {
+function Header({ onNavHome, onNavServices, onNavWork, onNavResume, onNavA11y, mobileOpen, setMobileOpen }) {
   const navBtn = (label, action, isEmail = false) => (
     <button
       className={isEmail ? "pk-nav__email" : "pk-nav__link"}
@@ -41,6 +42,7 @@ function Header({ onNavHome, onNavWork, onNavResume, onNavA11y, mobileOpen, setM
           Daniel Chavez
         </button>
         <nav aria-label="Primary" className={`pk-nav ${mobileOpen ? "pk-nav--open" : ""}`}>
+          {navBtn("Services", onNavServices)}
           {navBtn("Work", onNavWork)}
           {navBtn("Résumé", onNavResume)}
           {navBtn("A11y", onNavA11y)}
@@ -78,7 +80,7 @@ function Footer() {
 // ============================================================
 // HOME VIEW
 // ============================================================
-function HomeView({ goWork, goA11y, goResume, openCase }) {
+function HomeView({ goServices, goA11y, goResume, openCase }) {
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
   const [marqueePaused, setMarqueePaused] = useState(false);
@@ -96,17 +98,22 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
         </div>
 
         <h1 className="pk-hero__h1">
-          Sites that
+          Technical work
           <br />
-          outlive their
+          that moves
           <br />
-          <span className="pk-hero__h1-accent">launch.</span>
+          <span className="pk-hero__h1-accent">people forward.</span>
         </h1>
 
         <div className="pk-hero__bottom">
+          <p className="pk-hero__intro">
+            Bilingual technical delivery, customer-facing problem solving, and
+            production web work. Based in Manitoba and open to remote roles,
+            contract work, and focused client projects.
+          </p>
           <div className="pk-hero__ctas">
-            <button className="pk-btn-solid" onClick={goWork}>
-              See the work ↓
+            <button className="pk-btn-solid" onClick={goServices}>
+              Ways I can help ↓
             </button>
             <a className="pk-btn-ghost" href={EMAIL_HREF}>
               Get in touch
@@ -145,42 +152,74 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
         </div>
         <div className="pk-about-grid" style={{ marginTop: "clamp(24px, 4vh, 40px)" }}>
           <h2 className="pk-about__h2">
-            4+ years shipping production websites and web apps.
+            Developer, client partner, and finance-trained problem solver.
           </h2>
           <div>
             <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", margin: "0 0 28px", maxWidth: "52ch" }}>
-              Production web developer with agency experience across React,
-              JavaScript, PHP, WordPress, and Shopify. I contribute across the
-              delivery lifecycle, from Figma handoff and implementation through
-              accessibility QA, deployment, and ongoing support.
+              I combine 4+ years of production web experience with earlier
+              finance, sales, CRM, and customer-relationship ownership. That
+              makes me useful in the space between a customer&apos;s business
+              problem and the technical work needed to solve it.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
                 <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
-                  Accessible by habit
+                  Bilingual client communication
                 </h3>
                 <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
-                  WCAG-compliant front-end built by habit, not bolted on at the end.
+                  English is my primary day-to-day language, and I also work
+                  fluently in Spanish.
                 </p>
               </div>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
                 <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
-                  AI-assisted workflows
+                  Commercial judgment
                 </h3>
                 <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
-                  Cursor, Copilot, and Claude to ship faster without cutting corners.
+                  Finance and sales experience taught me to manage pipelines,
+                  documentation, follow-up, and conversations tied to revenue.
                 </p>
               </div>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
                 <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
-                  CMS depth
+                  Hands-on technical delivery
                 </h3>
                 <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
-                  WordPress, Shopify, and custom CMS architecture that keeps editors self-sufficient.
+                  React, WordPress, Shopify, APIs, accessibility QA, deployment,
+                  and ongoing production support.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="pk-section">
+        <div className="pk-label-row">
+          <span className="pk-label-row__primary">Ways I can help</span>
+          <span className="pk-label-row__right">Employment + focused services</span>
+        </div>
+        <div className="pk-services-intro">
+          <h2 className="pk-about__h2">One profile. Several useful lanes.</h2>
+          <p>
+            I am prioritizing a strong full-time role while keeping a small,
+            concrete service menu for organizations that need practical help now.
+          </p>
+        </div>
+        <div className="pk-services-grid">
+          {serviceOffers.map((offer) => (
+            <article key={offer.title} className="pk-service-card">
+              <div className="pk-service-card__meta">
+                <span>{offer.label}</span>
+                <span>{offer.price}</span>
+              </div>
+              <h3>{offer.title}</h3>
+              <p>{offer.body}</p>
+              <p className="pk-service-card__fit">{offer.fit}</p>
+              <a href={EMAIL_HREF}>Ask about this →</a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -313,17 +352,19 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
       {/* CONTACT */}
       <section id="contact" className="pk-section--contact">
         <div className="pk-label-row">
-          <span className="pk-label-row__primary">Next role</span>
+          <span className="pk-label-row__primary">Work together</span>
         </div>
         <h2 className="pk-contact__h2">
-          Let's build
+          Let&apos;s solve
           <br />
-          something <span style={{ color: "var(--accent)" }}>lasting.</span>
+          something <span style={{ color: "var(--accent)" }}>useful.</span>
         </h2>
         <p className="pk-contact__body">
-          I'm after a team where front-end quality, CMS work, and accessibility
-          actually matter, the kind of place that cares who inherits the code.
-          If that's the room you're building, let's talk.
+          I&apos;m open to full-time remote roles across implementation,
+          customer success, solutions, account management, fintech, and web
+          delivery, plus a limited number of focused client projects. If the
+          work rewards ownership, communication, and technical judgment,
+          let&apos;s talk.
         </p>
         <a className="pk-contact__email" href={EMAIL_HREF}>
           Say hello →
@@ -338,7 +379,7 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
           <a className="pk-contact__link" href={GITHUB_HREF} target="_blank" rel="noopener noreferrer">
             GitHub ↗
           </a>
-          <span className="pk-contact__location">Based in Manitoba · Open to remote</span>
+          <span className="pk-contact__location">Manitoba · Remote · English / Spanish</span>
         </div>
       </section>
     </div>
@@ -498,7 +539,7 @@ function ResumeView({ goHome }) {
         <div>
           <h1 className="pk-resume__h1">Daniel Chavez</h1>
           <p className="pk-resume__sub">
-            Production web developer · Winnipeg, MB · 204-721-2248
+            Technical delivery &amp; client solutions · Winnipeg, MB · 204-721-2248
           </p>
         </div>
         <a
@@ -512,12 +553,11 @@ function ResumeView({ goHome }) {
       </div>
 
       <p className="pk-resume__summary">
-        Production web developer with 4+ years building and maintaining
-        accessible websites and web apps across agency and freelance work.
-        Strongest in JavaScript, React, WordPress, PHP, and CMS delivery, with
-        hands-on Shopify Hydrogen experience. I contribute from Figma handoff
-        and implementation through accessibility QA, deployment, and ongoing
-        support. Available now for full-time roles and select freelance work.
+        Bilingual technical and client-facing professional with 4+ years
+        building and maintaining production websites, backed by earlier finance,
+        sales, CRM, and relationship-management experience. Strongest where
+        customer needs, business process, and hands-on implementation meet.
+        Available now for full-time remote roles and select freelance work.
       </p>
 
       {/* Path */}
@@ -747,6 +787,7 @@ function App() {
   const goHome = useCallback(() => setViewPage("home"), [setViewPage]);
   const goA11y = useCallback(() => setViewPage("accessibility"), [setViewPage]);
   const goResume = useCallback(() => setViewPage("resume"), [setViewPage]);
+  const goServices = useCallback(() => goSection("services"), [goSection]);
   const goWork = useCallback(() => goSection("work"), [goSection]);
 
   useEffect(() => {
@@ -755,7 +796,7 @@ function App() {
 
   useEffect(() => {
     const titles = {
-      home: "Daniel Chavez — Full-stack web developer",
+      home: "Daniel Chavez — Technical delivery, client solutions & web",
       accessibility: "Accessibility — Daniel Chavez",
       resume: "Résumé — Daniel Chavez",
       case: caseId
@@ -782,6 +823,7 @@ function App() {
 
       <Header
         onNavHome={goHome}
+        onNavServices={goServices}
         onNavWork={goWork}
         onNavResume={goResume}
         onNavA11y={goA11y}
@@ -792,7 +834,7 @@ function App() {
       <main id="main-content" className="pk-main" tabIndex={-1}>
         {view === "home" && (
           <HomeView
-            goWork={goWork}
+            goServices={goServices}
             goA11y={goA11y}
             goResume={goResume}
             openCase={openCase}
