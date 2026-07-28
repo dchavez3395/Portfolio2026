@@ -227,20 +227,32 @@ export const credentials = [
 
 export const serviceOffers = [
   {
+    id: "bilingual-growth-desk",
+    label: "Founding pilot",
+    title: "Bilingual booking & growth desk",
+    price: "US$450",
+    body: "A focused English/Spanish conversion and booking-path pilot for Salvadoran tourism and hospitality businesses serving international travellers.",
+    fit: "For owner-operated teams that already receive inquiries but need a clearer English-language path from first visit to confirmed next step.",
+    action: "View the pilot",
+  },
+  {
+    id: "shopify-launch-check",
     label: "Fixed-scope review",
     title: "Shopify launch check",
-    price: "CAD 149",
+    price: "US$149",
     body: "A practical pre-launch review of storefront usability, mobile layout, product and collection setup, basic SEO, and obvious checkout friction.",
     fit: "For small stores that need a focused second set of eyes before spending more on traffic.",
   },
   {
+    id: "wordpress-care",
     label: "Ongoing support",
     title: "WordPress care",
-    price: "From CAD 149 / month",
+    price: "From US$149 / month",
     body: "Routine updates, content changes, troubleshooting, and a dependable technical contact for an existing WordPress site.",
     fit: "For organizations that need steady support without hiring a full-time developer.",
   },
   {
+    id: "technical-client-delivery",
     label: "Employment or contract",
     title: "Technical client delivery",
     price: "Available now",
@@ -248,6 +260,7 @@ export const serviceOffers = [
     fit: "For remote teams that need someone comfortable with customers, systems, deadlines, and hands-on delivery.",
   },
   {
+    id: "workplace-english",
     label: "Pilot offer",
     title: "Workplace English practice",
     price: "EN / ES",
@@ -255,6 +268,125 @@ export const serviceOffers = [
     fit: "A conversational pilot based on real business situations, not a formal language-school curriculum.",
   },
 ];
+
+export const growthDeskContent = {
+  en: {
+    languageName: "English",
+    switchLabel: "Ver en español",
+    eyebrow: "Founding pilot · 3 businesses",
+    title: "Make the next booking step easier in either language.",
+    intro:
+      "A fixed-scope pilot for Salvadoran tourism and hospitality businesses that want a clearer path for English-speaking travellers—from the first website visit or message to a qualified booking inquiry.",
+    primaryCta: "Request a pilot conversation",
+    secondaryCta: "Back to services",
+    problemEyebrow: "The practical problem",
+    problemTitle: "Good service can still lose inquiries in the handoff.",
+    problemBody:
+      "An interested traveller may move between a website, Instagram, WhatsApp, email, and a booking tool. The pilot reviews that journey and fixes a small, agreed set of communication and conversion gaps. It does not promise traffic, rankings, or sales.",
+    includedEyebrow: "What the pilot includes",
+    included: [
+      {
+        number: "01",
+        title: "Bilingual booking-path audit",
+        body: "A documented review of the current English and Spanish journey, including calls to action, contact routes, mobile usability, and obvious points of confusion.",
+      },
+      {
+        number: "02",
+        title: "Priority copy and flow fixes",
+        body: "Implementation or ready-to-use recommendations for a tightly scoped set of English/Spanish messages, FAQs, calls to action, or inquiry steps agreed before work begins.",
+      },
+      {
+        number: "03",
+        title: "Follow-up starter system",
+        body: "Reusable bilingual response templates, a simple qualification checklist, and a lead-tracking handoff the team can continue using.",
+      },
+      {
+        number: "04",
+        title: "Measurement handoff",
+        body: "A short before-and-after record of what changed, what the business should monitor, and whether an ongoing engagement is justified.",
+      },
+    ],
+    termsEyebrow: "Founding terms",
+    termsTitle: "US$450 · fixed scope · no long contract",
+    termsBody:
+      "The pilot begins only after a short fit conversation and a written scope. Third-party software, advertising, translation certification, photography, and full website rebuilds are excluded unless separately quoted. Ongoing support starts at US$99/month only when both sides agree it is useful.",
+    fitEyebrow: "Best fit",
+    fitItems: [
+      "A Salvadoran tour, lodging, surf, shuttle, or visitor-experience business",
+      "An existing website, social profile, or inquiry channel to review",
+      "A real person who can answer operational and booking questions",
+      "Willingness to track inquiries before and after the agreed changes",
+    ],
+    notFitEyebrow: "Not the offer",
+    notFitItems: [
+      "Guaranteed bookings, rankings, or revenue",
+      "Mass messaging or purchased lead lists",
+      "Handling traveller payments or acting as the merchant",
+      "Legal, immigration, medical, or certified translation services",
+    ],
+    closingTitle: "Start with evidence, then decide what deserves automation.",
+    closingBody:
+      "The first conversation is for fit and scope. If the pilot is not likely to produce a useful, measurable operational improvement, I will say so before proposing paid work.",
+  },
+  es: {
+    languageName: "Español",
+    switchLabel: "View in English",
+    eyebrow: "Piloto inicial · 3 negocios",
+    title: "Facilitemos el próximo paso de la reserva en ambos idiomas.",
+    intro:
+      "Un piloto de alcance fijo para negocios salvadoreños de turismo y hospitalidad que quieren ofrecer un camino más claro a viajeros de habla inglesa: desde la primera visita o mensaje hasta una consulta de reserva calificada.",
+    primaryCta: "Solicitar una conversación",
+    secondaryCta: "Volver a servicios",
+    problemEyebrow: "El problema práctico",
+    problemTitle: "Un buen servicio todavía puede perder consultas durante el proceso.",
+    problemBody:
+      "Un viajero interesado puede pasar entre el sitio web, Instagram, WhatsApp, correo y una plataforma de reservas. El piloto revisa ese recorrido y corrige un grupo pequeño y acordado de problemas de comunicación y conversión. No promete tráfico, posicionamiento ni ventas.",
+    includedEyebrow: "Lo que incluye el piloto",
+    included: [
+      {
+        number: "01",
+        title: "Auditoría bilingüe del proceso de reserva",
+        body: "Una revisión documentada del recorrido actual en inglés y español, incluyendo llamadas a la acción, canales de contacto, uso móvil y puntos evidentes de confusión.",
+      },
+      {
+        number: "02",
+        title: "Correcciones prioritarias de texto y flujo",
+        body: "Implementación o recomendaciones listas para usar sobre un grupo limitado de mensajes, preguntas frecuentes, llamadas a la acción o pasos de consulta acordados antes de comenzar.",
+      },
+      {
+        number: "03",
+        title: "Sistema inicial de seguimiento",
+        body: "Plantillas bilingües reutilizables, una lista sencilla para calificar consultas y un registro de prospectos que el equipo pueda seguir usando.",
+      },
+      {
+        number: "04",
+        title: "Entrega de medición",
+        body: "Un registro breve de los cambios, qué debe observar el negocio y si se justifica continuar con apoyo mensual.",
+      },
+    ],
+    termsEyebrow: "Condiciones iniciales",
+    termsTitle: "US$450 · alcance fijo · sin contrato largo",
+    termsBody:
+      "El piloto comienza únicamente después de una conversación breve y un alcance por escrito. Software de terceros, publicidad, traducción certificada, fotografía y reconstrucciones completas se excluyen salvo cotización separada. El apoyo continuo comienza desde US$99 al mes solamente si ambas partes consideran que vale la pena.",
+    fitEyebrow: "Perfil adecuado",
+    fitItems: [
+      "Un negocio salvadoreño de tours, hospedaje, surf, transporte o experiencias",
+      "Un sitio, perfil social o canal de consultas existente para revisar",
+      "Una persona que pueda responder preguntas operativas y de reservas",
+      "Disposición para registrar consultas antes y después de los cambios",
+    ],
+    notFitEyebrow: "Lo que no es",
+    notFitItems: [
+      "Reservas, posicionamiento o ingresos garantizados",
+      "Mensajes masivos o listas de contactos compradas",
+      "Manejo de pagos de viajeros o actuación como comercio",
+      "Servicios legales, migratorios, médicos o de traducción certificada",
+    ],
+    closingTitle: "Comencemos con evidencia y luego decidamos qué merece automatización.",
+    closingBody:
+      "La primera conversación sirve para confirmar compatibilidad y alcance. Si el piloto no parece capaz de producir una mejora operativa útil y medible, lo diré antes de proponer trabajo pagado.",
+  },
+};
 
 export const principles = [
   {
