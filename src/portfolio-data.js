@@ -221,8 +221,39 @@ export const credentials = [
   "Modern PHP: Beginner to Advanced — Jannis Seemann, Udemy",
   "Web Accessibility Training — Deque University",
   "WCAG 2.1 AA as a working benchmark, not an afterthought",
-  "Bilingual — English and Spanish (fluent, C2)",
+  "Bilingual — English and Spanish",
   "AI-assisted workflows: Cursor, Copilot, Claude",
+];
+
+export const serviceOffers = [
+  {
+    label: "Fixed-scope review",
+    title: "Shopify launch check",
+    price: "CAD 149",
+    body: "A practical pre-launch review of storefront usability, mobile layout, product and collection setup, basic SEO, and obvious checkout friction.",
+    fit: "For small stores that need a focused second set of eyes before spending more on traffic.",
+  },
+  {
+    label: "Ongoing support",
+    title: "WordPress care",
+    price: "From CAD 149 / month",
+    body: "Routine updates, content changes, troubleshooting, and a dependable technical contact for an existing WordPress site.",
+    fit: "For organizations that need steady support without hiring a full-time developer.",
+  },
+  {
+    label: "Employment or contract",
+    title: "Technical client delivery",
+    price: "Available now",
+    body: "Implementation, customer success, solutions, account support, CMS delivery, and web production work where technical judgment and clear communication overlap.",
+    fit: "For remote teams that need someone comfortable with customers, systems, deadlines, and hands-on delivery.",
+  },
+  {
+    label: "Pilot offer",
+    title: "Workplace English practice",
+    price: "EN / ES",
+    body: "Practical English conversation for Spanish-speaking professionals preparing for interviews, client calls, presentations, and day-to-day workplace communication.",
+    fit: "A conversational pilot based on real business situations, not a formal language-school curriculum.",
+  },
 ];
 
 export const principles = [

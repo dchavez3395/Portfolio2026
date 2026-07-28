@@ -1648,3 +1648,95 @@ button {
 .pk-main:focus {
   outline: none;
 }
+
+.pk-hero__intro {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--body);
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.65;
+}
+
+.pk-services-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+  margin-top: clamp(28px, 5vh, 56px);
+}
+
+.pk-services-intro p {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--body);
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.65;
+}
+
+.pk-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(36px, 6vh, 68px);
+  background: var(--hair);
+  border: 1px solid var(--hair);
+}
+
+.pk-service-card {
+  min-height: 330px;
+  padding: clamp(24px, 3.5vw, 44px);
+  background: var(--bg);
+}
+
+.pk-service-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.pk-service-card h3 {
+  margin: 52px 0 18px;
+  font-size: clamp(25px, 3vw, 39px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.pk-service-card p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pk-service-card .pk-service-card__fit {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.pk-service-card a {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .pk-services-intro,
+  .pk-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pk-service-card {
+    min-height: auto;
+  }
+}
