@@ -18,7 +18,7 @@ export const projects = [
     brand: "#6D4CFF",
     logo: "/puchica.svg",
     image: "/case-puchica.jpg",
-    role: "Sole developer — full Shopify Hydrogen storefront built from an empty repo: custom React components, collection taxonomy, SEO infrastructure, and Shopify Admin API integration.",
+    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, and a controlled 20-product launch catalogue for Canada and the US.",
   },
   {
     id: "telus",
@@ -149,13 +149,13 @@ export const projects = [
 export const caseStudies = {
   puchica: {
     brief:
-      "Puchica is a curated retail brand rooted in Central American and pre-Hispanic heritage. They wanted a storefront that carried that identity through every page, not a dressed-up template.",
+      "Puchica is a self-directed e-commerce venture rooted in Central American and pre-Hispanic heritage. The goal was a storefront that carried that identity through every page, not a dressed-up template.",
     built:
-      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO baked into the routing rather than bolted on, and an integration with the Shopify Admin API so merchandising stays in Shopify where the team already works.",
+      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO built into the routing, and a controlled 20-product launch catalogue validated for Canada and the US. Merchandising remains in Shopify Admin.",
     details: [
       "A reusable component library that scales as the catalogue grows",
       "Server-rendered for speed and search visibility",
-      "Admin API integration — the client never edits code to merchandise",
+      "Shopify-managed merchandising with a 20-product launch catalogue",
     ],
   },
   telus: {
@@ -197,7 +197,7 @@ export const pathItems = [
   {
     title: "Web Developer — Vincent Design Inc.",
     period: "Jan 2023 – Jul 2026",
-    body: "Built and maintained responsive production websites and web apps for agencies and the organizations they serve. Worked across React, Node.js, PHP, and WordPress, building reusable UI components, scalable styling systems with SCSS and Tailwind, and back-end integrations with REST APIs. Partnered directly with designers in Figma to ship accessible, WCAG-compliant interfaces. Owned deployments via Vercel, WP Engine, and Flywheel. Ten-plus shipped projects across annual reports, Indigenous communities and non-profits, public information, and e-commerce.",
+    body: "Built and maintained responsive production websites and web apps for the agency's clients. Worked across React, JavaScript, PHP, and WordPress, creating reusable UI components, scalable SCSS and Tailwind systems, and REST API integrations. Collaborated with designers in Figma, performed accessibility QA, and supported deployments through Vercel, WP Engine, and Flywheel. Contributed to ten-plus projects across annual reports, Indigenous communities and non-profits, public information, and e-commerce.",
   },
   {
     title: "Front-End Developer — Freelance",

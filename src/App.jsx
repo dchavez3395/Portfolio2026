@@ -145,13 +145,14 @@ function HomeView({ goWork, goA11y, goResume, openCase }) {
         </div>
         <div className="pk-about-grid" style={{ marginTop: "clamp(24px, 4vh, 40px)" }}>
           <h2 className="pk-about__h2">
-            3+ years shipping production web apps.
+            4+ years shipping production websites and web apps.
           </h2>
           <div>
             <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", margin: "0 0 28px", maxWidth: "52ch" }}>
-              Full-stack developer with agency experience across React,
-              Node.js, Express, PHP, and WordPress. I own projects end to end,
-              from design handoff to deployment.
+              Production web developer with agency experience across React,
+              JavaScript, PHP, WordPress, and Shopify. I contribute across the
+              delivery lifecycle, from Figma handoff and implementation through
+              accessibility QA, deployment, and ongoing support.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
@@ -497,7 +498,7 @@ function ResumeView({ goHome }) {
         <div>
           <h1 className="pk-resume__h1">Daniel Chavez</h1>
           <p className="pk-resume__sub">
-            Full-stack web developer · Winnipeg, MB · 204-721-2248
+            Production web developer · Winnipeg, MB · 204-721-2248
           </p>
         </div>
         <a
@@ -511,13 +512,12 @@ function ResumeView({ goHome }) {
       </div>
 
       <p className="pk-resume__summary">
-        Full-stack developer with 3+ years shipping and maintaining production
-        web apps in a fast-paced agency environment. Strongest in the modern
-        JavaScript stack, React, Node.js, and Express, with solid PHP and CMS
-        depth to back it up. I own projects end to end, from design handoff to
-        deployment, and pair clean, accessible, performant code with
-        AI-assisted workflows to ship faster without cutting corners.
-        Available for full-time roles and select freelance work.
+        Production web developer with 4+ years building and maintaining
+        accessible websites and web apps across agency and freelance work.
+        Strongest in JavaScript, React, WordPress, PHP, and CMS delivery, with
+        hands-on Shopify Hydrogen experience. I contribute from Figma handoff
+        and implementation through accessibility QA, deployment, and ongoing
+        support. Available now for full-time roles and select freelance work.
       </p>
 
       {/* Path */}
