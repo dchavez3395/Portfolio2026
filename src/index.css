@@ -1657,6 +1657,14 @@ button {
   line-height: 1.65;
 }
 
+@media (max-width: 700px) {
+  .pk-hero__intro {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 .pk-services-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);

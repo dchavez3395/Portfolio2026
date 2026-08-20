@@ -2,7 +2,7 @@
 
 export const EMAIL = "dchavez3395@gmail.com";
 export const EMAIL_HREF = `mailto:${EMAIL}`;
-export const RESUME_HREF = "/Daniel_Chavez_Resume.pdf";
+export const RESUME_HREF = "/Daniel_Chavez_Technical_Solutions_Resume.pdf";
 export const LINKEDIN_HREF = "https://www.linkedin.com/in/danielchavez2/";
 export const GITHUB_HREF = "https://github.com/dchavez3395";
 
@@ -214,6 +214,16 @@ export const pathItems = [
     period: "Jan 2018 – Nov 2018",
     body: "Managed sales pipelines and CRM lead workflows to improve appointment conversion and follow-up discipline. Where I learned stakeholder communication, relationship ownership, and what it means to be accountable to a number.",
   },
+  {
+    title: "Sales Consultant — Birchwood Nissan Brandon",
+    period: "May 2015 – Jan 2018",
+    body: "Used consultative selling, product knowledge, follow-up, and negotiation to guide customers through high-consideration vehicle purchases. Maintained the dealership's highest closing ratio in 2016 and 2018 and received the Bronze Nissan Club Excellence Award in 2016.",
+  },
+  {
+    title: "Additional Sales Experience — Combined Insurance, House of Nissan & The Source",
+    period: "Earlier career",
+    body: "Built a broad sales foundation through door-to-door insurance prospecting, automotive sales, and consumer-technology retail. Developed comfort initiating conversations, explaining complex products, handling objections, following up, and asking for the business.",
+  },
 ];
 
 export const credentials = [
@@ -225,34 +235,53 @@ export const credentials = [
   "AI-assisted workflows: Cursor, Copilot, Claude",
 ];
 
+export const commercialHighlights = [
+  {
+    title: "Consultative sales and closing",
+    body: "Automotive sales experience with Birchwood and House of Nissan, including the highest closing ratio in 2016 and 2018 and a Bronze Nissan Club Excellence Award in 2016.",
+  },
+  {
+    title: "Finance and solution structuring",
+    body: "Managed automotive finance across credit tiers, balancing customer affordability, lender requirements, documentation, compliance, and dealership outcomes from submission through funding.",
+  },
+  {
+    title: "Pipeline, prospecting, and follow-through",
+    body: "Managed CRM lead workflows in business development and built resilience through door-to-door insurance sales with Combined Insurance.",
+  },
+  {
+    title: "Technical product communication",
+    body: "Retail technology sales at The Source and years of client-facing web delivery strengthened my ability to explain products clearly to both technical and nontechnical audiences.",
+  },
+];
+
 export const serviceOffers = [
   {
-    label: "Fixed-scope review",
-    title: "Shopify launch check",
-    price: "CAD 149",
-    body: "A practical pre-launch review of storefront usability, mobile layout, product and collection setup, basic SEO, and obvious checkout friction.",
-    fit: "For small stores that need a focused second set of eyes before spending more on traffic.",
+    label: "Presales",
+    title: "Sales & solutions engineering",
+    price: "Primary target",
+    body: "Customer discovery, technical qualification, tailored walkthroughs, integration conversations, proof-of-concept support, and a clear solution story tied to business value.",
+    fit: "Best fit for SaaS teams that need technical credibility without losing commercial judgment or customer empathy.",
   },
   {
-    label: "Ongoing support",
-    title: "WordPress care",
-    price: "From CAD 149 / month",
-    body: "Routine updates, content changes, troubleshooting, and a dependable technical contact for an existing WordPress site.",
-    fit: "For organizations that need steady support without hiring a full-time developer.",
+    label: "Post-sale",
+    title: "Implementation & customer success",
+    price: "Strong fit",
+    body: "Requirements translation, onboarding, CMS and API delivery, troubleshooting, training, stakeholder updates, and dependable follow-through after the deal is signed.",
+    fit: "For teams that need customers to reach value quickly and stay confident through implementation and change.",
   },
   {
-    label: "Employment or contract",
-    title: "Technical client delivery",
-    price: "Available now",
-    body: "Implementation, customer success, solutions, account support, CMS delivery, and web production work where technical judgment and clear communication overlap.",
-    fit: "For remote teams that need someone comfortable with customers, systems, deadlines, and hands-on delivery.",
+    label: "Revenue",
+    title: "Technical account growth",
+    price: "Selective",
+    body: "Pipeline ownership, consultative discovery, product explanation, objection handling, CRM discipline, and account conversations grounded in how the product actually works.",
+    fit: "Especially relevant to automotive technology, fintech, insurtech, e-commerce, and operational SaaS.",
   },
   {
-    label: "Pilot offer",
-    title: "Workplace English practice",
-    price: "EN / ES",
-    body: "Practical English conversation for Spanish-speaking professionals preparing for interviews, client calls, presentations, and day-to-day workplace communication.",
-    fit: "A conversational pilot based on real business situations, not a formal language-school curriculum.",
+    label: "Delivery",
+    title: "Web, CMS & accessibility",
+    price: "Technical proof",
+    body: "Production web applications, CMS workflows, e-commerce, APIs, accessibility QA, deployment, and ongoing support across inherited or newly built systems.",
+    fit: "The hands-on technical foundation behind credible customer conversations and practical solution design.",
   },
 ];
 
@@ -273,20 +302,20 @@ export const principles = [
 
 export const skillGroups = [
   {
-    title: "Core stack",
-    items: "JavaScript (ES6+) · React · Node.js · Express · REST APIs · HTML5 · SCSS/SASS · Tailwind CSS",
+    title: "Customer & revenue",
+    items: "Consultative discovery · CRM & pipeline ownership · Product explanation · Objection handling · Negotiation · Automotive F&I",
   },
   {
-    title: "Also proficient",
-    items: "PHP · EJS · Blade templating · WordPress (custom themes)",
+    title: "Solutions & delivery",
+    items: "Requirements translation · Client walkthroughs · REST APIs · CMS workflows · Implementation · QA · Training & support",
   },
   {
-    title: "Workflow & tooling",
-    items: "Git & GitHub · Figma handoff · AI-assisted dev (Cursor, Copilot, Claude) · Responsive & cross-browser",
+    title: "Technical foundation",
+    items: "JavaScript · React · Node.js · Express · PHP · WordPress · Shopify · HTML/CSS · Git & GitHub · Figma",
   },
   {
-    title: "Deploy & quality",
-    items: "Vercel · WP Engine · Flywheel · WCAG accessibility · SEO · Performance optimization · Cross-browser testing",
+    title: "Risk & quality",
+    items: "WCAG accessibility · Documentation · Compliance mindset · SEO · Performance · Cross-browser QA · AI-assisted workflows",
   },
 ];
 

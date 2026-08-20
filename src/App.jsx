@@ -5,6 +5,7 @@ import {
   pathItems,
   credentials,
   principles,
+  commercialHighlights,
   serviceOffers,
   skillGroups,
   a11yPoints,
@@ -42,7 +43,7 @@ function Header({ onNavHome, onNavServices, onNavWork, onNavResume, onNavA11y, m
           Daniel Chavez
         </button>
         <nav aria-label="Primary" className={`pk-nav ${mobileOpen ? "pk-nav--open" : ""}`}>
-          {navBtn("Services", onNavServices)}
+          {navBtn("Solutions", onNavServices)}
           {navBtn("Work", onNavWork)}
           {navBtn("Résumé", onNavResume)}
           {navBtn("A11y", onNavA11y)}
@@ -98,22 +99,22 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
         </div>
 
         <h1 className="pk-hero__h1">
-          Technical work
+          Technical solutions
           <br />
-          that moves
+          that move
           <br />
-          <span className="pk-hero__h1-accent">people forward.</span>
+          <span className="pk-hero__h1-accent">customers forward.</span>
         </h1>
 
         <div className="pk-hero__bottom">
           <p className="pk-hero__intro">
-            Bilingual technical delivery, customer-facing problem solving, and
-            production web work. Based in Manitoba and open to remote roles,
-            contract work, and focused client projects.
+            I combine production web development with sales, automotive finance,
+            CRM, and client delivery. I help teams understand customer problems,
+            shape the right solution, and carry it through implementation.
           </p>
           <div className="pk-hero__ctas">
             <button className="pk-btn-solid" onClick={goServices}>
-              Ways I can help ↓
+              Explore my fit ↓
             </button>
             <a className="pk-btn-ghost" href={EMAIL_HREF}>
               Get in touch
@@ -137,10 +138,10 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           aria-hidden="true"
         >
           <span>
-            &nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;Node.js&nbsp;&nbsp;/&nbsp;&nbsp;Express&nbsp;&nbsp;/&nbsp;&nbsp;JavaScript&nbsp;&nbsp;/&nbsp;&nbsp;PHP&nbsp;&nbsp;/&nbsp;&nbsp;WordPress&nbsp;&nbsp;/&nbsp;&nbsp;Tailwind&nbsp;&nbsp;/&nbsp;&nbsp;SCSS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Figma&nbsp;&nbsp;/&nbsp;&nbsp;
+            &nbsp;&nbsp;Customer discovery&nbsp;&nbsp;/&nbsp;&nbsp;Client walkthroughs&nbsp;&nbsp;/&nbsp;&nbsp;CRM&nbsp;&nbsp;/&nbsp;&nbsp;Pipeline ownership&nbsp;&nbsp;/&nbsp;&nbsp;Solution design&nbsp;&nbsp;/&nbsp;&nbsp;APIs&nbsp;&nbsp;/&nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;CMS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Finance&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
           </span>
           <span>
-            &nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;Node.js&nbsp;&nbsp;/&nbsp;&nbsp;Express&nbsp;&nbsp;/&nbsp;&nbsp;JavaScript&nbsp;&nbsp;/&nbsp;&nbsp;PHP&nbsp;&nbsp;/&nbsp;&nbsp;WordPress&nbsp;&nbsp;/&nbsp;&nbsp;Tailwind&nbsp;&nbsp;/&nbsp;&nbsp;SCSS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Figma&nbsp;&nbsp;/&nbsp;&nbsp;
+            &nbsp;&nbsp;Customer discovery&nbsp;&nbsp;/&nbsp;&nbsp;Client walkthroughs&nbsp;&nbsp;/&nbsp;&nbsp;CRM&nbsp;&nbsp;/&nbsp;&nbsp;Pipeline ownership&nbsp;&nbsp;/&nbsp;&nbsp;Solution design&nbsp;&nbsp;/&nbsp;&nbsp;APIs&nbsp;&nbsp;/&nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;CMS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Finance&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
           </span>
         </div>
       </section>
@@ -159,7 +160,8 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
               I combine 4+ years of production web experience with earlier
               finance, sales, CRM, and customer-relationship ownership. That
               makes me useful in the space between a customer&apos;s business
-              problem and the technical work needed to solve it.
+              problem, the solution they can believe in, and the technical work
+              needed to deliver it.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
@@ -194,17 +196,38 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
         </div>
       </section>
 
+      {/* COMMERCIAL FOUNDATION */}
+      <section id="commercial" className="pk-section--tight">
+        <div className="pk-label-row">
+          <span className="pk-label-row__primary">Commercial foundation</span>
+          <span className="pk-label-row__right">Sales · Finance · CRM</span>
+        </div>
+        <div className="pk-about-grid">
+          <h2 className="pk-about__h2">Sales discipline behind the technical work.</h2>
+          <div>
+            {commercialHighlights.map((item, index) => (
+              <div key={index} className="pk-principle">
+                <div>
+                  <h3 className="pk-principle__h3">{item.title}</h3>
+                  <p className="pk-principle__body">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="services" className="pk-section">
         <div className="pk-label-row">
-          <span className="pk-label-row__primary">Ways I can help</span>
-          <span className="pk-label-row__right">Employment + focused services</span>
+          <span className="pk-label-row__primary">Solutions</span>
+          <span className="pk-label-row__right">Where I create value</span>
         </div>
         <div className="pk-services-intro">
-          <h2 className="pk-about__h2">One profile. Several useful lanes.</h2>
+          <h2 className="pk-about__h2">One profile. Four valuable lanes.</h2>
           <p>
-            I am prioritizing a strong full-time role while keeping a small,
-            concrete service menu for organizations that need practical help now.
+            My best work happens where revenue conversations, customer needs,
+            technical judgment, and dependable implementation overlap.
           </p>
         </div>
         <div className="pk-services-grid">
@@ -217,7 +240,7 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
               <h3>{offer.title}</h3>
               <p>{offer.body}</p>
               <p className="pk-service-card__fit">{offer.fit}</p>
-              <a href={EMAIL_HREF}>Ask about this →</a>
+              <a href={EMAIL_HREF}>Start a conversation →</a>
             </article>
           ))}
         </div>
@@ -360,11 +383,11 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           something <span style={{ color: "var(--accent)" }}>useful.</span>
         </h2>
         <p className="pk-contact__body">
-          I&apos;m open to full-time remote roles across implementation,
-          customer success, solutions, account management, fintech, and web
-          delivery, plus a limited number of focused client projects. If the
-          work rewards ownership, communication, and technical judgment,
-          let&apos;s talk.
+          I&apos;m targeting full-time remote roles in sales engineering, solutions
+          consulting, implementation, technical account management, and
+          customer-facing SaaS. Automotive technology, fintech, insurtech,
+          e-commerce, and accessibility are especially strong fits. I remain
+          open to selective account-executive and focused client work.
         </p>
         <a className="pk-contact__email" href={EMAIL_HREF}>
           Say hello →
@@ -539,7 +562,7 @@ function ResumeView({ goHome }) {
         <div>
           <h1 className="pk-resume__h1">Daniel Chavez</h1>
           <p className="pk-resume__sub">
-            Technical delivery &amp; client solutions · Winnipeg, MB · 204-721-2248
+            Technical solutions &amp; client delivery · Winnipeg, MB · 204-721-2248
           </p>
         </div>
         <a
@@ -553,11 +576,11 @@ function ResumeView({ goHome }) {
       </div>
 
       <p className="pk-resume__summary">
-        Bilingual technical and client-facing professional with 4+ years
-        building and maintaining production websites, backed by earlier finance,
-        sales, CRM, and relationship-management experience. Strongest where
-        customer needs, business process, and hands-on implementation meet.
-        Available now for full-time remote roles and select freelance work.
+        Bilingual technical-solutions professional combining 4+ years building
+        and maintaining production websites with earlier automotive sales,
+        finance, CRM, prospecting, and relationship-management experience.
+        Strongest where customer discovery, business process, solution design,
+        and hands-on implementation meet.
       </p>
 
       {/* Path */}
@@ -591,7 +614,7 @@ function ResumeView({ goHome }) {
 
       {/* Core stack */}
       <div className="pk-resume-section">
-        <h2 className="pk-resume-section__label">Core stack</h2>
+        <h2 className="pk-resume-section__label">Capabilities</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           {skillGroups.map((g, i) => (
             <div key={i} className="pk-resume-skill-group">
@@ -796,7 +819,7 @@ function App() {
 
   useEffect(() => {
     const titles = {
-      home: "Daniel Chavez — Technical delivery, client solutions & web",
+      home: "Daniel Chavez — Technical solutions, sales & client delivery",
       accessibility: "Accessibility — Daniel Chavez",
       resume: "Résumé — Daniel Chavez",
       case: caseId
