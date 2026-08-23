@@ -1,4 +1,12 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
+import {
+  Link,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import {
   projects,
   caseStudies,
@@ -22,31 +30,41 @@ import {
 // ============================================================
 // HEADER
 // ============================================================
-function Header({ onNavHome, onNavServices, onNavWork, onNavResume, onNavA11y, mobileOpen, setMobileOpen }) {
-  const navBtn = (label, action, isEmail = false) => (
-    <button
-      className={isEmail ? "pk-nav__email" : "pk-nav__link"}
-      onClick={() => {
-        setMobileOpen(false);
-        action();
-      }}
-    >
-      {label}
-    </button>
-  );
+function Header({ mobileOpen, setMobileOpen }) {
+  const { pathname, hash } = useLocation();
+
+  // Every destination is a real URL behind a real anchor. This is not a style
+  // preference: a <button> cannot be opened in a new tab, copied, bookmarked,
+  // shared into an application, or followed by a crawler, and screen readers
+  // announce it as a button rather than a link.
+  const navLink = (label, to) => {
+    const route = normalizePath(pathname);
+    const isCurrent =
+      to.startsWith("/#") ? route === "/" && hash === to.slice(1) : route === to;
+    return (
+      <Link
+        className="pk-nav__link"
+        to={to}
+        aria-current={isCurrent ? "page" : undefined}
+        onClick={() => setMobileOpen(false)}
+      >
+        {label}
+      </Link>
+    );
+  };
 
   return (
     <header className="pk-header">
       <div className="pk-header__inner">
-        <button className="pk-logo" onClick={onNavHome} style={{ background: "none", border: "none", cursor: "pointer", padding: 0, color: "inherit", font: "inherit" }}>
+        <Link className="pk-logo" to="/" onClick={() => setMobileOpen(false)}>
           <span className="pk-logo__square" aria-hidden="true"></span>
           Daniel Chavez
-        </button>
+        </Link>
         <nav aria-label="Primary" className={`pk-nav ${mobileOpen ? "pk-nav--open" : ""}`}>
-          {navBtn("Solutions", onNavServices)}
-          {navBtn("Work", onNavWork)}
-          {navBtn("Résumé", onNavResume)}
-          {navBtn("A11y", onNavA11y)}
+          {navLink("Solutions", "/#services")}
+          {navLink("Work", "/#work")}
+          {navLink("Résumé", "/resume")}
+          {navLink("A11y", "/accessibility")}
           <a className="pk-nav__email" href={EMAIL_HREF}>
             Email ↗
           </a>
@@ -81,7 +99,7 @@ function Footer() {
 // ============================================================
 // HOME VIEW
 // ============================================================
-function HomeView({ goServices, goA11y, goResume, openCase }) {
+function HomeView() {
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
   const [marqueePaused, setMarqueePaused] = useState(false);
@@ -113,9 +131,9 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
             shape the right solution, and carry it through implementation.
           </p>
           <div className="pk-hero__ctas">
-            <button className="pk-btn-solid" onClick={goServices}>
+            <Link className="pk-btn-solid" to="/#services">
               Explore my fit ↓
-            </button>
+            </Link>
             <a className="pk-btn-ghost" href={EMAIL_HREF}>
               Get in touch
             </a>
@@ -255,11 +273,11 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
 
         <div className="pk-featured-grid" style={{ marginTop: "clamp(24px, 4vh, 44px)" }}>
           {featured.map((p) => (
-            <button
+            <Link
               key={p.id}
               className="pk-tile"
-              onClick={() => openCase(p.id)}
-              style={{ background: "none", border: "1px solid var(--hair)", cursor: "pointer", textAlign: "left" }}
+              to={`/work/${p.id}`}
+              style={{ border: "1px solid var(--hair)", textAlign: "left", display: "block" }}
             >
               <div className="pk-tile__top" style={{ background: p.brand }}>
                 {p.logo ? (
@@ -277,7 +295,7 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
                 </span>
                 <span className="pk-tile__case">Case study →</span>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       </section>
@@ -365,9 +383,9 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
                 </li>
               ))}
             </ul>
-            <button className="pk-btn-ghost" onClick={goA11y}>
+            <Link className="pk-btn-ghost" to="/accessibility">
               How I handle it →
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -393,9 +411,9 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           Say hello →
         </a>
         <div className="pk-contact__links">
-          <button className="pk-contact__link" onClick={goResume} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit" }}>
+          <Link className="pk-contact__link" to="/resume">
             Résumé ↗
-          </button>
+          </Link>
           <a className="pk-contact__link" href={LINKEDIN_HREF} target="_blank" rel="noopener noreferrer">
             LinkedIn ↗
           </a>
@@ -412,13 +430,13 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
 // ============================================================
 // ACCESSIBILITY VIEW
 // ============================================================
-function AccessibilityView({ goHome, openCase }) {
+function AccessibilityView() {
   return (
     <div className="pk-page">
       <div className="pk-breadcrumb">
-        <button className="pk-breadcrumb__link" onClick={goHome} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit", color: "inherit" }}>
+        <Link className="pk-breadcrumb__link" to="/">
           Home
-        </button>
+        </Link>
         &nbsp;/&nbsp; <span className="pk-breadcrumb__current">Accessibility</span>
       </div>
 
@@ -450,9 +468,9 @@ function AccessibilityView({ goHome, openCase }) {
           Not theory. These are projects where accessibility shaped the build.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(16px, 2vw, 24px)", marginTop: "clamp(28px, 4vh, 44px)" }}>
-          <button
-            onClick={() => openCase("telus")}
-            style={{ textAlign: "left", background: "none", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", cursor: "pointer", color: "var(--text)", transition: "border-color 0.25s" }}
+          <Link
+            to="/work/telus"
+            style={{ display: "block", textAlign: "left", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", color: "var(--text)", textDecoration: "none", transition: "border-color 0.25s" }}
             className="pk-a11y-proof-card"
           >
             <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(19px, 2vw, 24px)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
@@ -466,10 +484,10 @@ function AccessibilityView({ goHome, openCase }) {
             <span style={{ display: "block", marginTop: "14px", fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>
               Case study →
             </span>
-          </button>
-          <button
-            onClick={() => openCase("tamalpais")}
-            style={{ textAlign: "left", background: "none", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", cursor: "pointer", color: "var(--text)", transition: "border-color 0.25s" }}
+          </Link>
+          <Link
+            to="/work/tamalpais"
+            style={{ display: "block", textAlign: "left", border: "1px solid var(--hair)", borderRadius: "5px", padding: "24px", color: "var(--text)", textDecoration: "none", transition: "border-color 0.25s" }}
             className="pk-a11y-proof-card"
           >
             <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(19px, 2vw, 24px)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
@@ -483,7 +501,7 @@ function AccessibilityView({ goHome, openCase }) {
             <span style={{ display: "block", marginTop: "14px", fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>
               Case study →
             </span>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -533,9 +551,9 @@ function AccessibilityView({ goHome, openCase }) {
           <a className="pk-btn-solid" href={EMAIL_HREF}>
             Email me →
           </a>
-          <button className="pk-btn-ghost" onClick={goHome}>
+          <Link className="pk-btn-ghost" to="/">
             Back to home
-          </button>
+          </Link>
         </div>
         <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "var(--muted)", margin: "28px 0 0" }}>
           General information, not legal advice.
@@ -548,13 +566,13 @@ function AccessibilityView({ goHome, openCase }) {
 // ============================================================
 // RESUME VIEW
 // ============================================================
-function ResumeView({ goHome }) {
+function ResumeView() {
   return (
     <div className="pk-page--resume">
       <div className="pk-breadcrumb">
-        <button className="pk-breadcrumb__link" onClick={goHome} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit", color: "inherit" }}>
+        <Link className="pk-breadcrumb__link" to="/">
           Home
-        </button>
+        </Link>
         &nbsp;/&nbsp; <span className="pk-breadcrumb__current">Résumé</span>
       </div>
 
@@ -654,9 +672,9 @@ function ResumeView({ goHome }) {
         <a className="pk-btn-solid" href={EMAIL_HREF}>
           Email me →
         </a>
-        <button className="pk-btn-ghost" onClick={goHome}>
+        <Link className="pk-btn-ghost" to="/">
           Back to home
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -665,7 +683,7 @@ function ResumeView({ goHome }) {
 // ============================================================
 // CASE STUDY VIEW
 // ============================================================
-function CaseStudyView({ caseId, goHome, goWork, openCase }) {
+function CaseStudyView({ caseId }) {
   const project = projects.find((p) => p.id === caseId);
   if (!project) return null;
 
@@ -677,13 +695,13 @@ function CaseStudyView({ caseId, goHome, goWork, openCase }) {
   return (
     <div className="pk-page--case">
       <div className="pk-breadcrumb">
-        <button className="pk-breadcrumb__link" onClick={goHome} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit", color: "inherit" }}>
+        <Link className="pk-breadcrumb__link" to="/">
           Home
-        </button>
+        </Link>
         &nbsp;/&nbsp;
-        <button className="pk-breadcrumb__link" onClick={goWork} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit", color: "inherit" }}>
+        <Link className="pk-breadcrumb__link" to="/#work">
           Work
-        </button>
+        </Link>
         &nbsp;/&nbsp; <span className="pk-breadcrumb__current">{project.title}</span>
       </div>
 
@@ -740,13 +758,13 @@ function CaseStudyView({ caseId, goHome, goWork, openCase }) {
       )}
 
       <div className="pk-case__nav">
-        <button className="pk-case__nav-back" onClick={goWork} style={{ background: "none", border: "none", cursor: "pointer", font: "inherit", letterSpacing: "inherit", textTransform: "inherit" }}>
+        <Link className="pk-case__nav-back" to="/#work">
           ← All work
-        </button>
-        <button className="pk-case__nav-next" onClick={() => openCase(next.id)}>
+        </Link>
+        <Link className="pk-case__nav-next" to={`/work/${next.id}`}>
           <span className="pk-case__nav-next-label">Next</span>
           <span className="pk-case__nav-next-title">{next.title} →</span>
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -755,81 +773,89 @@ function CaseStudyView({ caseId, goHome, goWork, openCase }) {
 // ============================================================
 // APP
 // ============================================================
-function App() {
-  const [view, setView] = useState("home");
-  const [caseId, setCaseId] = useState(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
+/**
+ * Scroll behaviour for a real router: a new page starts at the top, and a
+ * `/#section` link scrolls to that section whether or not we were already on
+ * the home page. Without this, giving the nav real hrefs would silently break
+ * the in-page jumps the old button handlers did by hand.
+ */
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
 
-  const scrollToId = useCallback((id) => {
-    requestAnimationFrame(() => {
-      const el = document.getElementById(id);
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+    // The target may not be mounted on the frame the route changes.
+    let frames = 0;
+    const tick = () => {
+      const el = document.getElementById(hash.slice(1));
       if (el) {
         const y = el.getBoundingClientRect().top + window.scrollY - 72;
         window.scrollTo({ top: y, behavior: "smooth" });
+      } else if (frames++ < 20) {
+        requestAnimationFrame(tick);
       }
-    });
-  }, []);
+    };
+    requestAnimationFrame(tick);
+  }, [pathname, hash]);
 
-  const toTop = useCallback(() => {
-    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
-  }, []);
+  return null;
+}
 
-  const goSection = useCallback(
-    (id) => {
-      if (view !== "home") {
-        setView("home");
-        setCaseId(null);
-        setTimeout(() => scrollToId(id), 100);
-      } else {
-        scrollToId(id);
-      }
-    },
-    [view, scrollToId]
-  );
+const PAGE_TITLES = {
+  "/": "Daniel Chavez — Technical solutions, sales & client delivery",
+  "/resume": "Résumé — Daniel Chavez",
+  "/accessibility": "Accessibility — Daniel Chavez",
+};
 
-  const setViewPage = useCallback(
-    (v) => {
-      setView(v);
-      setCaseId(null);
-      setMobileOpen(false);
-      toTop();
-    },
-    [toTop]
-  );
+/**
+ * Static hosts serve prerendered routes as directories, so the same page can
+ * arrive as "/resume" or "/resume/". Comparing the raw pathname silently misses
+ * the trailing-slash form and falls back to the home title.
+ */
+function normalizePath(pathname) {
+  if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
+  return pathname;
+}
 
-  const openCase = useCallback(
-    (id) => {
-      setView("case");
-      setCaseId(id);
-      setMobileOpen(false);
-      toTop();
-    },
-    [toTop]
-  );
+/** Keep the document title in step with the URL for tabs, history and bookmarks. */
+function DocumentTitle() {
+  const { pathname } = useLocation();
 
-  const goHome = useCallback(() => setViewPage("home"), [setViewPage]);
-  const goA11y = useCallback(() => setViewPage("accessibility"), [setViewPage]);
-  const goResume = useCallback(() => setViewPage("resume"), [setViewPage]);
-  const goServices = useCallback(() => goSection("services"), [goSection]);
-  const goWork = useCallback(() => goSection("work"), [goSection]);
+  useEffect(() => {
+    const route = normalizePath(pathname);
+    const caseMatch = route.match(/^\/work\/([^/]+)$/);
+    if (caseMatch) {
+      const project = projects.find((p) => p.id === caseMatch[1]);
+      document.title = project
+        ? `${project.title} — Daniel Chavez`
+        : "Case study — Daniel Chavez";
+      return;
+    }
+    document.title = PAGE_TITLES[route] || PAGE_TITLES["/"];
+  }, [pathname]);
+
+  return null;
+}
+
+/** A case study reached by URL: /work/:caseId. */
+function CaseStudyRoute() {
+  const { caseId } = useParams();
+  const project = projects.find((p) => p.id === caseId);
+  // An unknown or non-case project id is a dead end, not a blank page.
+  if (!project || !caseStudies[caseId]) return <Navigate to="/" replace />;
+  return <CaseStudyView caseId={caseId} />;
+}
+
+function App() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = "en";
   }, []);
-
-  useEffect(() => {
-    const titles = {
-      home: "Daniel Chavez — Technical solutions, sales & client delivery",
-      accessibility: "Accessibility — Daniel Chavez",
-      resume: "Résumé — Daniel Chavez",
-      case: caseId
-        ? `${projects.find((p) => p.id === caseId)?.title || "Case Study"} — Daniel Chavez`
-        : "Case Study — Daniel Chavez",
-    };
-    document.title = titles[view] || titles.home;
-  }, [view, caseId]);
-
-  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setShowBackToTop(window.scrollY > 600);
@@ -844,38 +870,19 @@ function App() {
       </a>
       <div className="pk-grid-overlay" aria-hidden="true"></div>
 
-      <Header
-        onNavHome={goHome}
-        onNavServices={goServices}
-        onNavWork={goWork}
-        onNavResume={goResume}
-        onNavA11y={goA11y}
-        mobileOpen={mobileOpen}
-        setMobileOpen={setMobileOpen}
-      />
+      <ScrollManager />
+      <DocumentTitle />
+
+      <Header mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
       <main id="main-content" className="pk-main" tabIndex={-1}>
-        {view === "home" && (
-          <HomeView
-            goServices={goServices}
-            goA11y={goA11y}
-            goResume={goResume}
-            openCase={openCase}
-          />
-        )}
-
-        {view === "accessibility" && <AccessibilityView goHome={goHome} openCase={openCase} />}
-
-        {view === "resume" && <ResumeView goHome={goHome} />}
-
-        {view === "case" && (
-          <CaseStudyView
-            caseId={caseId}
-            goHome={goHome}
-            goWork={goWork}
-            openCase={openCase}
-          />
-        )}
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/accessibility" element={<AccessibilityView />} />
+          <Route path="/resume" element={<ResumeView />} />
+          <Route path="/work/:caseId" element={<CaseStudyRoute />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       <Footer />
