@@ -18,7 +18,7 @@ export const projects = [
     brand: "#6D4CFF",
     logo: "/puchica.svg",
     image: "/case-puchica.jpg",
-    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, and a controlled 20-product launch catalogue for Canada and the US.",
+    role: "Sole developer and operator — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, a four-locale storefront, and a fail-closed catalogue gate that only serves products with verified cost and shipping evidence.",
   },
   {
     id: "telus",
@@ -149,13 +149,14 @@ export const projects = [
 export const caseStudies = {
   puchica: {
     brief:
-      "Puchica is a self-directed e-commerce venture rooted in Central American and pre-Hispanic heritage. The goal was a storefront that carried that identity through every page, not a dressed-up template.",
+      "Puchica is a self-directed e-commerce venture rooted in Central American and pre-Hispanic heritage. I own it end to end — the code, the catalogue, the pricing and the compliance — so it is where I make the commercial calls as well as the technical ones.",
     built:
-      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO built into the routing, and a controlled 20-product launch catalogue validated for Canada and the US. Merchandising remains in Shopify Admin.",
+      "A React storefront on Shopify Hydrogen, built from an empty repository and running in four locales. The catalogue is gated: a product is only servable once its supplier cost, shipping route and imagery have been verified, and the gate fails closed, so an unverified product disappears from the storefront, the sitemap and the product feed at once rather than half-appearing. The same rule suspended the entire US market in one change when tariff economics stopped working.",
     details: [
-      "A reusable component library that scales as the catalogue grows",
-      "Server-rendered for speed and search visibility",
-      "Shopify-managed merchandising with a 20-product launch catalogue",
+      "Fail-closed catalogue gate — unverified products cannot reach the storefront, feed or sitemap",
+      "Four locales (EN / FR / ES / PT-BR) with a single source of truth for product copy",
+      "Free-shipping threshold held in one constant the cart and the product page both read",
+      "Server-rendered on Oxygen for speed and search visibility",
     ],
   },
   telus: {
