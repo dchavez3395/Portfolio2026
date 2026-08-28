@@ -29,3 +29,8 @@ dist-ssr
 # Verification artifacts
 _verify_*.png
 _verify_*.mjs
+
+# Local scratch and generated artifacts (not part of the site)
+tmp/
+output/
+career-ops/
