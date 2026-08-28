@@ -18,7 +18,7 @@ export const projects = [
     brand: "#6D4CFF",
     logo: "/puchica.svg",
     image: "/case-puchica.jpg",
-    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, and a curated launch catalogue for Canada and the US.",
+    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, a four-locale internationalized build (EN, FR, ES, PT-BR), collection taxonomy, and SEO infrastructure for Canada and the US.",
   },
   {
     id: "telus",
@@ -149,13 +149,13 @@ export const projects = [
 export const caseStudies = {
   puchica: {
     brief:
-      "Puchica is a self-directed e-commerce venture rooted in Central American and pre-Hispanic heritage. The goal was a storefront that carried that identity through every page, not a dressed-up template.",
+      "Puchica is a self-directed e-commerce venture rooted in Central American heritage. The goal was a storefront that carried that identity through every page — an indigo story drawn from El Salvador's two centuries in the dye trade, not a palette picked off a template.",
     built:
-      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO built into the routing, and a curated launch catalogue validated for Canada and the US. Merchandising remains in Shopify Admin.",
+      "A React storefront on Shopify Hydrogen, built from an empty repository and shipped in four locales — English, French, Spanish and Brazilian Portuguese — localized down to per-locale page titles, meta descriptions, navigation and policy pages rather than machine-swapped body copy. Custom components for collections and product pages, SEO built into the routing, and a brand system that holds the same voice from the homepage through to checkout. Merchandising stays in Shopify Admin.",
     details: [
-      "A reusable component library that scales as the catalogue grows",
-      "Server-rendered for speed and search visibility",
-      "Shopify-managed merchandising, curated rather than bulk-imported",
+      "Four live locales — EN, FR, ES and PT-BR — localized to per-locale meta and policy pages",
+      "A brand system carried through copy, palette and product presentation, not applied as a skin",
+      "Server-rendered on Hydrogen for speed and search visibility",
     ],
   },
   telus: {
