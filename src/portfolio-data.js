@@ -18,7 +18,7 @@ export const projects = [
     brand: "#6D4CFF",
     logo: "/puchica.svg",
     image: "/case-puchica.jpg",
-    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, and a controlled 20-product launch catalogue for Canada and the US.",
+    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, collection taxonomy, SEO infrastructure, and a curated launch catalogue for Canada and the US.",
   },
   {
     id: "telus",
@@ -151,11 +151,11 @@ export const caseStudies = {
     brief:
       "Puchica is a self-directed e-commerce venture rooted in Central American and pre-Hispanic heritage. The goal was a storefront that carried that identity through every page, not a dressed-up template.",
     built:
-      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO built into the routing, and a controlled 20-product launch catalogue validated for Canada and the US. Merchandising remains in Shopify Admin.",
+      "A React storefront on Shopify Hydrogen, built from an empty repository. Custom components for collections and product pages, a taxonomy that keeps a growing catalogue navigable, SEO built into the routing, and a curated launch catalogue validated for Canada and the US. Merchandising remains in Shopify Admin.",
     details: [
       "A reusable component library that scales as the catalogue grows",
       "Server-rendered for speed and search visibility",
-      "Shopify-managed merchandising with a 20-product launch catalogue",
+      "Shopify-managed merchandising, curated rather than bulk-imported",
     ],
   },
   telus: {
