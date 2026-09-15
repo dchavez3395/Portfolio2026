@@ -2,36 +2,23 @@
 
 export const EMAIL = "dchavez3395@gmail.com";
 export const EMAIL_HREF = `mailto:${EMAIL}`;
-export const RESUME_HREF = "/Daniel_Chavez_Technical_Solutions_Resume.pdf";
+export const RESUME_HREF = "/Daniel_Chavez_Developer_Resume.pdf";
 export const LINKEDIN_HREF = "https://www.linkedin.com/in/danielchavez2/";
 export const GITHUB_HREF = "https://github.com/dchavez3395";
 
 export const projects = [
-  {
-    id: "puchica",
-    title: "Puchica",
-    domain: "puchica.ca",
-    demo: "https://puchica.ca/",
-    discipline: "E-commerce",
-    stack: "Shopify Hydrogen · React",
-    featured: true,
-    brand: "#6D4CFF",
-    logo: "/puchica.svg",
-    image: "/case-puchica.jpg",
-    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, a four-locale internationalized build (EN, FR, ES, PT-BR), collection taxonomy, and SEO infrastructure for Canada and the US.",
-  },
   {
     id: "telus",
     title: "TELUS Reconciliation Report",
     domain: "reconciliationreport.telus.com",
     demo: "https://reconciliationreport.telus.com/",
     discipline: "Annual report",
-    stack: "React · Headless CMS",
+    stack: "WordPress · ACF · Accessible data viz",
     featured: true,
     brand: "#4B286D",
     logo: "/telus.webp",
     image: "/case-telus.jpg",
-    role: "Multi-section React build with a client-controlled CMS, accessible data visualizations, and a publishing workflow for the report's ongoing lifecycle.",
+    role: "Custom WordPress and ACF build: hand-written blocks for each report section, data visualizations that work by keyboard and screen reader, and an editing workflow TELUS's own team runs for the report's ongoing lifecycle.",
   },
   {
     id: "tamalpais",
@@ -133,6 +120,19 @@ export const projects = [
     role: "Built and maintained the site: membership directory, apprenticeship resources, a news section, and a CMS so union staff publish without filing a ticket.",
   },
   {
+    id: "puchica",
+    title: "Puchica",
+    domain: "puchica.ca",
+    demo: "https://puchica.ca/",
+    discipline: "E-commerce",
+    stack: "Shopify Hydrogen · React",
+    featured: false,
+    brand: "#6D4CFF",
+    logo: "/puchica.svg",
+    image: "/case-puchica.jpg",
+    role: "Sole developer — custom Shopify Hydrogen storefront built from an empty repo: React components, a four-locale internationalized build (EN, FR, ES, PT-BR), collection taxonomy, and SEO infrastructure for Canada and the US.",
+  },
+  {
     id: "ceda",
     title: "CEDA",
     domain: "cedawpg.org",
@@ -162,7 +162,7 @@ export const caseStudies = {
     brief:
       "TELUS publishes an annual Indigenous reconciliation report. It has to be credible, accessible, and fully updatable by their own team long after launch.",
     built:
-      "A multi-section React build fronted by a client-controlled CMS. The data visualizations were built to be read by screen readers and operated by keyboard, not just looked at. A publishing workflow lets TELUS revise the report across its lifecycle with no developer in the loop.",
+      "A custom WordPress theme in PHP with hand-built ACF blocks for each section of the report, rather than a page builder. The data visualizations were built to be read by screen readers and operated by keyboard, not just looked at. The editing workflow lets TELUS revise the report across its lifecycle with no developer in the loop.",
     details: [
       "Accessible data visualizations, not image-only charts",
       "Client-controlled CMS for the full report lifecycle",
@@ -212,7 +212,7 @@ export const pathItems = [
   {
     title: "Business Development Manager — Birchwood Nissan Brandon",
     period: "Jan 2018 – Nov 2018",
-    body: "Managed sales pipelines and CRM lead workflows to improve appointment conversion and follow-up discipline. Where I learned stakeholder communication, relationship ownership, and what it means to be accountable to a number.",
+    body: "Managed lead workflows and follow-up discipline in a business development role. Where I learned stakeholder communication, owning a process end to end, and what it means to be accountable for an outcome.",
   },
   {
     title: "Sales Consultant — Birchwood Nissan Brandon",
@@ -237,51 +237,47 @@ export const credentials = [
 
 export const commercialHighlights = [
   {
-    title: "Consultative sales and closing",
-    body: "Automotive sales experience with Birchwood and House of Nissan, including the highest closing ratio in 2016 and 2018 and a Bronze Nissan Club Excellence Award in 2016.",
+    title: "Adjudicating against a written standard",
+    body: "Three years adjudicating consumer credit on a dealership group's in-house lending book, across prime and non-prime. Read the file, test it against the policy that governs it, document what fails. It is the same habit an accessibility audit runs on, which is why the audit work came naturally.",
   },
   {
-    title: "Finance and solution structuring",
-    body: "Managed automotive finance across credit tiers, balancing customer affordability, lender requirements, documentation, compliance, and dealership outcomes from submission through funding.",
+    title: "Evidence and verification",
+    body: "Analyzed credit files and verified income and identity documentation on every deal, reconciling what an applicant stated against what the file actually supported. Working under documented conditions and real deadlines is where the discipline behind my QA comes from.",
   },
   {
-    title: "Pipeline, prospecting, and follow-through",
-    body: "Managed CRM lead workflows in business development and built resilience through door-to-door insurance sales with Combined Insurance.",
-  },
-  {
-    title: "Technical product communication",
-    body: "Retail technology sales at The Source and years of client-facing web delivery strengthened my ability to explain products clearly to both technical and nontechnical audiences.",
+    title: "Explaining technical things to people who aren't technical",
+    body: "Years of client-facing work, in English and Spanish, spent explaining structures and tradeoffs to people who had not seen them before. On a build team that turns into clear writing in a ticket and a client who understands why a fix matters.",
   },
 ];
 
 export const serviceOffers = [
   {
-    label: "Presales",
-    title: "Sales & solutions engineering",
-    price: "Primary target",
-    body: "Customer discovery, technical qualification, tailored walkthroughs, integration conversations, proof-of-concept support, and a clear solution story tied to business value.",
-    fit: "Best fit for SaaS teams that need technical credibility without losing commercial judgment or customer empathy.",
+    label: "Build",
+    title: "Custom WordPress development",
+    price: "Primary",
+    body: "Hand-written themes in PHP, native Gutenberg blocks and ACF blocks built to match a design rather than approximate it, and an editing experience the client's team can actually use. No page-builder bloat underneath.",
+    fit: "Best fit for agencies and in-house teams who want the design shipped as drawn and a CMS their editors won't break.",
   },
   {
-    label: "Post-sale",
-    title: "Implementation & customer success",
-    price: "Strong fit",
-    body: "Requirements translation, onboarding, CMS and API delivery, troubleshooting, training, stakeholder updates, and dependable follow-through after the deal is signed.",
-    fit: "For teams that need customers to reach value quickly and stay confident through implementation and change.",
+    label: "Accessibility",
+    title: "WCAG 2.2 AA audit & remediation",
+    price: "Primary",
+    body: "Conformance audits against the published standard, every finding documented in terms the person fixing it can act on, and remediation tracked through to closure. Deque University trained.",
+    fit: "For public-sector work and any project where conformance is written into the contract and somebody has to stand behind it.",
   },
   {
-    label: "Revenue",
-    title: "Technical account growth",
-    price: "Selective",
-    body: "Pipeline ownership, consultative discovery, product explanation, objection handling, CRM discipline, and account conversations grounded in how the product actually works.",
-    fit: "Especially relevant to automotive technology, fintech, insurtech, e-commerce, and operational SaaS.",
+    label: "Rescue",
+    title: "Inherited builds & ongoing care",
+    price: "Available",
+    body: "Joining a codebase mid-flight, reading the existing patterns, fixing what's broken, and leaving it cleaner without demanding a rewrite. Plus the unglamorous part: updates, migrations, and support after launch.",
+    fit: "For teams carrying a site someone else built and needing it to keep working.",
   },
   {
-    label: "Delivery",
-    title: "Web, CMS & accessibility",
-    price: "Technical proof",
-    body: "Production web applications, CMS workflows, e-commerce, APIs, accessibility QA, deployment, and ongoing support across inherited or newly built systems.",
-    fit: "The hands-on technical foundation behind credible customer conversations and practical solution design.",
+    label: "Front end",
+    title: "Design-faithful front-end work",
+    price: "Available",
+    body: "Figma handoff to responsive, mobile-first build, holding the line on spacing, type, contrast and focus states through to launch. React and Next.js when a project calls for them.",
+    fit: "For design-led studios who are tired of builds drifting from the file.",
   },
 ];
 
@@ -302,20 +298,20 @@ export const principles = [
 
 export const skillGroups = [
   {
-    title: "Customer & revenue",
-    items: "Consultative discovery · CRM & pipeline ownership · Product explanation · Objection handling · Negotiation · Automotive F&I",
+    title: "WordPress & PHP",
+    items: "Custom theme development · PHP · Advanced Custom Fields · Native Gutenberg blocks · ACF blocks · MySQL · WP Engine · Flywheel",
   },
   {
-    title: "Solutions & delivery",
-    items: "Requirements translation · Client walkthroughs · REST APIs · CMS workflows · Implementation · QA · Training & support",
+    title: "Accessibility",
+    items: "WCAG 2.0 / 2.1 / 2.2 AA auditing · ARIA patterns · Keyboard navigation · Focus & contrast management · Semantic structure · Remediation tracking",
   },
   {
-    title: "Technical foundation",
-    items: "JavaScript · React · Node.js · Express · PHP · WordPress · Shopify · HTML/CSS · Git & GitHub · Figma",
+    title: "Front end",
+    items: "HTML · CSS / SCSS · JavaScript (ES6+) · Responsive & mobile-first · Figma handoff · Cross-browser QA · Performance · SEO",
   },
   {
-    title: "Risk & quality",
-    items: "WCAG accessibility · Documentation · Compliance mindset · SEO · Performance · Cross-browser QA · AI-assisted workflows",
+    title: "Also worked with",
+    items: "React · Next.js · TypeScript · Tailwind · Node.js · REST APIs · Git & GitHub · AI-assisted workflows",
   },
 ];
 

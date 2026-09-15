@@ -43,7 +43,7 @@ function Header({ onNavHome, onNavServices, onNavWork, onNavResume, onNavA11y, m
           Daniel Chavez
         </button>
         <nav aria-label="Primary" className={`pk-nav ${mobileOpen ? "pk-nav--open" : ""}`}>
-          {navBtn("Solutions", onNavServices)}
+          {navBtn("Services", onNavServices)}
           {navBtn("Work", onNavWork)}
           {navBtn("Résumé", onNavResume)}
           {navBtn("A11y", onNavA11y)}
@@ -99,22 +99,24 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
         </div>
 
         <h1 className="pk-hero__h1">
-          Technical solutions
+          Custom WordPress,
           <br />
-          that move
+          built to be
           <br />
-          <span className="pk-hero__h1-accent">customers forward.</span>
+          <span className="pk-hero__h1-accent">used by everyone.</span>
         </h1>
 
         <div className="pk-hero__bottom">
           <p className="pk-hero__intro">
-            I combine production web development with sales, automotive finance,
-            CRM, and client delivery. I help teams understand customer problems,
-            shape the right solution, and carry it through implementation.
+            I build custom WordPress sites in PHP — hand-written themes, native
+            Gutenberg blocks and ACF blocks made to match the design rather than
+            approximate it — for agency, enterprise and public-sector clients. I
+            also run the WCAG 2.2 AA audits on that work and see the fixes through
+            to closure.
           </p>
           <div className="pk-hero__ctas">
             <button className="pk-btn-solid" onClick={goServices}>
-              Explore my fit ↓
+              See what I build ↓
             </button>
             <a className="pk-btn-ghost" href={EMAIL_HREF}>
               Get in touch
@@ -138,10 +140,10 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           aria-hidden="true"
         >
           <span>
-            &nbsp;&nbsp;Customer discovery&nbsp;&nbsp;/&nbsp;&nbsp;Client walkthroughs&nbsp;&nbsp;/&nbsp;&nbsp;CRM&nbsp;&nbsp;/&nbsp;&nbsp;Pipeline ownership&nbsp;&nbsp;/&nbsp;&nbsp;Solution design&nbsp;&nbsp;/&nbsp;&nbsp;APIs&nbsp;&nbsp;/&nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;CMS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Finance&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
+            &nbsp;&nbsp;WordPress&nbsp;&nbsp;/&nbsp;&nbsp;PHP&nbsp;&nbsp;/&nbsp;&nbsp;ACF&nbsp;&nbsp;/&nbsp;&nbsp;Gutenberg blocks&nbsp;&nbsp;/&nbsp;&nbsp;Custom themes&nbsp;&nbsp;/&nbsp;&nbsp;WCAG 2.2 AA&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility audits&nbsp;&nbsp;/&nbsp;&nbsp;Remediation&nbsp;&nbsp;/&nbsp;&nbsp;Figma handoff&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
           </span>
           <span>
-            &nbsp;&nbsp;Customer discovery&nbsp;&nbsp;/&nbsp;&nbsp;Client walkthroughs&nbsp;&nbsp;/&nbsp;&nbsp;CRM&nbsp;&nbsp;/&nbsp;&nbsp;Pipeline ownership&nbsp;&nbsp;/&nbsp;&nbsp;Solution design&nbsp;&nbsp;/&nbsp;&nbsp;APIs&nbsp;&nbsp;/&nbsp;&nbsp;React&nbsp;&nbsp;/&nbsp;&nbsp;CMS&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility&nbsp;&nbsp;/&nbsp;&nbsp;Finance&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
+            &nbsp;&nbsp;WordPress&nbsp;&nbsp;/&nbsp;&nbsp;PHP&nbsp;&nbsp;/&nbsp;&nbsp;ACF&nbsp;&nbsp;/&nbsp;&nbsp;Gutenberg blocks&nbsp;&nbsp;/&nbsp;&nbsp;Custom themes&nbsp;&nbsp;/&nbsp;&nbsp;WCAG 2.2 AA&nbsp;&nbsp;/&nbsp;&nbsp;Accessibility audits&nbsp;&nbsp;/&nbsp;&nbsp;Remediation&nbsp;&nbsp;/&nbsp;&nbsp;Figma handoff&nbsp;&nbsp;/&nbsp;&nbsp;English + Spanish&nbsp;&nbsp;/&nbsp;&nbsp;
           </span>
         </div>
       </section>
@@ -153,15 +155,16 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
         </div>
         <div className="pk-about-grid" style={{ marginTop: "clamp(24px, 4vh, 40px)" }}>
           <h2 className="pk-about__h2">
-            Developer, client partner, and finance-trained problem solver.
+            A developer who audits his own work.
           </h2>
           <div>
             <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", margin: "0 0 28px", maxWidth: "52ch" }}>
-              I combine 4+ years of production web experience with earlier
-              finance, sales, CRM, and customer-relationship ownership. That
-              makes me useful in the space between a customer&apos;s business
-              problem, the solution they can believe in, and the technical work
-              needed to deliver it.
+              Five years at a Winnipeg design studio building custom WordPress in
+              PHP, and running the WCAG 2.2 AA conformance audits on the same work.
+              Being the developer as well as the auditor means I know the part
+              that is harder than finding an issue: writing the finding so the
+              person fixing it can act on it, and knowing which remediation will
+              survive the next content update.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
@@ -175,11 +178,12 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
               </div>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
                 <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 600, margin: "0 0 6px", letterSpacing: "-0.01em" }}>
-                  Commercial judgment
+                  Evidence discipline
                 </h3>
                 <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
-                  Finance and sales experience taught me to manage pipelines,
-                  documentation, follow-up, and conversations tied to revenue.
+                  Three years adjudicating consumer credit before development,
+                  testing files against written policy and documenting what failed.
+                  The audit habit started there.
                 </p>
               </div>
               <div style={{ padding: "18px 0", borderTop: "1px solid var(--hair)" }}>
@@ -187,8 +191,8 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
                   Hands-on technical delivery
                 </h3>
                 <p style={{ fontSize: "15px", lineHeight: 1.55, color: "var(--body)", margin: "0" }}>
-                  React, WordPress, Shopify, APIs, accessibility QA, deployment,
-                  and ongoing production support.
+                  Custom WordPress themes, ACF and Gutenberg blocks, PHP, MySQL,
+                  accessibility QA, deployment, and ongoing production support.
                 </p>
               </div>
             </div>
@@ -199,11 +203,11 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
       {/* COMMERCIAL FOUNDATION */}
       <section id="commercial" className="pk-section--tight">
         <div className="pk-label-row">
-          <span className="pk-label-row__primary">Commercial foundation</span>
-          <span className="pk-label-row__right">Sales · Finance · CRM</span>
+          <span className="pk-label-row__primary">Before development</span>
+          <span className="pk-label-row__right">Credit · Lending · Documentation</span>
         </div>
         <div className="pk-about-grid">
-          <h2 className="pk-about__h2">Sales discipline behind the technical work.</h2>
+          <h2 className="pk-about__h2">Where the documentation habit came from.</h2>
           <div>
             {commercialHighlights.map((item, index) => (
               <div key={index} className="pk-principle">
@@ -220,7 +224,7 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
       {/* SERVICES */}
       <section id="services" className="pk-section">
         <div className="pk-label-row">
-          <span className="pk-label-row__primary">Solutions</span>
+          <span className="pk-label-row__primary">What I do</span>
           <span className="pk-label-row__right">Where I create value</span>
         </div>
         <div className="pk-services-intro">
@@ -383,11 +387,11 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           something <span style={{ color: "var(--accent)" }}>useful.</span>
         </h2>
         <p className="pk-contact__body">
-          I&apos;m targeting full-time remote roles in sales engineering, solutions
-          consulting, implementation, technical account management, and
-          customer-facing SaaS. Automotive technology, fintech, insurtech,
-          e-commerce, and accessibility are especially strong fits. I remain
-          open to selective account-executive and focused client work.
+          I&apos;m looking for WordPress and PHP development work, or accessibility
+          audit and remediation work, at design and digital agencies, public-sector
+          organizations, and accessibility consultancies. Winnipeg on-site, hybrid
+          and fully remote all work. Available immediately, and open to contract
+          as well as full-time.
         </p>
         <a className="pk-contact__email" href={EMAIL_HREF}>
           Say hello →
@@ -562,7 +566,7 @@ function ResumeView({ goHome }) {
         <div>
           <h1 className="pk-resume__h1">Daniel Chavez</h1>
           <p className="pk-resume__sub">
-            Technical solutions &amp; client delivery · Winnipeg, MB · 204-721-2248
+            WordPress developer &amp; accessibility · Winnipeg, MB · 204-721-2248
           </p>
         </div>
         <a
@@ -576,11 +580,12 @@ function ResumeView({ goHome }) {
       </div>
 
       <p className="pk-resume__summary">
-        Bilingual technical-solutions professional combining 4+ years building
-        and maintaining production websites with earlier automotive sales,
-        finance, CRM, prospecting, and relationship-management experience.
-        Strongest where customer discovery, business process, solution design,
-        and hands-on implementation meet.
+        Web developer with five years at a Winnipeg design studio building custom
+        WordPress sites in PHP and ACF for enterprise and public-sector clients,
+        with accessibility treated as a standing requirement rather than a final
+        check. Earlier career in automotive finance, which is where the habit of
+        testing a file against a written standard came from. Bilingual English
+        and Spanish.
       </p>
 
       {/* Path */}
@@ -819,7 +824,7 @@ function App() {
 
   useEffect(() => {
     const titles = {
-      home: "Daniel Chavez — Technical solutions, sales & client delivery",
+      home: "Daniel Chavez — WordPress developer & accessibility specialist",
       accessibility: "Accessibility — Daniel Chavez",
       resume: "Résumé — Daniel Chavez",
       case: caseId
