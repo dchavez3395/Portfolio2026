@@ -159,8 +159,9 @@ function HomeView({ goServices, goA11y, goResume, openCase }) {
           </h2>
           <div>
             <p style={{ fontSize: "clamp(17px, 1.6vw, 21px)", lineHeight: 1.6, color: "var(--body)", margin: "0 0 28px", maxWidth: "52ch" }}>
-              Five years at a Winnipeg design studio building custom WordPress in
-              PHP, and running the WCAG 2.2 AA conformance audits on the same work.
+              Three and a half years at a Winnipeg design studio building custom
+              WordPress in PHP, and running the WCAG 2.2 AA conformance audits on the
+              same work. Five years in production web development altogether.
               Being the developer as well as the auditor means I know the part
               that is harder than finding an issue: writing the finding so the
               person fixing it can act on it, and knowing which remediation will
@@ -580,8 +581,9 @@ function ResumeView({ goHome }) {
       </div>
 
       <p className="pk-resume__summary">
-        Web developer with five years at a Winnipeg design studio building custom
-        WordPress sites in PHP and ACF for enterprise and public-sector clients,
+        Web developer with five years in production web development, three and a half
+        of them at a Winnipeg design studio building custom WordPress sites in PHP and
+        ACF for enterprise and public-sector clients,
         with accessibility treated as a standing requirement rather than a final
         check. Earlier career in automotive finance, which is where the habit of
         testing a file against a written standard came from. Bilingual English
